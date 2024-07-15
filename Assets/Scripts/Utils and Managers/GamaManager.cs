@@ -5,8 +5,6 @@ using UnityEngine;
 public class GamaManager : MonoBehaviour
 {
     static GamaManager instance;
-    [SerializeField]
-    new_Python_script pythonScript_Class;
     public static GamaManager Instance {  get { return instance; } }
 	static NPCManager npcInstance;
 	public static NPCManager NPCInstance { get { return npcInstance; } }
