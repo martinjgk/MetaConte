@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2764237371149289164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3041384009708848194}
+  - component: {fileID: 6230915353058890853}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3041384009708848194
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2764237371149289164}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 299.00598, y: 123.01189, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6230915353058890853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2764237371149289164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4efed133f53a0094bb74ff6d64b7f5af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infos: []
+  NPCImageList:
+  - {fileID: 21300000, guid: 2911d5b7fbc055b43aa5680abb48d965, type: 3}
+  - {fileID: 21300000, guid: 1021dea62ba2ea24a94e32b4cd321284, type: 3}
+  - {fileID: 21300000, guid: 1021dea62ba2ea24a94e32b4cd321284, type: 3}
+  - {fileID: 21300000, guid: 1021dea62ba2ea24a94e32b4cd321284, type: 3}
+  - {fileID: 21300000, guid: 935691736eee66f4886de9dd3ae59ce2, type: 3}
+  - {fileID: 21300000, guid: 935691736eee66f4886de9dd3ae59ce2, type: 3}
+  - {fileID: 21300000, guid: 935691736eee66f4886de9dd3ae59ce2, type: 3}
+  - {fileID: 21300000, guid: 39dbdb381ce665441a534b9a8c0353e2, type: 3}
+  - {fileID: 21300000, guid: c9a0554071710374da6864e6119953b0, type: 3}
+  - {fileID: 21300000, guid: 935691736eee66f4886de9dd3ae59ce2, type: 3}
+  - {fileID: 21300000, guid: 935691736eee66f4886de9dd3ae59ce2, type: 3}
+  - {fileID: 21300000, guid: 3adae95beec905d489f3b90355a9c233, type: 3}
+  - {fileID: 21300000, guid: c9a0554071710374da6864e6119953b0, type: 3}
+  - {fileID: 21300000, guid: 0e833e5af5a7c814283af0d28060c59d, type: 3}
+  - {fileID: 21300000, guid: c9a0554071710374da6864e6119953b0, type: 3}
+  - {fileID: 21300000, guid: c9a0554071710374da6864e6119953b0, type: 3}
+  questManager: {fileID: 0}
