@@ -17,11 +17,14 @@ public abstract class Magic : MonoBehaviour
 	[SerializeField]
 	protected WordClass wordClass;
 
-	protected PlayerMagic playerSkill;
-
-	public float lastSkillTime = 0f;
 	[SerializeField]
-	public float coolTime;
+	protected SerializableDictionary<string, GameObject> effectDict;
+
+	[SerializeField]
+	public List<string> nextMagic;
+
+	protected float skillOnTime;
+	protected PlayerMagic playerSkill;
 
 	public void Init() {
 		playerSkill = GameObject.Find("Player").GetComponent<PlayerMagic>();
@@ -29,4 +32,10 @@ public abstract class Magic : MonoBehaviour
 
 	public abstract void UseSkill();
 
+	public GamaManager.Element GetElement() {
+		return element;
+	}
+	public void SetElement(GamaManager.Element element) {
+		this.element = element;
+	}
 }

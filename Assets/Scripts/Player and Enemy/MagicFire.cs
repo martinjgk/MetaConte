@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagicWater : Magic {
+public class MagicFire : Magic {
 	[SerializeField]
 	public float damage;
 	[SerializeField]
@@ -14,7 +14,13 @@ public class MagicWater : Magic {
 	private void Awake() {
 		
 		player = FindObjectOfType<Player>();
-		UseSkill();
+
+		if (player != null && effectDict.ContainsKey(player.CurrentSkill)) {
+			UseSkill();
+		}
+		else {
+			Destroy(gameObject);
+		}
 	}
 
 	public override void UseSkill() {

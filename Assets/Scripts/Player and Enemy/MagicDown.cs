@@ -14,45 +14,37 @@ public class MagicDown : Magic
 	List<GameObject> effectList;
 	GameObject effect;
 
-	public override void UseSkill() {
+	private void Awake() {
+		player = GetComponent<Player>();
 		effect.SetActive(false);
-		player = FindObjectOfType<Player>();
+		
+		if (player.CurrentSkill == "None") {
+
+		}
+	}
+
+	public override void UseSkill() {
 
 
-		if (Time.time - lastSkillTime >= coolTime) {
-			switch (player.ElementState) {
-				case GamaManager.Element.Water:
+		if (Time.time - skillOnTime >= duringTime) {
 
-
-					break;
-				case GamaManager.Element.Fire:
-					break;
-				case GamaManager.Element.Dirt:
-					break;
-				case GamaManager.Element.Wind:
-					break;
-				default:
-					break;
-			}
-
-			
 		}
 	}
 
 	void SkillDown() {
-		player.ElementState = GamaManager.Element.None;
-		lastSkillTime = Time.time;
+		player.CurrentSkill = this.name;
+		skillOnTime = Time.time;
 		effect.SetActive(true);
 	}
 
 	public void OffSkill() {
 		effect.SetActive(false);
 		gameObject.SetActive(false);
-		player.ElementState = GamaManager.Element.None;
+		player.CurrentSkill = "None";
 	}
 
 	private void Update() {
-		if (Time.time - lastSkillTime > duringTime) {
+		if (Time.time - skillOnTime > duringTime) {
 			OffSkill();
 		}
 		transform.position = player.transform.position;

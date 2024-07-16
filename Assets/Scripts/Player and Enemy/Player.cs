@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Player : LivingEntity
 {
-	private GamaManager.Element element_state;
-	public GamaManager.Element ElementState { 
+
+	private string current_skill;
+	public string CurrentSkill { 
 		get {
-			return element_state;
+			return current_skill;
 		}
 		set {
-			if (element_state != value)
+			if (current_skill != value)
 			{
-				element_state = value;
+				current_skill = value;
 			}
 		}
 	}
