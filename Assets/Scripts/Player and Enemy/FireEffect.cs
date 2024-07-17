@@ -48,9 +48,9 @@ public class FireEffect : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider other) {
 		Debug.Log("Enter!" + other.gameObject.tag);
-		if (other.gameObject.tag == "Dragon") {
+		if (other.gameObject.tag == "Enemy") {
 			Debug.Log("Dragon!!");
-			Enemy lv = other.gameObject.GetComponent<Enemy>();
+			LivingEntity lv = other.gameObject.GetComponent<LivingEntity>();
 			if (lv != null) {
 				Debug.Log("!!!!!!!Enter!!!!!!");
 				lv.getDamage(magicElement.damage);

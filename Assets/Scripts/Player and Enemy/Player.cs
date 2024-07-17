@@ -4,20 +4,6 @@ using UnityEngine;
 
 public class Player : LivingEntity
 {
-
-	private string current_skill;
-	public string CurrentSkill { 
-		get {
-			return current_skill;
-		}
-		set {
-			if (current_skill != value)
-			{
-				current_skill = value;
-			}
-		}
-	}
-
 	PlayerMagic playerSkill;
 
 	private static Player s_instance;

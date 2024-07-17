@@ -9630,6 +9630,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a645af2c6da5c1f448380fdd7984b950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circleR: 0
+  circleR: 6
   deg: 0
-  speed: 0
+  speed: 100

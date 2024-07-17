@@ -24,18 +24,29 @@ public abstract class Magic : MonoBehaviour
 	public List<string> nextMagic;
 
 	protected float skillOnTime;
-	protected PlayerMagic playerSkill;
+	protected PlayerMagic player=null;
 
-	public void Init() {
-		playerSkill = GameObject.Find("Player").GetComponent<PlayerMagic>();
+	public virtual void UseSkill() {
+		player.CurrentSkill = skillName;
 	}
 
-	public abstract void UseSkill();
+	protected virtual void OffSkill() {
+		player.CurrentSkill = "None";
+		player.SetUsableSkillElement();
+		Destroy(gameObject);
+	}
+
 
 	public GamaManager.Element GetElement() {
 		return element;
 	}
 	public void SetElement(GamaManager.Element element) {
 		this.element = element;
+	}
+
+	private void Update() {
+		if (player != null) {
+			player.UpdateLastSkillTime(name);
+		}
 	}
 }

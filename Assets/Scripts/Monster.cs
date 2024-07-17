@@ -5,15 +5,13 @@ using UnityEngine;
 using UnityEditor.UI;
 using UnityEngine.UI;
 
-public class Monster : MonoBehaviour
+public class Monster : LivingEntity
 {
-    private int HP = 100;
     public Slider healthBar;
     public Animator animator;
     public float attackInterval = 2.0f; // 공격 간격 (초)
     private int currentAttackType = 0; // 현재 공격 타입 - used in blend tree
 
-    private bool isDead = false; // 죽음 여부
 
     void Start()
     {
@@ -27,11 +25,12 @@ public class Monster : MonoBehaviour
         // 테스트용
         if (Input.GetKeyDown(KeyCode.U))
         {
-            TakeDamage(10); // 예시로 10의 데미지를 입힘
+            getDamage(10); // 예시로 10의 데미지를 입힘
         }
        
     }
-    
+
+	/*
     public void TakeDamage(int damageAmount){
         if (isDead){
             return;
@@ -50,8 +49,21 @@ public class Monster : MonoBehaviour
             animator.SetTrigger("damage");
         }
     }
+	*/
 
-    IEnumerator AttackRoutine()
+	public override void getDamage(float damage) {
+		base.getDamage(damage);
+		if (HP <= 0) {
+			animator.SetTrigger("die");
+			GetComponent<Collider>().enabled = false;
+			StartCoroutine(DestroyAfterDelay(5f)); // 5초 후에 사라지게 함
+		}
+		else {
+			animator.SetTrigger("damage");
+		}
+	}
+
+	IEnumerator AttackRoutine()
     {
         while (true)
         {

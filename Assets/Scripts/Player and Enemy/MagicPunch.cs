@@ -1,35 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class MagicDown : Magic
+public class MagicPunch : Magic
 {
 	[SerializeField]
 	public float damage;
 	[SerializeField]
 	float duringTime;
+
 	[SerializeField]
-	float moveSpd;
-	[SerializeField]
-	float maxDistance;
+	float sizeUp;
 	[SerializeField]
 	float damageTick;
 
-	GameObject effect;
+	GameObject effectRightHand;
+	GameObject effectLeftHand;
 
-	Vector3 moveDir;
-	float movedDistance = 0;
-	float deltaPos;
-	[SerializeField]
-	bool isReached = false;
 
 	private void Awake() {
 		player = FindObjectOfType<PlayerMagic>();
 
-		effect = Instantiate(effectDict[player.CurrentSkill]);
-		effect.transform.SetParent(transform, false);
-		moveDir = player.transform.forward;
+		effectRightHand = Instantiate(effectDict[player.CurrentSkill]);
+		effectRightHand.transform.SetParent(transform, false);
+		effectRightHand.GetComponent<SphereCollider>().radius += sizeUp;
+
+		effectLeftHand = Instantiate(effectDict[player.CurrentSkill]);
+		effectLeftHand.transform.SetParent(transform, false);
+		effectLeftHand.GetComponent<SphereCollider>().radius += sizeUp;
+
+
 
 		transform.position = player.transform.position;
 		transform.rotation = player.transform.rotation;
@@ -50,32 +50,19 @@ public class MagicDown : Magic
 		if (Time.time - skillOnTime > duringTime) {
 			OffSkill();
 		}
-
-		deltaPos = moveSpd * Time.deltaTime;
-		if (!isReached) {
-			if (movedDistance <= maxDistance) {
-				transform.Translate(moveDir * deltaPos);
-				// transform.position = transform.position + (moveDir * deltaPos);
-				movedDistance += deltaPos;
-			}
-			else {
-				isReached = true;
-			}
-		}
 	}
 
 	private void OnCollisionEnter(Collision collision) {
 		IDamageable dmgable = collision.gameObject.GetComponent<IDamageable>();
 		if (dmgable != null) {
-			isReached = true;
 			StartCoroutine(GiveDamage(dmgable));
 		}
-    }
+	}
 
 	private void OnCollisionExit(Collision collision) {
 		IDamageable dmgable = collision.gameObject.GetComponent<IDamageable>();
 		if (dmgable != null) {
-			isReached = false;
+
 			StopCoroutine(GiveDamage(dmgable));
 		}
 	}

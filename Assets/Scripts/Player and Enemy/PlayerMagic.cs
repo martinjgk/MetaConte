@@ -8,6 +8,21 @@ using UnityEngine.Rendering;
 public class PlayerMagic : MonoBehaviour
 {
 	Player player;
+	InputSignLang inputSignLang;
+
+	private string current_skill;
+	public string CurrentSkill {
+		get {
+			return current_skill;
+		}
+		set {
+			if (current_skill != value) {
+				current_skill = value;
+			}
+		}
+	}
+
+	private GameObject currentSkillObj;
 
 	[SerializeField]
 	SerializableDictionary<string, GameObject> skillDict;
@@ -27,34 +42,38 @@ public class PlayerMagic : MonoBehaviour
 		{"hell", 0f},
 		{"scatter", 0f}
 	};
+	[SerializeField]
 	List<string> learnedSkills;
+
 	public List<string> usableSkills;
     void Start()
     {
-		learnedSkills = new List<string>();
+		// learnedSkills = new List<string>();
 		usableSkills = new List<string>();
+		player = GetComponent<Player>();
+		inputSignLang = FindObjectOfType<InputSignLang>();
+		SetUsableSkillElement();
 	}
 
     // Update is called once per frame
     void Update()
     {
-		if(player.CurrentSkill == "None") {
-			
-		}
-        if(Input.GetKey(KeyCode.Alpha1)) {
+        if(Input.GetKey(KeyCode.Alpha1) || inputSignLang.inputSign == "water") {
 			CastSkill("water");
 		}
-		if(Input.GetKey(KeyCode.E)) {
+		if(Input.GetKey(KeyCode.E) || inputSignLang.inputSign == "down") {
 			CastSkill("down");
 		}
 		if(Input.GetKey(KeyCode.Alpha2)) {
 			CastSkill("fire");
 		}
+ 
     }
 
 	void CastSkill(string skillName) {
 		GameObject skill = skillDict[skillName];
-		if(skill != null && learnedSkills.Contains(skillName)) {
+		if(skill != null && learnedSkills.Contains(skillName) && usableSkills.Contains(skillName)) {
+
 			if(Time.time - lastSkillTimeDict[skillName] >= skillCoolDict[skillName]) {
 				usableSkills.Clear();
 				Magic skillMagic = skill.GetComponent<Magic>();
@@ -64,8 +83,10 @@ public class PlayerMagic : MonoBehaviour
 						usableSkills.Add(nextSkillName);
 					}
 				}
-				Instantiate(skill);
-				lastSkillTimeDict[skillName] = Time.time;
+				if (CurrentSkill != "None" && currentSkillObj != null) {
+					Destroy(currentSkillObj);
+				}
+				currentSkillObj = Instantiate(skill);
 			}
 		}
 	}
@@ -76,6 +97,27 @@ public class PlayerMagic : MonoBehaviour
 		if(newSkill != null && !learnedSkills.Contains(skillName)) {
 
 			learnedSkills.Add(skillName);
+		}
+	}
+
+	public void UpdateLastSkillTime(string skillName) {
+		lastSkillTimeDict[skillName] = Time.time;
+	}
+
+	public void SetUsableSkillElement () {
+		usableSkills.Clear();
+		currentSkillObj = null;
+		if(learnedSkills.Contains("water")) {
+			usableSkills.Add("water");
+		}
+		if (learnedSkills.Contains("fire")) {
+			usableSkills.Add("fire");
+		}
+		if (learnedSkills.Contains("dirt")) {
+			usableSkills.Add("dirt");
+		}
+		if (learnedSkills.Contains("wind")) {
+			usableSkills.Add("wind");
 		}
 	}
 }

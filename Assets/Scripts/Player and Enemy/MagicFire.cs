@@ -8,31 +8,20 @@ public class MagicFire : Magic {
 	[SerializeField]
 	float duringTime;
 
-	Player player;
-
-	
 	private void Awake() {
-		
-		player = FindObjectOfType<Player>();
-
-		if (player != null && effectDict.ContainsKey(player.CurrentSkill)) {
-			UseSkill();
-		}
-		else {
-			Destroy(gameObject);
-		}
+		player = FindObjectOfType<PlayerMagic>();
+		UseSkill();
 	}
 
 	public override void UseSkill() {
+		base.UseSkill();
 		skillOnTime = Time.time;
-		player.CurrentSkill = this.name;
-		
 	}
 
-	public void OffSkill() {
-		
+	protected override void OffSkill() {
+		base.OffSkill();
 		gameObject.SetActive(false);
-		player.CurrentSkill = "None";
+		Destroy(gameObject);
 	}
 
 	private void Update() {

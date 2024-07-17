@@ -10,8 +10,11 @@ public class PersistentSocketClient : MonoBehaviour
     private Thread clientThread;
     private bool running = true;
 
+	private InputSignLang inputSignLang;
+
     void Start()
     {
+		inputSignLang = GetComponent<InputSignLang>();
         client = new TcpClient("localhost", 1398);
         stream = client.GetStream();
         clientThread = new Thread(new ThreadStart(ReceiveData));
@@ -30,6 +33,7 @@ public class PersistentSocketClient : MonoBehaviour
                     int bytesRead = stream.Read(receivedBytes, 0, receivedBytes.Length);
                     string receivedMessage = System.Text.Encoding.UTF8.GetString(receivedBytes, 0, bytesRead);
                     Debug.Log("Received from server: " + receivedMessage);
+					inputSignLang.inputSign = receivedMessage;
                     if(receivedMessage == "water"){
                         //monster.callMonster();
                     }

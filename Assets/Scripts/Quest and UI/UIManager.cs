@@ -110,7 +110,7 @@ public class UIManager : MonoBehaviour
     
 
     void SetCurrentIcon(string targetMagicName){
-        if(targetMagicName == "OFF"){
+        if(targetMagicName == "None"){
             CurrentSkill.SetActive(false);
         }
         if(targetMagicName == "water"){
@@ -158,7 +158,7 @@ public class UIManager : MonoBehaviour
     }
 
     void SetFirstIcon(string targetMagicName){
-        if(targetMagicName == "OFF"){
+        if(targetMagicName == "None"){
             FirstSkill.SetActive(false);
         }
         else{
@@ -175,7 +175,7 @@ public class UIManager : MonoBehaviour
     }
 
     void SetSecondIcon(string targetMagicName){
-        if(targetMagicName == "OFF"){
+        if(targetMagicName == "None"){
             SecondSkill.SetActive(false);
         }
         else
@@ -193,7 +193,7 @@ public class UIManager : MonoBehaviour
     }
 
     void SetThirdIcon(string targetMagicName){
-        if(targetMagicName == "OFF"){
+        if(targetMagicName == "None"){
             ThirdSkill.SetActive(false);
         }
         else
@@ -215,7 +215,7 @@ public class UIManager : MonoBehaviour
             curMagicName = "";
             Debug.Log("prev: " + prevMagicName + ", cur: "+curMagicName);
             currentState = 0;
-            SetCurrentIcon("OFF");
+            SetCurrentIcon("None");
             SetFirstIcon("water");
             SetSecondIcon("fire");
             SetThirdIcon("dirt");
@@ -228,8 +228,8 @@ public class UIManager : MonoBehaviour
             Debug.Log("prev: " + prevMagicName + ", cur: "+curMagicName);
             SetCurrentIcon(currentMagicName);
             SetFirstIcon("down");
-            SetSecondIcon("OFF");
-            SetThirdIcon("OFF");
+            SetSecondIcon("None");
+            SetThirdIcon("None");
             UpdateCurrentSkillTime(5.0f);
         }
     }

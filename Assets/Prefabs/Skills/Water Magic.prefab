@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6744460602976024170}
   - component: {fileID: 5928981576598151559}
   m_Layer: 0
-  m_Name: Element Magic
+  m_Name: Water Magic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e481dfff74b114441a73e0dd2a4df996, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillName: 
+  skillName: water
   element: 1
   wordClass: 0
   effectDict:
