@@ -9,10 +9,16 @@ public class Dragon : MonoBehaviour
     private int HP = 100;
     public Slider healthBar;
     public Animator animator;
-    public float attackInterval = 2.0f; // 공격 간격 (초)
+    public float attackInterval = 3.0f; // 공격 간격 (초)
     private int currentAttackType = 0; // 현재 공격 타입 - used in blend tree
 
     private bool isDead = false; // 죽음 여부
+
+    public GameObject fireBreathPrefab;
+    public float fireBreathDuration = 1f;
+    public float heightOffset = 1.0f;
+
+    private GameObject fireBreathInstance;
 
     void Start()
     {
@@ -81,4 +87,26 @@ public class Dragon : MonoBehaviour
 
         }
     }
+
+    public void StartFireBreath()
+    {
+        StartCoroutine(ExecuteFireBreath());
+    }
+
+    private IEnumerator ExecuteFireBreath()
+    {
+       if (fireBreathPrefab != null)
+        {
+            Vector3 adjustedPosition = animator.transform.position + Vector3.up * heightOffset;
+            fireBreathInstance = Instantiate(fireBreathPrefab, adjustedPosition, animator.transform.rotation);
+            fireBreathInstance.SetActive(true);
+            yield return new WaitForSeconds(fireBreathDuration);
+            Destroy(fireBreathInstance);
+        }
+        else
+        {
+            Debug.LogError("FireBreath Prefab가 설정되지 않았습니다.");
+        }
+    }
+
 }

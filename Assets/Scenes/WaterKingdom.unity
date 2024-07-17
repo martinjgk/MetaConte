@@ -653,14 +653,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1590765093792591237, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
-      propertyPath: skillDict.array.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1590765093792591237, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
-      propertyPath: skillDict.array.Array.data[0].Key
-      value: water
-      objectReference: {fileID: 0}
-    - target: {fileID: 1590765093792591237, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
       propertyPath: skillDict.array.Array.data[0].Value
       value: 
       objectReference: {fileID: 1922703032}

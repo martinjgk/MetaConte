@@ -223,6 +223,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e79294719548f04d884c9e57365f995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillDict:
+    array:
+    - Key: water
+      Value: {fileID: 0}
+    - Key: fire
+      Value: {fileID: 0}
+    - Key: down
+      Value: {fileID: 0}
 --- !u!114 &5293372282084738160
 MonoBehaviour:
   m_ObjectHideFlags: 0

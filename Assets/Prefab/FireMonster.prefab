@@ -1128,6 +1128,9 @@ MonoBehaviour:
   healthBar: {fileID: 2227452939011209926}
   animator: {fileID: 8702745027191388697}
   attackInterval: 3
+  fireBreathPrefab: {fileID: 6399877595109076523, guid: d53be075f7cd84a5b85dd6c4bd6c0be9, type: 3}
+  fireBreathDuration: 3
+  heightOffset: 1
 --- !u!195 &1864269602337889411
 NavMeshAgent:
   m_ObjectHideFlags: 0
