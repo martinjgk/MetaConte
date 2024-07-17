@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7581389600636388269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 361861009199788370}
+  - component: {fileID: 8218012630715683765}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &361861009199788370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7581389600636388269}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1113554, y: -0.8847174, z: 6.2618694}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8218012630715683765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7581389600636388269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b6b0e12ed3a26459b558d91bbdcfe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentSkill: {fileID: 0}
+  CurrentSkillIconImage: {fileID: 0}
+  CurrentSkillIconText: {fileID: 0}
+  FirstSkill: {fileID: 0}
+  FirstSkillIconImage: {fileID: 0}
+  FirstSkillIconText: {fileID: 0}
+  SecondSkill: {fileID: 0}
+  SecondSkillIconImage: {fileID: 0}
+  SecondSkillIconText: {fileID: 0}
+  ThirdSkill: {fileID: 0}
+  ThirdSkillIconImage: {fileID: 0}
+  ThirdSkillIconText: {fileID: 0}
+  NextSkillTimerSlider: {fileID: 0}
+  imageList:
+  - {fileID: 21300000, guid: 1021dea62ba2ea24a94e32b4cd321284, type: 3}
+  - {fileID: 21300000, guid: 935691736eee66f4886de9dd3ae59ce2, type: 3}
+  - {fileID: 21300000, guid: ab2277baa71544f4d8d995c5daaa7073, type: 3}
+  - {fileID: 21300000, guid: 39dbdb381ce665441a534b9a8c0353e2, type: 3}
+  - {fileID: 21300000, guid: 3adae95beec905d489f3b90355a9c233, type: 3}
+  - {fileID: 21300000, guid: 0e833e5af5a7c814283af0d28060c59d, type: 3}
+  - {fileID: 21300000, guid: 6ea91eb7b63818d4aa0ad67068d1499a, type: 3}
+  maxCurrentSkillTime: 0
