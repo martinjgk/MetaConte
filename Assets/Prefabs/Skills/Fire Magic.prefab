@@ -57,7 +57,7 @@ MonoBehaviour:
   - punch
   - hell
   damage: 20
-  duringTime: 7
+  duringTime: 10
 --- !u!1001 &3984077956915191823
 PrefabInstance:
   m_ObjectHideFlags: 0

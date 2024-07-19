@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,11 @@ public class PlayerMagic : MonoBehaviour
 {
 	Player player;
 	InputSignLang inputSignLang;
+	UIManager ui;
 
+	[SerializeField]
 	private string current_skill;
+	
 	public string CurrentSkill {
 		get {
 			return current_skill;
@@ -48,6 +52,7 @@ public class PlayerMagic : MonoBehaviour
 	public List<string> usableSkills;
     void Start()
     {
+		ui = FindObjectOfType<UIManager>();
 		// learnedSkills = new List<string>();
 		usableSkills = new List<string>();
 		player = GetComponent<Player>();
@@ -67,7 +72,8 @@ public class PlayerMagic : MonoBehaviour
 		if(Input.GetKey(KeyCode.Alpha2)) {
 			CastSkill("fire");
 		}
- 
+		
+		ui.SetSkillDialog(current_skill);
     }
 
 	void CastSkill(string skillName) {
@@ -87,6 +93,7 @@ public class PlayerMagic : MonoBehaviour
 					Destroy(currentSkillObj);
 				}
 				currentSkillObj = Instantiate(skill);
+
 			}
 		}
 	}

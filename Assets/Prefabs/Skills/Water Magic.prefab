@@ -56,7 +56,7 @@ MonoBehaviour:
   - down
   - flow
   damage: 10
-  duringTime: 7
+  duringTime: 10
 --- !u!1001 &70857233982076973
 PrefabInstance:
   m_ObjectHideFlags: 0

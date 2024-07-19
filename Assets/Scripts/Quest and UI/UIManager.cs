@@ -68,7 +68,7 @@ public class UIManager : MonoBehaviour
 
     public void SetSkillDialog(string targetMagicName){
         if(isSkillDialog){
-            if(targetMagicName == "init")
+            if(targetMagicName == "None")
             {
                 ShowInitState();
                 currentState = 0;
@@ -230,7 +230,7 @@ public class UIManager : MonoBehaviour
             SetFirstIcon("down");
             SetSecondIcon("None");
             SetThirdIcon("None");
-            UpdateCurrentSkillTime(5.0f);
+            UpdateCurrentSkillTime(7.0f);
         }
     }
 
