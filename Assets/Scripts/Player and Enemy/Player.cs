@@ -4,19 +4,6 @@ using UnityEngine;
 
 public class Player : LivingEntity
 {
-	private GamaManager.Element element_state;
-	public GamaManager.Element ElementState { 
-		get {
-			return element_state;
-		}
-		set {
-			if (element_state != value)
-			{
-				element_state = value;
-			}
-		}
-	}
-
 	PlayerMagic playerSkill;
 
 	private static Player s_instance;

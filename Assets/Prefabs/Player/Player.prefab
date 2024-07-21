@@ -223,6 +223,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e79294719548f04d884c9e57365f995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillDict:
+    array:
+    - Key: water
+      Value: {fileID: 5950268727943348770, guid: ae9d2ff69a825fc4fa574ae5c147433a, type: 3}
+    - Key: fire
+      Value: {fileID: 3732865343195339182, guid: 0971583cda302db4b9cad42d82a6d90c, type: 3}
+    - Key: down
+      Value: {fileID: 3712962257597547801, guid: 531721c65bb9cc44bab58d354cd90b30, type: 3}
+    - Key: punch
+      Value: {fileID: 3712962257597547801, guid: 531721c65bb9cc44bab58d354cd90b30, type: 3}
+  skillCoolDict:
+    array:
+    - Key: water
+      Value: 2
+    - Key: fire
+      Value: 2
+    - Key: down
+      Value: 3
+    - Key: punch
+      Value: 3
+  learnedSkills:
+  - water
+  - fire
+  - down
+  - punch
+  usableSkills: []
 --- !u!114 &5293372282084738160
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,30 +8,22 @@ public class MagicWater : Magic {
 	[SerializeField]
 	float duringTime;
 
-	Player player;
-	[SerializeField]
-	GameObject effect;
-
-	public override void UseSkill() {
-		effect.SetActive(false);
-		player = FindObjectOfType<Player>();
-		
-
-		if (Time.time - lastSkillTime >= coolTime) {
-			player.ElementState = GamaManager.Element.Water;
-			lastSkillTime = Time.time;
-			effect.SetActive(true);
-		}
+	private void Awake() {
+		player = FindObjectOfType<PlayerMagic>();
+		UseSkill();
 	}
 
-	public void OffSkill() {
-		effect.SetActive(false);
-		gameObject.SetActive(false);
-		player.ElementState = GamaManager.Element.None;
+	public override void UseSkill() {
+		base.UseSkill();
+		skillOnTime = Time.time;
+	}
+
+	protected override void OffSkill() {
+		base.OffSkill();
 	}
 
 	private void Update() {
-		if(Time.time - lastSkillTime > duringTime) {
+		if (Time.time - skillOnTime > duringTime) {
 			OffSkill();
 		}
 		transform.position = player.transform.position;

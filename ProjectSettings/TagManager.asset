@@ -11,6 +11,7 @@ TagManager:
   - Wind
   - Dirt
   - Skill
+  - Enemy
   layers:
   - Default
   - TransparentFX

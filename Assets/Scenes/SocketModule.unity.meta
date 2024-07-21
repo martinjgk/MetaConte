@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Skills/FireEffect.prefab.meta
+guid: e3ff0c8f99bf3c94eb56ff06e315c5b4
+PrefabImporter:
+========
 guid: 3b0cd3e051731fd4d8192c2c9c06d9c0
 DefaultImporter:
+>>>>>>>> Feature-SocketModule:Assets/Scenes/SocketModule.unity.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

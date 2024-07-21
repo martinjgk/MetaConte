@@ -17,16 +17,36 @@ public abstract class Magic : MonoBehaviour
 	[SerializeField]
 	protected WordClass wordClass;
 
-	protected PlayerMagic playerSkill;
-
-	public float lastSkillTime = 0f;
 	[SerializeField]
-	public float coolTime;
+	protected SerializableDictionary<string, GameObject> effectDict;
 
-	public void Init() {
-		playerSkill = GameObject.Find("Player").GetComponent<PlayerMagic>();
+	[SerializeField]
+	public List<string> nextMagic;
+
+	protected float skillOnTime;
+	protected PlayerMagic player=null;
+
+	public virtual void UseSkill() {
+		player.CurrentSkill = skillName;
 	}
 
-	public abstract void UseSkill();
+	protected virtual void OffSkill() {
+		player.CurrentSkill = "None";
+		player.SetUsableSkillElement();
+		Destroy(gameObject);
+	}
 
+
+	public GamaManager.Element GetElement() {
+		return element;
+	}
+	public void SetElement(GamaManager.Element element) {
+		this.element = element;
+	}
+
+	private void Update() {
+		if (player != null) {
+			player.UpdateLastSkillTime(name);
+		}
+	}
 }

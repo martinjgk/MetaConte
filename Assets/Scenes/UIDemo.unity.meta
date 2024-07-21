@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Skills/WaterEffect.prefab.meta
+guid: dbaf41f2fefc5414ba8e2482d24853eb
+PrefabImporter:
+========
 guid: bc3f8e7b4594c724597c88c7aa3c52a7
 DefaultImporter:
+>>>>>>>> Feature-SocketModule:Assets/Scenes/UIDemo.unity.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

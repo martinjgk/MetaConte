@@ -2678,6 +2678,7 @@ RectTransform:
   - {fileID: 6148964145966070268}
   - {fileID: 7859371837288211709}
   - {fileID: 743863982142999021}
+  - {fileID: 1441522616292198638}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4802,3 +4803,117 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1226324373546416572
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8305077190833621816}
+    m_Modifications:
+    - target: {fileID: 361861009199788370, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -958.8887
+      objectReference: {fileID: 0}
+    - target: {fileID: 361861009199788370, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -540.8847
+      objectReference: {fileID: 0}
+    - target: {fileID: 361861009199788370, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.2618694
+      objectReference: {fileID: 0}
+    - target: {fileID: 361861009199788370, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 361861009199788370, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 361861009199788370, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 361861009199788370, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 361861009199788370, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 361861009199788370, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 361861009199788370, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7581389600636388269, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: m_Name
+      value: UIManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8218012630715683765, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: FirstSkill
+      value: 
+      objectReference: {fileID: 4039332088661277103}
+    - target: {fileID: 8218012630715683765, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: ThirdSkill
+      value: 
+      objectReference: {fileID: 6028483669269242838}
+    - target: {fileID: 8218012630715683765, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: SecondSkill
+      value: 
+      objectReference: {fileID: 5107155149854064045}
+    - target: {fileID: 8218012630715683765, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: CurrentSkill
+      value: 
+      objectReference: {fileID: 8968711121748095508}
+    - target: {fileID: 8218012630715683765, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: FirstSkillIconText
+      value: 
+      objectReference: {fileID: 6142187110892937691}
+    - target: {fileID: 8218012630715683765, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: ThirdSkillIconText
+      value: 
+      objectReference: {fileID: 8068164087323614435}
+    - target: {fileID: 8218012630715683765, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: FirstSkillIconImage
+      value: 
+      objectReference: {fileID: 6978818152924207729}
+    - target: {fileID: 8218012630715683765, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: SecondSkillIconText
+      value: 
+      objectReference: {fileID: 4122012561571137895}
+    - target: {fileID: 8218012630715683765, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: ThirdSkillIconImage
+      value: 
+      objectReference: {fileID: 1666132013254488712}
+    - target: {fileID: 8218012630715683765, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: CurrentSkillIconText
+      value: 
+      objectReference: {fileID: 8783843135756441082}
+    - target: {fileID: 8218012630715683765, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: NextSkillTimerSlider
+      value: 
+      objectReference: {fileID: 4747180237980217936}
+    - target: {fileID: 8218012630715683765, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: SecondSkillIconImage
+      value: 
+      objectReference: {fileID: 1386487755103748498}
+    - target: {fileID: 8218012630715683765, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+      propertyPath: CurrentSkillIconImage
+      value: 
+      objectReference: {fileID: 4905508097026584251}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+--- !u!4 &1441522616292198638 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 361861009199788370, guid: fdf6358da6121b84e98c753db652812b, type: 3}
+  m_PrefabInstance: {fileID: 1226324373546416572}
+  m_PrefabAsset: {fileID: 0}
