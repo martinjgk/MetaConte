@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GamaManager : MonoBehaviour
 {
@@ -19,6 +20,11 @@ public class GamaManager : MonoBehaviour
     {
         // pythonScript_Class.Run();
         Init();
+        Scene currentScene = SceneManager.GetActiveScene();
+        Debug.Log("현재 씬 이름: " + currentScene.name);
+        if (currentScene.name == "WaterTestField"){
+            
+        }
     }
 
     private void Update()

@@ -5,25 +5,25 @@ using UnityEngine;
 
 public class NPCMasterTrigger : MonoBehaviour
 {
-    private GameObject Main;
+    [SerializeField]
+    private GameObject NPCManager;
     void Start()
     {
-        Main = GameObject.Find("GameManager");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "myplayer")
+        if (other.tag == "Player")
         {
-            Main.GetComponent<NPCManager>().NPCChatEnter();
+            NPCManager.GetComponent<NPCManager>().NPCChatEnter();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "myplayer")
+        if (other.tag == "Player")
         {
-            Main.GetComponent<NPCManager>().NPCChatExit();
+            NPCManager.GetComponent<NPCManager>().NPCChatExit();
         }
     }
 }

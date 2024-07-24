@@ -73,7 +73,7 @@ public class PlayerMagic : MonoBehaviour
 			CastSkill("fire");
 		}
 		
-		ui.SetSkillDialog(current_skill);
+		ui.SetSkillDialog(current_skill, usableSkills);
     }
 
 	void CastSkill(string skillName) {
