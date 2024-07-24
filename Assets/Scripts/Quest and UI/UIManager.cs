@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class UIManager : MonoBehaviour
 {
@@ -21,32 +22,53 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject FirstSkill;
     [SerializeField]
-    private Image FirstSkillIconImage;
+    private VideoPlayer FirstSkillIconVideoPlayer;
     [SerializeField]
     private Text FirstSkillIconText;
 
     [SerializeField]
     private GameObject SecondSkill;
     [SerializeField]
-    private Image SecondSkillIconImage;
+    private VideoPlayer SecondSkillIconVideoPlayer;
     [SerializeField]
     private Text SecondSkillIconText;
 
     [SerializeField]
     private GameObject ThirdSkill;
     [SerializeField]
-    private Image ThirdSkillIconImage;
+    private VideoPlayer ThirdSkillIconVideoPlayer;
     [SerializeField]
     private Text ThirdSkillIconText;
 
     [SerializeField]
+    private GameObject FourthSkill;
+    [SerializeField]
+    private VideoPlayer FourthSkillIconVideoPlayer;
+    [SerializeField]
+    private Text FourthSkillIconText;
+
+    [SerializeField]
     private Slider NextSkillTimerSlider;
+
+    [SerializeField]
+    private Image NextSkillTimerFill;
 
 
     [SerializeField]
     private Sprite[] imageList; // List of images
 
     private List <string> magicName = new List<string>();
+
+    [SerializeField]
+    private float firstLevelMagicCoolTime = 7.0f;
+
+    [SerializeField]
+    private float secondLevelMagicCoolTime = 5.0f;
+
+    [SerializeField]
+    private List<VideoClip> videoClips;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,32 +79,83 @@ public class UIManager : MonoBehaviour
     }
 
     void InitializeMagicName(){
-        magicName.Add("물");
-        magicName.Add("내리다");
-        magicName.Add("비");
-        magicName.Add("불");
-        magicName.Add("주먹");
-        magicName.Add("지옥");
-        magicName.Add("흙");
+        magicName.Add("물");        //0
+        magicName.Add("불");        //1
+        magicName.Add("흙");        //2
+        magicName.Add("바람");      //3
+        magicName.Add("내리다");    //4
+        magicName.Add("흐르다");    //5
+        magicName.Add("주먹");      //6
+        magicName.Add("지옥");      //7
+        magicName.Add("뿌리다");
+        magicName.Add("막다");      //9
+        magicName.Add("돌아올라가다");
+        magicName.Add("비");        //11
+        magicName.Add("유성");
+        magicName.Add("황사");
+        magicName.Add("empty1");
+        magicName.Add("강");        //15
+        magicName.Add("화염");
+        magicName.Add("산사태");
+        magicName.Add("empty2");
+        magicName.Add("물주먹");
+        magicName.Add("불주먹");
+        magicName.Add("흙주먹");    //19
+        magicName.Add("empty3");
+        magicName.Add("홍수");
+        magicName.Add("불지옥");
+        magicName.Add("지진");
+        magicName.Add("empty4");
+        magicName.Add("거품");
+        magicName.Add("불꽃세례");  //24
+        magicName.Add("흙뿌리기");
+        magicName.Add("empty5");
+        magicName.Add("물의 장벽");
+        magicName.Add("불의 장벽");
+        magicName.Add("흙의 장벽");
+        magicName.Add("empty6");
+        magicName.Add("회오리바람");//29
     }
 
-    public void SetSkillDialog(string targetMagicName){
-        if(isSkillDialog){
-            if(targetMagicName == "None")
-            {
-                ShowInitState();
-                currentState = 0;
+    public void SetSkillDialog(string targetMagicName, List<string> usableSkills){
+        if(targetMagicName == "") {
+            prevMagicName = curMagicName;
+            curMagicName = targetMagicName;
+            return;
+        }
+        else if(targetMagicName != prevMagicName){
+            if(isSkillDialog){
+                int idx = GetIndexOfMagic(targetMagicName);
+                if(targetMagicName == "None")
+                {
+                    //Debug.Log("SetSkillDialog None: prev: "+prevMagicName+" cur:" + targetMagicName);
+                    ShowInitState();
+                    currentState = 0;
+                }
+                else if(currentState == 0 && idx >= 0 && idx <= 3){
+                    prevMagicName = curMagicName;
+                    curMagicName = targetMagicName;
+                    foreach (string skill in usableSkills)
+                    {
+                        //Debug.Log(skill);
+                    }
+                    ShowFirstState(idx, usableSkills);
+                    currentState = 1;
+                }
+                else if(currentState == 1 && idx >= 4 && idx <= 10){
+                    Debug.Log("SetSkillDialog Second: prev: "+prevMagicName+" cur:" + targetMagicName);
+                    prevMagicName = curMagicName;
+                    curMagicName = targetMagicName;
+                    ShowSecondState(idx, usableSkills);
+                    currentState = 2;
+                }
+                else if(currentState == 2 && targetMagicName == "강하다"){
+                    //강하다 발동
+                }
+                else if(currentState == 2&& idx >= 0 && idx <= 3){
+                    //None이 실행될 것.
+                }
             }
-            else if(currentState == 0 && targetMagicName == "water"){
-                ShowFirstState("water");
-                currentState = 1;
-            }
-
-            else if(currentState == 1 && targetMagicName == "down"){
-                ShowSecondState("down");
-                currentState = 1;
-            }
-            Debug.Log("prev: " + prevMagicName + ", cur: "+curMagicName);
         }
     }
 
@@ -90,22 +163,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isSkillDialog){
-            if(Input.GetKeyDown(KeyCode.G)){
-                ShowInitState();
-                currentState = 0;
-            }
-            else if(currentState == 0 && Input.GetKeyDown(KeyCode.H)){
-                ShowFirstState("water");
-                currentState = 1;
-            }
 
-            else if(currentState == 1 && Input.GetKeyDown(KeyCode.J)){
-                ShowSecondState("down");
-                currentState = 1;
-            }
-            
-        }
     }
     
 
@@ -113,47 +171,62 @@ public class UIManager : MonoBehaviour
         if(targetMagicName == "None"){
             CurrentSkill.SetActive(false);
         }
-        if(targetMagicName == "water"){
+        else if (GetIndexOfMagic(targetMagicName) != -1){
             CurrentSkill.SetActive(true);
-            CurrentSkillIconImage.sprite = imageList[0];
-            CurrentSkillIconText.text = magicName[0];
-        } 
-        if(targetMagicName == "rain"){
-            CurrentSkill.SetActive(true);
-            CurrentSkillIconImage.sprite = imageList[2];
-            CurrentSkillIconText.text = magicName[2];
-        } 
+            int idx = GetIndexOfMagic(targetMagicName);
+            CurrentSkillIconImage.sprite = imageList[idx];
+            CurrentSkillIconText.text = magicName[idx];
+        }
     }
 
-    int getIndexOfMagic(string targetMagicName){
+    void SetCurrentIconIdx(int targetMagicIdx){
+        if(targetMagicIdx == -1){
+            CurrentSkill.SetActive(false);
+        }
+        else{
+            CurrentSkill.SetActive(true);
+            CurrentSkillIconImage.sprite = imageList[targetMagicIdx];
+            CurrentSkillIconText.text = magicName[targetMagicIdx];
+        }
+    }
+
+    int GetIndexOfMagic(string targetMagicName){
         if(targetMagicName == "water")
         {
             return 0;
-        } 
-        else if(targetMagicName == "down")
+        }
+        else if(targetMagicName == "fire")
         {
             return 1;
         } 
-        else if(targetMagicName == "rain")
+        else if(targetMagicName == "dirt")
         {
             return 2;
         } 
-        else if(targetMagicName == "fire")
+        else if(targetMagicName == "wind")
         {
             return 3;
-        }
-        else if(targetMagicName == "punch")
+        } 
+        else if(targetMagicName == "down")
         {
             return 4;
-        }
-        else if(targetMagicName == "hell")
+        } 
+        else if(targetMagicName == "flow")
         {
             return 5;
-        }
-        else if(targetMagicName == "dirt")
+        } 
+        else if(targetMagicName == "punch")
         {
             return 6;
         }
+        else if(targetMagicName == "hell")
+        {
+            return 7;
+        }
+        else if(targetMagicName == "rain")
+        {
+            return 11;
+        } 
         return -1;
     }
 
@@ -163,13 +236,13 @@ public class UIManager : MonoBehaviour
         }
         else{
             FirstSkill.SetActive(true);
-            int index = getIndexOfMagic(targetMagicName);
+            int index = GetIndexOfMagic(targetMagicName);
             if(index == -1)
             {
                 Debug.Log("ERROR At getIndexOfMagic"+targetMagicName);
                 return;
             }
-            FirstSkillIconImage.sprite = imageList[index];
+            FirstSkillIconVideoPlayer.clip = videoClips[index];
             FirstSkillIconText.text = magicName[index];
         }
     }
@@ -181,13 +254,13 @@ public class UIManager : MonoBehaviour
         else
         {
             SecondSkill.SetActive(true);
-            int index = getIndexOfMagic(targetMagicName);
+            int index = GetIndexOfMagic(targetMagicName);
             if(index == -1)
             {
                 Debug.Log("ERROR At getIndexOfMagic"+targetMagicName);
                 return;
             }
-            SecondSkillIconImage.sprite = imageList[index];
+            SecondSkillIconVideoPlayer.clip = videoClips[index];
             SecondSkillIconText.text = magicName[index];
         } 
     }
@@ -199,53 +272,130 @@ public class UIManager : MonoBehaviour
         else
         {
             ThirdSkill.SetActive(true);
-            int index = getIndexOfMagic(targetMagicName);
+            int index = GetIndexOfMagic(targetMagicName);
             if(index == -1)
             {
                 Debug.Log("ERROR At getIndexOfMagic"+targetMagicName);
                 return;
             }
-            ThirdSkillIconImage.sprite = imageList[index];
+            ThirdSkillIconVideoPlayer.clip = videoClips[index];
             ThirdSkillIconText.text = magicName[index];
+        } 
+    }
+    void SetFourthIcon(string targetMagicName){
+        if(targetMagicName == "None"){
+            FourthSkill.SetActive(false);
+        }
+        else
+        {
+            FourthSkill.SetActive(true);
+            int index = GetIndexOfMagic(targetMagicName);
+            if(index == -1)
+            {
+                Debug.Log("ERROR At getIndexOfMagic"+targetMagicName);
+                return;
+            }
+            FourthSkillIconVideoPlayer.clip = videoClips[index];
+            FourthSkillIconText.text = magicName[index];
         } 
     }
 
     void ShowInitState(){
             prevMagicName = curMagicName;
-            curMagicName = "";
-            Debug.Log("prev: " + prevMagicName + ", cur: "+curMagicName);
+            curMagicName = "None";
             currentState = 0;
             SetCurrentIcon("None");
             SetFirstIcon("water");
             SetSecondIcon("fire");
             SetThirdIcon("dirt");
+            SetFourthIcon("wind");
             NextSkillTimerSlider.gameObject.SetActive(false);
     }
-    void ShowFirstState(string currentMagicName){
-        if(currentMagicName == "water"){
-            prevMagicName = curMagicName;
-            curMagicName = currentMagicName;
-            Debug.Log("prev: " + prevMagicName + ", cur: "+curMagicName);
-            SetCurrentIcon(currentMagicName);
-            SetFirstIcon("down");
-            SetSecondIcon("None");
-            SetThirdIcon("None");
-            UpdateCurrentSkillTime(7.0f);
+    void ShowFirstState(int currentMagicIdx, List<string> usableSkills)
+    {
+        SetCurrentIconIdx(currentMagicIdx);
+        
+        if (usableSkills.Count > 0)
+        {
+            SetFirstIcon(usableSkills[0]);
         }
+        else
+        {
+            SetFirstIcon("None");
+        }
+
+        if (usableSkills.Count > 1)
+        {
+            SetSecondIcon(usableSkills[1]);
+        }
+        else
+        {
+            SetSecondIcon("None");
+        }
+
+        if (usableSkills.Count > 2)
+        {
+            SetThirdIcon(usableSkills[2]);
+        }
+        else
+        {
+            SetThirdIcon("None");
+        }
+
+        if (usableSkills.Count > 3)
+        {
+            SetFourthIcon(usableSkills[3]);
+        }
+        else
+        {
+            SetFourthIcon("None");
+        }
+
+        UpdateCurrentSkillTime(firstLevelMagicCoolTime);
     }
 
-    void ShowSecondState(string currentMagicName){
-        if(currentMagicName == "down"){
-            prevMagicName = curMagicName;
-            curMagicName = currentMagicName;
-            Debug.Log("prev: " + prevMagicName + ", cur: "+curMagicName);
-            SetCurrentIcon("rain");
-            SetFirstIcon("water");
-            SetSecondIcon("fire");
-            SetThirdIcon("dirt");
-            StopSkillTimer();
-            NextSkillTimerSlider.gameObject.SetActive(false);
+    void ShowSecondState(int currentMagicIdx, List<string> usableSkills)
+    {
+        //Debug.Log("ShowSecondState "+currentMagicIdx.ToString()+" "+prevMagicName+" "+(11 + 4 * (currentMagicIdx - 4) + getIndexOfMagic(prevMagicName)).ToString());
+        SetCurrentIconIdx(11 + 4 * (currentMagicIdx - 4) + GetIndexOfMagic(prevMagicName));
+        
+        if (usableSkills.Count > 0)
+        {
+            SetFirstIcon(usableSkills[0]);
         }
+        else
+        {
+            SetFirstIcon("None");
+        }
+
+        if (usableSkills.Count > 1)
+        {
+            SetSecondIcon(usableSkills[1]);
+        }
+        else
+        {
+            SetSecondIcon("None");
+        }
+
+        if (usableSkills.Count > 2)
+        {
+            SetThirdIcon(usableSkills[2]);
+        }
+        else
+        {
+            SetThirdIcon("None");
+        }
+
+        if (usableSkills.Count > 3)
+        {
+            SetFourthIcon(usableSkills[3]);
+        }
+        else
+        {
+            SetFourthIcon("None");
+        }
+
+        UpdateCurrentSkillTime(secondLevelMagicCoolTime);
     }
 
 
@@ -263,6 +413,7 @@ public class UIManager : MonoBehaviour
     {
         if (NextSkillTimerSlider != null)
             NextSkillTimerSlider.value = curSkillTime / maxCurrentSkillTime;
+            UpdateSliderColor();
     }
     private IEnumerator SkillTimer()
     {
@@ -278,6 +429,7 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateCurrentSkillTime(float amount)
     {
+        Debug.Log("UpdateCurrentSkillTime");
         NextSkillTimerSlider.gameObject.SetActive(true);
         maxCurrentSkillTime = amount;
         curSkillTime = maxCurrentSkillTime;
@@ -287,6 +439,23 @@ public class UIManager : MonoBehaviour
             StopCoroutine(skillTimerCoroutine);
         }
         skillTimerCoroutine = StartCoroutine(SkillTimer());
+    }
+    private void UpdateSliderColor()
+    {
+        float percentage = curSkillTime / maxCurrentSkillTime;
+
+        if (percentage > 0.6f)
+        {
+            NextSkillTimerFill.color = Color.green;
+        }
+        else if (percentage > 0.3f)
+        {
+            NextSkillTimerFill.color = Color.yellow;
+        }
+        else
+        {
+            NextSkillTimerFill.color = Color.red;
+        }
     }
 
     public void StopSkillTimer()

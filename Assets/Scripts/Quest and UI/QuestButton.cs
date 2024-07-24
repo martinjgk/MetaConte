@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,25 +8,31 @@ public class QuestButton : MonoBehaviour
 {
     public QuestManager questManager; // QuestManager 참조 추가
 
+    [SerializeField]
     private GameObject QuestDialog;
+    [SerializeField]
     private Text QuestText_Discription;
+    [SerializeField]
     private Text QuestText_name;
     private Queue<string> sentences;
     private bool isDialogActive = false;
-
+    [SerializeField]
+    private Text NewQuestText;
     void Start()
     {
-        QuestDialog = GameObject.Find("QuestDialog");
-        QuestText_Discription = GameObject.Find("QuestText_Discription").GetComponent<Text>();
-        QuestText_name = GameObject.Find("QuestText_name").GetComponent<Text>();
+        //QuestDialog = GameObject.Find("QuestDialog");
+        //QuestText_Discription = GameObject.Find("QuestText_Discription").GetComponent<Text>();
+        //QuestText_name = GameObject.Find("QuestText_name").GetComponent<Text>();
         QuestDialog.SetActive(false);
 		questManager = GameObject.Find("QuestManager").GetComponent<QuestManager>();
 
         sentences = new Queue<string>();
+
     }
 
     public void OnButtonClick()
     {
+        NewQuestText.text = "";
         if (QuestDialog != null)
         {
             QuestDialog.SetActive(true);

@@ -35,14 +35,6 @@ public class PersistentSocketClient : MonoBehaviour
                 // Parse the received JSON to get the prediction string
                 string prediction = JsonUtility.FromJson<PredictionResponse>(receivedMessage).prediction;
                 inputSignLang.inputSign = prediction;
-                if (prediction == "water")
-                {
-                    //monster.callMonster();
-                }
-                else if (prediction == "down")
-                {
-                    //monster.callMonster();
-                }
             }
 
             yield return new WaitForSeconds(1f);  // Slight delay to reduce CPU usage
