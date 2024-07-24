@@ -467,9 +467,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   longRangeAttackDistance: 3
-  longRangeAttackType: 2
   attackCooldown: 2
-  monsterSkillPrefab: {fileID: 0}
+  monsterSkillPrefab: {fileID: 2136785645489602735, guid: 3a9de3b17ff764509a81750e2da50724, type: 3}
   heightOffset: 1
 --- !u!1107 &6585215753520775433
 AnimatorStateMachine:
@@ -485,7 +484,7 @@ AnimatorStateMachine:
     m_Position: {x: 370, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2468054720434779658}
-    m_Position: {x: 460, y: -70, z: 0}
+    m_Position: {x: 460, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5405828251941745241}
     m_Position: {x: 730, y: 0, z: 0}
