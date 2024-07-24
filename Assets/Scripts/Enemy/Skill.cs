@@ -13,7 +13,7 @@ public class Skill : MonoBehaviour
         Destroy(transform.GetComponent<Rigidbody>());
         if(other.tag == "Dragon"){
             transform.parent = other.transform;
-            other.GetComponent<Dragon>().TakeDamage(damageAmount);
+            other.GetComponent<Dragon>().getDamage(damageAmount);
         }
     }
 

@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7754640611547027164}
   - component: {fileID: 7912749003695259972}
   - component: {fileID: 122948415730649330}
+  - component: {fileID: -524475817477672252}
   m_Layer: 0
   m_Name: SlimeMonster
-  m_TagString: Dragon
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -117,6 +118,33 @@ MonoBehaviour:
   healthBar: {fileID: 5133729077297493863}
   animator: {fileID: 5136869356721466044}
   attackInterval: 2
+--- !u!54 &-524475817477672252
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587939628229384020}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1744438453567694126
 GameObject:
   m_ObjectHideFlags: 0

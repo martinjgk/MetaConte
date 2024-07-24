@@ -6,57 +6,48 @@ using UnityEditor.UI;
 using UnityEngine.UI;
 using System;
 
-public class Monster : MonoBehaviour
+public class Monster : LivingEntity
 {
-    private int HP = 100;
     public Slider healthBar;
     public Animator animator;
     public float attackInterval = 2.0f; // 공격 간격 (초)
     private int currentAttackType = 0; // 현재 공격 타입 - used in blend tree
 
-    private bool isDead = false; // 죽음 여부
     public event Action<GameObject> OnDeath; // 사망 이벤트
 
-    void Start()
+
+	private QuestManager questManager;
+
+	void Start()
     {
         StartCoroutine(AttackRoutine());
-    }
+		questManager = FindAnyObjectByType<QuestManager>();
+	}
 
     void Update(){
         healthBar.value = HP;
-
-        // 임의로 키 입력을 감지하여 데미지 입히기
-        // 테스트용
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            TakeDamage(10); // 예시로 10의 데미지를 입힘
-        }
-       
+		
     }
-    
-    public void TakeDamage(int damageAmount){
-        if (isDead){
-            return;
-        }
 
-        HP -= damageAmount;
-        if (HP <= 0)
-        {
-            Die();
-            isDead = true;
-            animator.SetTrigger("die");
-            GetComponent<Collider>().enabled = false;
-            StartCoroutine(DestroyAfterDelay(5f)); // 5초 후에 사라지게 함
-        }
-        else
-        {
-            animator.SetTrigger("damage");
-        }
-    }
+
+	public override void getDamage(float damage) {
+		base.getDamage(damage);
+		if (HP <= 0) {
+			Die();
+			isDead = true;
+			animator.SetTrigger("die");
+			GetComponent<Collider>().enabled = false;
+			StartCoroutine(DestroyAfterDelay(5f)); // 5초 후에 사라지게 함
+		}
+		else {
+			animator.SetTrigger("damage");
+		}
+	}
 
     void Die()
     {
-        OnDeath?.Invoke(gameObject); // 사망 이벤트 발생
+		questManager.AddNumMonsterKill();
+		OnDeath?.Invoke(gameObject); // 사망 이벤트 발생
         
     }
 

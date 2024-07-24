@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class LivingEntity : MonoBehaviour, IDamageable
 {
-    private bool isDead = false;
+    protected bool isDead = false;
     private float hp = 100;
-	private float lastDamageT = -10;
+	protected float lastDamageT = -10;
 	private float damageCool = 0.5f;
 
 

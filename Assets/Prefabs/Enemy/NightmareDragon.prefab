@@ -738,6 +738,7 @@ GameObject:
   - component: {fileID: 7973199622247758795}
   - component: {fileID: 2187449547516774757}
   - component: {fileID: 5070530023740791378}
+  - component: {fileID: -8638729662795133792}
   m_Layer: 0
   m_Name: NightmareDragon
   m_TagString: Dragon
@@ -821,6 +822,9 @@ MonoBehaviour:
   healthBar: {fileID: 7684185188407661918}
   animator: {fileID: 2216029562108184222}
   attackInterval: 2
+  fireBreathPrefab: {fileID: 0}
+  fireBreathDuration: 1
+  heightOffset: 1
 --- !u!65 &5070530023740791378
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -842,6 +846,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.6456823, y: 8.637589, z: 11.22232}
   m_Center: {x: 0, y: 0.38332775, z: 0}
+--- !u!54 &-8638729662795133792
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2736517211216637111}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2757965318394913768
 GameObject:
   m_ObjectHideFlags: 0
