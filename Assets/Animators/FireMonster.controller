@@ -245,8 +245,6 @@ MonoBehaviour:
   longRangeAttackDistance: 3
   attackCooldown: 2
   monsterSkillPrefab: {fileID: 6200238231780177456, guid: 956de3602000c495396b9aa587faa37b, type: 3}
-  fireBreathEffect: {fileID: 0}
-  fireBreathDuration: 2
   heightOffset: 1
 --- !u!91 &9100000
 AnimatorController:
