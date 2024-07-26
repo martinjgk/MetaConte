@@ -102,15 +102,15 @@ public class TutorialManager : MonoBehaviour
 				currentSkillImage.gameObject.transform.parent.parent.parent.parent.parent.gameObject.SetActive(true);
 				nextSkillText.gameObject.transform.parent.gameObject.SetActive(true);
 
-				nextSkillText.text = "¹°";
+				nextSkillText.text = "ï¿½ï¿½";
 				nextSkillVideo.clip = waterVideo;
 			}
 			else if (dialogStep == 11) {
 				inputDone = false;
 				nextSkillText.gameObject.transform.parent.gameObject.SetActive(true);
 
-				nextSkillText.text = "³»¸®´Ù";
-				nextSkillVideo.clip = waterVideo;
+				nextSkillText.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
+				nextSkillVideo.clip = downVideo;
 			}
 			else if (dialogStep == 13) {
 				inputDone = false;
@@ -127,7 +127,7 @@ public class TutorialManager : MonoBehaviour
 					dialog.text = npcText[dialogStep];
 					currentSkillImage.gameObject.transform.parent.parent.parent.gameObject.SetActive(true);
 					currentSkillImage.sprite = waterImage;
-					currentSkillText.text = "¹°";
+					currentSkillText.text = "ï¿½ï¿½";
 					waterEffect.SetActive(true);
 					nextSkillText.gameObject.transform.parent.gameObject.SetActive(false);
 				}
@@ -139,9 +139,8 @@ public class TutorialManager : MonoBehaviour
 					dialog.text = npcText[dialogStep];
 					currentSkillImage.gameObject.transform.parent.parent.parent.gameObject.SetActive(true);
 					currentSkillImage.sprite = downWaterImage;
-					currentSkillText.text = "ºñ";
+					currentSkillText.text = "ï¿½ï¿½";
 					waterEffect.SetActive(false);
-
 					rainEffect.SetActive(true);
 					nextSkillText.gameObject.transform.parent.gameObject.SetActive(false);
 				}

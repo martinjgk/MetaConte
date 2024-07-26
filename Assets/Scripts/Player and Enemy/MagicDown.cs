@@ -64,15 +64,15 @@ public class MagicDown : Magic
 		}
 	}
 
-	private void OnCollisionEnter(Collision collision) {
+	private void OnTriggerEnter(Collider collision) {
 		IDamageable dmgable = collision.gameObject.GetComponent<IDamageable>();
-		if (dmgable != null) {
+		if (dmgable != null && collision.gameObject.tag == "Enemy") {
 			isReached = true;
 			StartCoroutine(GiveDamage(dmgable));
 		}
     }
 
-	private void OnCollisionExit(Collision collision) {
+	private void OnTriggerExit(Collider collision) {
 		IDamageable dmgable = collision.gameObject.GetComponent<IDamageable>();
 		if (dmgable != null) {
 			isReached = false;

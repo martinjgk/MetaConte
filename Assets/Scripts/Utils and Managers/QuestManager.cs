@@ -36,6 +36,9 @@ public class QuestManager : MonoBehaviour
 
     [SerializeField]
     private int numMonsterKill = 0;
+
+    [SerializeField]
+    GameObject boss;
     void Start()
     {
         playerIngameProfileManager = FindObjectOfType<PlayerIngameProfileManager>();
@@ -45,6 +48,7 @@ public class QuestManager : MonoBehaviour
         InitializeQuests();
         NewQuestText.text = "";
         NextQuest();
+        boss.SetActive(false);
     }
 
     void InitializeQuests()
@@ -76,6 +80,9 @@ public class QuestManager : MonoBehaviour
             NewQuestText.text = "NEW";
             currentQuestIndex++;
             numMonsterKill = 0;
+            if (currentQuestIndex == 6) {
+                boss.SetActive(true);
+            }
         }
     }
 
@@ -98,11 +105,11 @@ public class QuestManager : MonoBehaviour
     }
 
     public void Update(){
-        if(Input.GetKeyDown(KeyCode.O))
+        if(Input.GetKeyDown(KeyCode.K))
         {
             PrevQuest();
         }
-        if(Input.GetKeyDown(KeyCode.P))
+        if(Input.GetKeyDown(KeyCode.L))
         {
             NextQuest();
         }
