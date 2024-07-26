@@ -65780,6 +65780,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: NewCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5021248504053828825, guid: 24bc54297c95e2441935fc9bac63cd48, type: 3}
+      propertyPath: videoClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 32900000, guid: 341d2f4a53e2eb444854419e056b4383, type: 3}
+    - target: {fileID: 5021248504053828825, guid: 24bc54297c95e2441935fc9bac63cd48, type: 3}
+      propertyPath: videoClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 32900000, guid: 9ea4359d5c178214ead30ea7c29d5710, type: 3}
+    - target: {fileID: 5021248504053828825, guid: 24bc54297c95e2441935fc9bac63cd48, type: 3}
+      propertyPath: videoClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 32900000, guid: 56c90997d5d472d49b1dab07046efbda, type: 3}
+    - target: {fileID: 5021248504053828825, guid: 24bc54297c95e2441935fc9bac63cd48, type: 3}
+      propertyPath: videoClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 32900000, guid: 756f5d42535186141842828ec308354a, type: 3}
+    - target: {fileID: 5021248504053828825, guid: 24bc54297c95e2441935fc9bac63cd48, type: 3}
+      propertyPath: videoClips.Array.data[4]
+      value: 
+      objectReference: {fileID: 32900000, guid: 143e962f340895046a559278b4f3b529, type: 3}
+    - target: {fileID: 5021248504053828825, guid: 24bc54297c95e2441935fc9bac63cd48, type: 3}
+      propertyPath: videoClips.Array.data[5]
+      value: 
+      objectReference: {fileID: 32900000, guid: 335d2c90cdb68d8498b01e8c6e375fd5, type: 3}
+    - target: {fileID: 5021248504053828825, guid: 24bc54297c95e2441935fc9bac63cd48, type: 3}
+      propertyPath: videoClips.Array.data[6]
+      value: 
+      objectReference: {fileID: 32900000, guid: 2acca2c350f06b244b2fb7841477ff58, type: 3}
+    - target: {fileID: 5021248504053828825, guid: 24bc54297c95e2441935fc9bac63cd48, type: 3}
+      propertyPath: videoClips.Array.data[7]
+      value: 
+      objectReference: {fileID: 32900000, guid: 55e9aeb28c3811f4986af590878bb32e, type: 3}
+    - target: {fileID: 5021248504053828825, guid: 24bc54297c95e2441935fc9bac63cd48, type: 3}
+      propertyPath: videoClips.Array.data[8]
+      value: 
+      objectReference: {fileID: 32900000, guid: 6b11ad3358afa3142b3b8377d32200f9, type: 3}
+    - target: {fileID: 5021248504053828825, guid: 24bc54297c95e2441935fc9bac63cd48, type: 3}
+      propertyPath: videoClips.Array.data[9]
+      value: 
+      objectReference: {fileID: 32900000, guid: 9bf65e292c785e44a9088c63e3545bce, type: 3}
+    - target: {fileID: 5021248504053828825, guid: 24bc54297c95e2441935fc9bac63cd48, type: 3}
+      propertyPath: videoClips.Array.data[10]
+      value: 
+      objectReference: {fileID: 32900000, guid: 42beb8d5ecc755b4395dd8a86816a1ae, type: 3}
     - target: {fileID: 6209965024813602118, guid: 24bc54297c95e2441935fc9bac63cd48, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -5820,8 +5820,8 @@ MonoBehaviour:
   currentSkillImage: {fileID: 1818017403}
   nextSkillText: {fileID: 450607517}
   nextSkillVideo: {fileID: 834867161}
-  waterVideo: {fileID: 32900000, guid: 03f4c3adb2bed5f40857894216e58469, type: 3}
-  downVideo: {fileID: 32900000, guid: c168121123a0b6a46b3921a54883124f, type: 3}
+  waterVideo: {fileID: 32900000, guid: 341d2f4a53e2eb444854419e056b4383, type: 3}
+  downVideo: {fileID: 32900000, guid: 143e962f340895046a559278b4f3b529, type: 3}
   waterImage: {fileID: 21300000, guid: 57e63a880eba87044b2ea0a5a87c9341, type: 3}
   downWaterImage: {fileID: 21300000, guid: 3b8935fc12cae024ca9702206d9ed3bc, type: 3}
   ultimateSkill: {fileID: 1835860969}
