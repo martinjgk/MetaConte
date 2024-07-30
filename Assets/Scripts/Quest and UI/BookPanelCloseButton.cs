@@ -42,7 +42,7 @@ public class BookPanelCloseButton : MonoBehaviour
         }
         if (buttonObject != null)
         {
-            buttonObject.SetActive(true);
+            //buttonObject.SetActive(true);
             
         }
         else
@@ -51,7 +51,7 @@ public class BookPanelCloseButton : MonoBehaviour
         }
         if (QuestButtton != null)
         {
-            QuestButtton.SetActive(true);
+            //QuestButtton.SetActive(true);
             
         }
         else

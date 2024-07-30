@@ -15,12 +15,20 @@ public class PlayerIngameProfileManager : MonoBehaviour
     private Text playerLevelText;
 
     private int playerLevel = 0;
+    [SerializeField]
+    private RankIcon rankIcon;
+
+    [SerializeField]
+    private List<Sprite> PlayerIcons;
+    [SerializeField]
+    private Image PlayerIconImage;
 
     // Start is called before the first frame update
     void Start()
     {
         playerNameText.text = " " +playerName;
-        playerLevelText.text = playerLevel.ToString();
+        UpdatePlayerLevelUI(playerLevel);
+        
     }
 
     // Update is called once per frame
@@ -35,7 +43,14 @@ public class PlayerIngameProfileManager : MonoBehaviour
 
     public void UpdatePlayerLevelUI(int newLevel){
         playerLevel = newLevel;
-        playerLevelText.text = newLevel.ToString();
+        playerLevelText.text = "Lv."+newLevel.ToString();
+        if (rankIcon != null)
+        {
+            rankIcon.SetRankIcon(newLevel);
+        }
+        if(newLevel % 5 == 0){
+            PlayerIconImage.sprite = PlayerIcons[newLevel/5];
+        }
     }
 
     [SerializeField]

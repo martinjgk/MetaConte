@@ -68,7 +68,20 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private List<VideoClip> videoClips;
 
+    InputSignLang inputSignLang;
+    private string FirstIconMagicName;
+    private string SecondIconMagicName;
+    private string ThirdIconMagicName;
+    private string FourthIconMagicName;
 
+    [SerializeField]
+    private GameObject CurrentWorldInfoUI;
+
+    [SerializeField]
+    private Text CurrentWorldInfoUIText;
+
+    [SerializeField]
+    private string currentWorldNameText;
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +89,7 @@ public class UIManager : MonoBehaviour
         CurrentSkillIconText.text = "";
         InitializeMagicName();
         ShowInitState();
+        inputSignLang = FindObjectOfType<InputSignLang>();
     }
 
     void InitializeMagicName(){
@@ -223,6 +237,18 @@ public class UIManager : MonoBehaviour
         {
             return 7;
         }
+        else if(targetMagicName == "scatter")
+        {
+            return 8;
+        }
+        else if(targetMagicName == "block")
+        {
+            return 9;
+        }
+        else if(targetMagicName == "spin")
+        {
+            return 10;
+        }
         else if(targetMagicName == "rain")
         {
             return 11;
@@ -231,6 +257,7 @@ public class UIManager : MonoBehaviour
     }
 
     void SetFirstIcon(string targetMagicName){
+        FirstIconMagicName = targetMagicName;
         if(targetMagicName == "None"){
             FirstSkill.SetActive(false);
         }
@@ -248,6 +275,7 @@ public class UIManager : MonoBehaviour
     }
 
     void SetSecondIcon(string targetMagicName){
+        SecondIconMagicName = targetMagicName;
         if(targetMagicName == "None"){
             SecondSkill.SetActive(false);
         }
@@ -266,6 +294,7 @@ public class UIManager : MonoBehaviour
     }
 
     void SetThirdIcon(string targetMagicName){
+        ThirdIconMagicName = targetMagicName;
         if(targetMagicName == "None"){
             ThirdSkill.SetActive(false);
         }
@@ -283,6 +312,7 @@ public class UIManager : MonoBehaviour
         } 
     }
     void SetFourthIcon(string targetMagicName){
+        FourthIconMagicName = targetMagicName;
         if(targetMagicName == "None"){
             FourthSkill.SetActive(false);
         }
@@ -465,5 +495,25 @@ public class UIManager : MonoBehaviour
             StopCoroutine(skillTimerCoroutine);
             skillTimerCoroutine = null;
         }
+    }
+    public void OnFirstIconClick(){
+    if (inputSignLang != null && !string.IsNullOrEmpty(FirstIconMagicName)) {
+        inputSignLang.inputSign = FirstIconMagicName;
+    } else {
+        Debug.LogWarning("inputSignLang is null or FirstIconMagicName is null or empty");
+    }
+}
+
+
+    public void OnSecondIconClick(){
+        Debug.Log(SecondIconMagicName);
+        inputSignLang.inputSign=SecondIconMagicName;
+        Debug.Log(inputSignLang.inputSign);
+    }
+    public void OnThirdIconClick(){
+        inputSignLang.inputSign=ThirdIconMagicName;
+    }
+    public void OnFourthIconClick(){
+        inputSignLang.inputSign=FourthIconMagicName;
     }
 }
