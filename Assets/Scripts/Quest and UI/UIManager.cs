@@ -109,15 +109,15 @@ public class UIManager : MonoBehaviour
         magicName.Add("황사");
         magicName.Add("empty1");
         magicName.Add("강");        //15
-        magicName.Add("화염");
+        magicName.Add("화염");      //16
         magicName.Add("산사태");
         magicName.Add("empty2");
-        magicName.Add("물주먹");
-        magicName.Add("불주먹");
-        magicName.Add("흙주먹");    //19
+        magicName.Add("물주먹");    //19
+        magicName.Add("불주먹");    //20
+        magicName.Add("흙주먹");
         magicName.Add("empty3");
-        magicName.Add("홍수");
-        magicName.Add("불지옥");
+        magicName.Add("홍수");      //23
+        magicName.Add("불지옥");    //24
         magicName.Add("지진");
         magicName.Add("empty4");
         magicName.Add("거품");
