@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9196623999673231073}
   m_Layer: 0
-  m_Name: Punch Magic
+  m_Name: Magic Punch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

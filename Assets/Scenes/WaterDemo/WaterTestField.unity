@@ -121,7 +121,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 361f17a869436c84b85d7cd5ec6eca07, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: ee961cef0e5323746930c7bdf74df7da, type: 2}
 --- !u!1001 &6130156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1419,15 +1419,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2490055635673535920, guid: e295872abd892884c8ef07a011c090d4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.979028
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2490055635673535920, guid: e295872abd892884c8ef07a011c090d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.014814
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2490055635673535920, guid: e295872abd892884c8ef07a011c090d4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.629614
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2490055635673535920, guid: e295872abd892884c8ef07a011c090d4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -28171,6 +28171,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4973117701365034, guid: a8be9f01144e2af499b282b2e273a5eb, type: 3}
   m_PrefabInstance: {fileID: 965374658}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &972621930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 972621931}
+  m_Layer: 0
+  m_Name: Magic Hell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &972621931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972621930}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &973968849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65213,8 +65244,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8461927649086600293, guid: ff856889f17737341974960f6ae49d4a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2003639386753004807}
   m_SourcePrefab: {fileID: 100100000, guid: ff856889f17737341974960f6ae49d4a, type: 3}
+--- !u!1 &2003639386753004806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8461927649086600293, guid: ff856889f17737341974960f6ae49d4a, type: 3}
+  m_PrefabInstance: {fileID: 2003639386753004805}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2003639386753004807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003639386753004806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4de15f298f9f04aac2b84b5fdad7f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: 
+  element: 0
+  wordClass: 0
+  effectDict:
+    array: []
+  nextMagic: []
+  damage: 0
+  duringTime: 0
+  sizeUp: 0
+  rightHand: {fileID: 0}
+  leftHand: {fileID: 0}
 --- !u!4 &2025435293467667447
 Transform:
   m_ObjectHideFlags: 0
@@ -69562,3 +69624,4 @@ SceneRoots:
   - {fileID: 201950724}
   - {fileID: 1381093817}
   - {fileID: 1983713560}
+  - {fileID: 972621931}

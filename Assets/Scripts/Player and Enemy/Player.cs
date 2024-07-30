@@ -6,6 +6,25 @@ public class Player : LivingEntity
 {
 	PlayerMagic playerSkill;
 
+	float mp = 100;
+
+	[SerializeField]
+	float mpRecoverT;
+	[SerializeField]
+	float mpReduceAmount;
+
+	public float MP {
+		get {
+			return mp;
+		}
+		set {
+			mp = value;
+			if (mp <= 0) {
+				mp = 0;
+			}
+		}
+	}
+
 	private static Player s_instance;
 	// Start is called before the first frame update
 	void Awake() {
@@ -16,6 +35,7 @@ public class Player : LivingEntity
 
 		s_instance = this;
 		DontDestroyOnLoad(gameObject);
+		StartCoroutine(MPUpdate());
 	}
 
 	// Start is called before the first frame update
@@ -28,5 +48,12 @@ public class Player : LivingEntity
 	void Update()
 	{
 		
+	}
+
+	IEnumerator MPUpdate() {
+		while (!isDead) {
+			MP -= mpReduceAmount;
+			yield return new WaitForSeconds(mpRecoverT);
+		}
 	}
 }

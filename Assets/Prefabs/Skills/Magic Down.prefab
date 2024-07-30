@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3031369926245350312}
   - component: {fileID: 2344048627950849094}
   m_Layer: 0
-  m_Name: Down Magic
+  m_Name: Magic Down
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

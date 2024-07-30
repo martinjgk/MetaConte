@@ -1,35 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class MagicPunch : Magic
+public class MagicDown : Magic
 {
 	[SerializeField]
 	public float damage;
 	[SerializeField]
 	float duringTime;
-
 	[SerializeField]
-	float sizeUp;
+	float moveSpd;
+	[SerializeField]
+	float maxDistance;
 	[SerializeField]
 	float damageTick;
 
-	GameObject effectRightHand;
-	GameObject effectLeftHand;
+	GameObject effect;
 
+	Vector3 moveDir;
+	float movedDistance = 0;
+	float deltaPos;
+	[SerializeField]
+	bool isReached = false;
 
 	private void Awake() {
 		player = FindObjectOfType<PlayerMagic>();
 
-		effectRightHand = Instantiate(effectDict[player.CurrentSkill]);
-		effectRightHand.transform.SetParent(transform, false);
-		effectRightHand.GetComponent<SphereCollider>().radius += sizeUp;
-
-		effectLeftHand = Instantiate(effectDict[player.CurrentSkill]);
-		effectLeftHand.transform.SetParent(transform, false);
-		effectLeftHand.GetComponent<SphereCollider>().radius += sizeUp;
-
-
+		effect = Instantiate(effectDict[player.CurrentSkill]);
+		effect.transform.SetParent(transform, false);
+		moveDir = player.transform.forward;
 
 		transform.position = player.transform.position;
 		transform.rotation = player.transform.rotation;
@@ -39,7 +39,6 @@ public class MagicPunch : Magic
 	public override void UseSkill() {
 		base.UseSkill();
 		skillOnTime = Time.time;
-		player.CurrentSkill = skillName;
 	}
 
 	protected override void OffSkill() {
@@ -50,19 +49,32 @@ public class MagicPunch : Magic
 		if (Time.time - skillOnTime > duringTime) {
 			OffSkill();
 		}
-	}
 
-	private void OnCollisionEnter(Collision collision) {
-		IDamageable dmgable = collision.gameObject.GetComponent<IDamageable>();
-		if (dmgable != null) {
-			StartCoroutine(GiveDamage(dmgable));
+		deltaPos = moveSpd * Time.deltaTime;
+		if (!isReached) {
+			if (movedDistance <= maxDistance) {
+				transform.Translate(moveDir * deltaPos);
+				// transform.position = transform.position + (moveDir * deltaPos);
+				movedDistance += deltaPos;
+			}
+			else {
+				isReached = true;
+			}
 		}
 	}
 
-	private void OnCollisionExit(Collision collision) {
+	private void OnTriggerEnter(Collider collision) {
+		IDamageable dmgable = collision.gameObject.GetComponent<IDamageable>();
+		if (dmgable != null && collision.gameObject.tag == "Enemy") {
+			isReached = true;
+			StartCoroutine(GiveDamage(dmgable));
+		}
+    }
+
+	private void OnTriggerExit(Collider collision) {
 		IDamageable dmgable = collision.gameObject.GetComponent<IDamageable>();
 		if (dmgable != null) {
-
+			isReached = false;
 			StopCoroutine(GiveDamage(dmgable));
 		}
 	}
