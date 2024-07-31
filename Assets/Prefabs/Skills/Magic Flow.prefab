@@ -60,15 +60,12 @@ MonoBehaviour:
     - Key: wind
       Value: {fileID: 0}
   nextMagic: []
-  damage: 30
+  damageCoef: 0.8
   viewRange: 20
   viewAngle: 60
   targetMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 0
   targetList: []
   speed: 6
 --- !u!195 &4151203177982990342

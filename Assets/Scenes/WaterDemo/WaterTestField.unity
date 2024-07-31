@@ -1498,6 +1498,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1590765093792591237, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
+      propertyPath: learnedSkills.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590765093792591237, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
+      propertyPath: skillDict.array.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590765093792591237, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
+      propertyPath: learnedSkills.Array.data[5]
+      value: hell
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590765093792591237, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
+      propertyPath: skillCoolDict.array.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590765093792591237, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
+      propertyPath: skillDict.array.Array.data[5].Key
+      value: hell
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590765093792591237, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
+      propertyPath: skillDict.array.Array.data[5].Value
+      value: 
+      objectReference: {fileID: 1812152447663851529, guid: 1afc65956944e134aadb0931108ae495, type: 3}
+    - target: {fileID: 1590765093792591237, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
+      propertyPath: skillCoolDict.array.Array.data[5].Key
+      value: hell
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590765093792591237, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
+      propertyPath: skillCoolDict.array.Array.data[5].Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4402888464355952886, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.897
@@ -1541,6 +1573,26 @@ PrefabInstance:
     - target: {fileID: 7216780626693914324, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481995585308890539, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
+      propertyPath: atk
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481995585308890539, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
+      propertyPath: def
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481995585308890539, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
+      propertyPath: mpRecoverT
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481995585308890539, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
+      propertyPath: mpReduceAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481995585308890539, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
+      propertyPath: mpRecoverAmount
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28171,37 +28223,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4973117701365034, guid: a8be9f01144e2af499b282b2e273a5eb, type: 3}
   m_PrefabInstance: {fileID: 965374658}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &972621930
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 972621931}
-  m_Layer: 0
-  m_Name: Magic Hell
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &972621931
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972621930}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &973968849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69624,4 +69645,3 @@ SceneRoots:
   - {fileID: 201950724}
   - {fileID: 1381093817}
   - {fileID: 1983713560}
-  - {fileID: 972621931}

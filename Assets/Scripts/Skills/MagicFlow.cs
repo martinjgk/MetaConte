@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class MagicFlow : Magic
 {
 	[SerializeField]
+	float damageCoef;
 	float damage;
-
 	[Header("Circle")]
 	[Range(0, 30)]
 	[SerializeField] private float viewRange;               // 시야 범위
@@ -16,7 +16,6 @@ public class MagicFlow : Magic
 
 	[Header("Target")]
 	[SerializeField] private LayerMask targetMask;          // 탐색 대상
-	[SerializeField] private LayerMask obstacleMask;        // 장애물 대상
 	[SerializeField] private List<Transform> targetList;    // 탐색 결과 리스트
 
 
@@ -32,7 +31,7 @@ public class MagicFlow : Magic
 	private void Awake() {
 		player = FindAnyObjectByType<PlayerMagic>();
 		agent = GetComponent<NavMeshAgent>();
-
+		damage = player.damage * damageCoef;
 		startTransform = player.transform;
 		transform.position = startTransform.position;
 		transform.rotation = startTransform.rotation;

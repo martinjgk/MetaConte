@@ -59,11 +59,11 @@ MonoBehaviour:
     - Key: wind
       Value: {fileID: 0}
   nextMagic: []
-  damage: 12
+  damageCoef: 0.2
   duringTime: 5
   moveSpd: 10
   maxDistance: 15
-  damageTick: 0.1
+  damageTick: 0.5
   isReached: 0
 --- !u!136 &2344048627950849094
 CapsuleCollider:

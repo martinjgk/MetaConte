@@ -7,11 +7,12 @@ public class Player : LivingEntity
 	PlayerMagic playerSkill;
 
 	float mp = 100;
+	[SerializeField]
+	float mpUpperBound = 100;
 
-	[SerializeField]
-	float mpRecoverT;
-	[SerializeField]
-	float mpReduceAmount;
+	public float mpRecoverT;
+	public float mpRecoverAmount;
+	public float mpReduceAmount;
 
 	public float MP {
 		get {
@@ -21,6 +22,9 @@ public class Player : LivingEntity
 			mp = value;
 			if (mp <= 0) {
 				mp = 0;
+			}
+			else if (mp >= mpUpperBound) {
+				mp = mpUpperBound;
 			}
 		}
 	}
