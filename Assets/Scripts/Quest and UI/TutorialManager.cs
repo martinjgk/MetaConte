@@ -62,6 +62,12 @@ public class TutorialManager : MonoBehaviour
 	[SerializeField]
 	GameObject rainEffect;
 
+	[SerializeField]
+	BGMManager bGMManager;
+
+	[SerializeField]
+	AudioClip clip;
+
 	int inputStep = -1;
 	int dialogStep = -1;
 
