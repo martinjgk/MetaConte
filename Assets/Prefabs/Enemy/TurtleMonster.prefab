@@ -1556,6 +1556,8 @@ MonoBehaviour:
   healthBar: {fileID: 8546340617078508821}
   animator: {fileID: 1980470002399456318}
   attackInterval: 2
+  damageTextPrefab: {fileID: 9071461270694169046, guid: a14d46ccdc8164e08aa4bfe54e54ce5c, type: 3}
+  skillSound: {fileID: 8300000, guid: 19349fd0eca448a44b2a45836e202d13, type: 3}
 --- !u!54 &3711024995705110864
 Rigidbody:
   m_ObjectHideFlags: 0

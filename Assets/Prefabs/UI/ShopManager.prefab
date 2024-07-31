@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 450ac8787a0914fe28ff36a1dd032a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopUI: {fileID: 0}
-  inventoryUI: {fileID: 0}
+  shopUI: {fileID: 3094567099870295938, guid: 99d85dc12a52d4fb38a75e3f22d0faff, type: 3}
+  inventoryUI: {fileID: 7014245204933319469, guid: 7f61d456fd5d24b569ff8ce4d433cd7c, type: 3}
   warningText: {fileID: 0}
   goldText: {fileID: 0}
-  inventory: {fileID: 0}
+  inventory: {fileID: 2941024030419926318, guid: 7f61d456fd5d24b569ff8ce4d433cd7c, type: 3}
+  player: {fileID: 7481995585308890539, guid: 483daa2c2f83c0248b43700c2cf8dae2, type: 3}
+  purchaseSound: {fileID: 8300000, guid: 4ca805e87398e904a86f9d549ac0ca39, type: 3}
