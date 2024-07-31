@@ -12,7 +12,7 @@ public class AttackState : StateMachineBehaviour
     private float lastAttackTime = 0f;
     public GameObject monsterSkillPrefab; // 스킬 프리팹
 
-    public float heightOffset = 1.0f;
+    public float heightOffset = 0f;
 
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -67,6 +67,7 @@ public class AttackState : StateMachineBehaviour
 
      void FireFireball(Animator animator)
     {
+        Dragon dragon = animator.GetComponent<Dragon>();
         if (monsterSkillPrefab != null && player != null)
         {
             Vector3 adjustedPosition = animator.transform.position + Vector3.up * heightOffset;
@@ -79,6 +80,7 @@ public class AttackState : StateMachineBehaviour
             {
                 particleSystem.Play();
             }
+            dragon.FireFireball();
         }
         else
         {
@@ -90,5 +92,7 @@ public class AttackState : StateMachineBehaviour
             }
         }
     }
+
+    
 
 }

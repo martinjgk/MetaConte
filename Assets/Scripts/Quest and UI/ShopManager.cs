@@ -12,6 +12,11 @@ public class ShopManager : MonoBehaviour
     public Inventory inventory;
     private bool isShopOpen = false;
 
+    public Player player;
+
+    public AudioClip purchaseSound; // 구매 소리 클립
+    private AudioSource audioSource; // AudioSource 컴포넌트
+
      void Start()
     {
         if (inventory == null)
@@ -116,6 +121,24 @@ public class ShopManager : MonoBehaviour
         }
     }
 
+    public void BuyItem(Item item)
+{
+    if (gold >= item.itemPrice)
+    {
+        gold -= item.itemPrice; // 금액 차감
+        inventory.AddItem(item); // 아이템 인벤토리에 추가
+        item.Use(player);
+        UpdateGoldText(); // 금액 텍스트 업데이트
+        HideWarning(); // 경고 메시지 숨기기
+        PlayPurchaseSound();
+    }
+    else
+    {
+        ShowWarning(); // 자금 부족 경고
+    }
+}
+
+
     private void ShowWarning()
     {
         if (warningText != null)
@@ -138,6 +161,18 @@ public class ShopManager : MonoBehaviour
         if (goldText != null)
         {
             goldText.text = "Gold: " + gold.ToString();
+        }
+    }
+
+    private void PlayPurchaseSound()
+    {
+        if (audioSource != null && purchaseSound != null)
+        {
+            audioSource.PlayOneShot(purchaseSound);
+        }
+        else
+        {
+            Debug.LogError("Purchase sound or AudioSource is not set.");
         }
     }
 }

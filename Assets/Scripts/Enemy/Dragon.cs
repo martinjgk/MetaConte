@@ -21,10 +21,16 @@ public class Dragon : LivingEntity
 
     private GameObject fireBreathInstance;
 
+    [SerializeField] private GameObject damageTextPrefab;
 	private QuestManager questManager;
+
+    public AudioClip fireballSound; // Fireball 사운드 클립
+    public AudioClip fireBreathSound; // FireBreath 사운드 클립
+    private AudioSource audioSource; // AudioSource 컴포넌트
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         StartCoroutine(AttackRoutine());
 		questManager = FindAnyObjectByType<QuestManager>();
     }
@@ -47,8 +53,31 @@ public class Dragon : LivingEntity
 		}
 		else {
 			animator.SetTrigger("damage");
+            ShowDamageText(damage);
 		}
 	}
+
+    private void ShowDamageText(float damage)
+    {
+        if (damageTextPrefab)  // Check if the prefab is assigned
+        {
+            Vector3 textPosition = transform.position + new Vector3(9.0f, 0, 0);
+            GameObject textObj = Instantiate(damageTextPrefab, textPosition, Quaternion.identity);
+            DamageText dmgText = textObj.GetComponent<DamageText>();
+            if (dmgText)
+            {
+                dmgText.damage = (int)damage;  // Set the damage amount to display
+            }
+            else
+            {
+                Debug.LogError("DamageText component not found on the prefab!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Damage text prefab is not assigned!");
+        }
+    }
 
 
     void Die()
@@ -102,6 +131,7 @@ public class Dragon : LivingEntity
             Vector3 adjustedPosition = animator.transform.position + Vector3.up * heightOffset;
             fireBreathInstance = Instantiate(fireBreathPrefab, adjustedPosition, animator.transform.rotation);
             fireBreathInstance.SetActive(true);
+            PlaySound(fireBreathSound);
             yield return new WaitForSeconds(fireBreathDuration);
             Destroy(fireBreathInstance);
         }
@@ -121,4 +151,15 @@ public class Dragon : LivingEntity
         }
     }
 
+    public void FireFireball(){
+        AudioClip clip = fireballSound;
+        PlaySound(clip);
+    }
+    public void PlaySound(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
+    }
 }
