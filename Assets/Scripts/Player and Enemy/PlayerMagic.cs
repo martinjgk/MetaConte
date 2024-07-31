@@ -69,7 +69,7 @@ public class PlayerMagic : MonoBehaviour
 		if(Input.GetKey(KeyCode.E) || inputSignLang.inputSign == "down") {
 			CastSkill("down");
 		}
-		if(Input.GetKey(KeyCode.Alpha2)) {
+		if(Input.GetKey(KeyCode.Alpha2) || inputSignLang.inputSign == "fire") {
 			CastSkill("fire");
 		}
 		

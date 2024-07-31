@@ -1,0 +1,219 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CasualGameRankBadges
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 2
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 743979aa7118ea34abcb9690eeabb40e, type: 3}
+    - {fileID: 102900000, guid: bc360d17b06ee8c4fbc316af71dd78e6, type: 3}
+    - {fileID: 102900000, guid: 7cf137ea979962d4d9eb2d8c0b253568, type: 3}
+    - {fileID: 102900000, guid: 6778031f91ca5b4419cba89b9e11fa82, type: 3}
+    - {fileID: 102900000, guid: 1cc5fb11b885a29439e17f9cbeb1858c, type: 3}
+    - {fileID: 102900000, guid: f02b293d2b419e4469154122a2fb44d1, type: 3}
+    - {fileID: 102900000, guid: fe1dddcfb6bc4d34caa04b173a6d86a1, type: 3}
+    - {fileID: 102900000, guid: 2c2f283949aede0428045498a6d3f3c5, type: 3}
+    totalSpriteSurfaceArea: 0
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 556a4520a436f9847b30269ae2300b1e, type: 3}
+  - {fileID: 21300000, guid: 9ed21d40723a3664f9855056b5241fca, type: 3}
+  - {fileID: 21300000, guid: 42dbd48034c8e304b90c411b95078738, type: 3}
+  - {fileID: 21300000, guid: 2bf4dcc08ab7ae54bbd1004b8dd0c76f, type: 3}
+  - {fileID: 21300000, guid: 2897dbf03807eac45bed2eba23f03418, type: 3}
+  - {fileID: 21300000, guid: 9a7e8b81debd8b64eae2eeee8f4a5e6e, type: 3}
+  - {fileID: 21300000, guid: 3c0824c138563ac419706ac2d3318c15, type: 3}
+  - {fileID: 21300000, guid: 2dd4a42264f60874884fd0dbaa9fec6c, type: 3}
+  - {fileID: 21300000, guid: cc51594225d781a4c8851a94ce5e4d42, type: 3}
+  - {fileID: 21300000, guid: 50db9962a899c004d990fabc8c993234, type: 3}
+  - {fileID: 21300000, guid: 244a85727eec4a34eb156dec1e36908a, type: 3}
+  - {fileID: 21300000, guid: 567208d20dd141240ab13e95385b656c, type: 3}
+  - {fileID: 21300000, guid: 1c0ab3e2ed596b84ebdb54e6e56600c9, type: 3}
+  - {fileID: 21300000, guid: bb6512f217acdf443b4e474f7db2e11f, type: 3}
+  - {fileID: 21300000, guid: aa1147030aca76a4a81e6be0d17170a7, type: 3}
+  - {fileID: 21300000, guid: 41aefa034538b8543861947be18b0d07, type: 3}
+  - {fileID: 21300000, guid: 2e56e73328ffa754393455329e496637, type: 3}
+  - {fileID: 21300000, guid: fd3ec8435295c154bab19cb44eb1fb92, type: 3}
+  - {fileID: 21300000, guid: a02eaa53e8a4ed6408cdfdbface172c3, type: 3}
+  - {fileID: 21300000, guid: c863b963194647246944cfcddf0a5985, type: 3}
+  - {fileID: 21300000, guid: d34bbf630f19cbc43ab073bc2a0904d6, type: 3}
+  - {fileID: 21300000, guid: 39505b8361f65e94eb24141dea9548d2, type: 3}
+  - {fileID: 21300000, guid: 455ee3b303a51304baa4389420a24214, type: 3}
+  - {fileID: 21300000, guid: 22ce98e3c61fd564189cb092e593878f, type: 3}
+  - {fileID: 21300000, guid: 344a932411b830244a7a3a3b5c8cd131, type: 3}
+  - {fileID: 21300000, guid: fd642da4c07484c44a1759e275c19443, type: 3}
+  - {fileID: 21300000, guid: b11fe1d4d2006b946aff5b6a15cf2df8, type: 3}
+  - {fileID: 21300000, guid: 84e6c21537f024347a19b4b98dde2ef9, type: 3}
+  - {fileID: 21300000, guid: 69e2256594f4173478d82e4b6228b4f9, type: 3}
+  - {fileID: 21300000, guid: ef212a95d0d13074fb64d3aed1a30623, type: 3}
+  - {fileID: 21300000, guid: 57c67e9544a86a841a1832ee055432f7, type: 3}
+  - {fileID: 21300000, guid: 26e0c8a59f2973d4792d9cebfba36e88, type: 3}
+  - {fileID: 21300000, guid: 19f15f7655c67ac448d6816ce53637cd, type: 3}
+  - {fileID: 21300000, guid: 4818c0a6380a94f4295923fb601c667f, type: 3}
+  - {fileID: 21300000, guid: 4bcd85a65c07cd544b0ed94fa6b16236, type: 3}
+  - {fileID: 21300000, guid: a1fd33b67f8a7db40a1f6cd91e4180ba, type: 3}
+  - {fileID: 21300000, guid: 10a30dc60ab8fe14b827880df44aaac7, type: 3}
+  - {fileID: 21300000, guid: a4205af6b226c7b4c8b1a809fa2c8b31, type: 3}
+  - {fileID: 21300000, guid: b0c43a57127fa2e468772e4803b1b603, type: 3}
+  - {fileID: 21300000, guid: 67ea0e67b3db650459730fb71c42c4ab, type: 3}
+  - {fileID: 21300000, guid: d002e7c751d330248939fb9089b70b44, type: 3}
+  - {fileID: 21300000, guid: 9518f8e7db10ed142b20a1c41531cb11, type: 3}
+  - {fileID: 21300000, guid: 4a17b3380825c0d4aa17fb8fb1cf14a1, type: 3}
+  - {fileID: 21300000, guid: 89f00368580ed85438cfcfd72e2e9624, type: 3}
+  - {fileID: 21300000, guid: 145b8c68f829c0442a6329111e7ea4c3, type: 3}
+  - {fileID: 21300000, guid: 95f512b8b1ad17f4698e80606501a96f, type: 3}
+  - {fileID: 21300000, guid: a12d66b8071a7014b8448c05cf67db07, type: 3}
+  - {fileID: 21300000, guid: ee53bde8af184444a9ffcb4f3236f48b, type: 3}
+  - {fileID: 21300000, guid: 65450919674c6fe439bd66ba5e6a4d28, type: 3}
+  - {fileID: 21300000, guid: 3ba10339348411045bdee1f1f3e847fb, type: 3}
+  - {fileID: 21300000, guid: 7e7db1b978aaa5a4ebcd3e481853c004, type: 3}
+  - {fileID: 21300000, guid: e39439d970d005d43b39b537f0e43814, type: 3}
+  - {fileID: 21300000, guid: 898a6ff98ad9f8d40b8ab1e6933a32ed, type: 3}
+  - {fileID: 21300000, guid: ce73772a00368da4b98a189640c304aa, type: 3}
+  - {fileID: 21300000, guid: 9da5065ac38d5f34a80d2773b570d1ef, type: 3}
+  - {fileID: 21300000, guid: 7aadbd8a786d48542abdd8b7fdda8f9a, type: 3}
+  - {fileID: 21300000, guid: e72670aac342bf444a90b160fa63602f, type: 3}
+  - {fileID: 21300000, guid: bf3967da52ebca24091874fee562db09, type: 3}
+  - {fileID: 21300000, guid: 0d62b73b6afee3b4f90e5cceab5c8e65, type: 3}
+  - {fileID: 21300000, guid: dd13d9abfa5f91f4dab8ef98a98d4e08, type: 3}
+  - {fileID: 21300000, guid: 468a24fb3fb47fe4da794d9ce36a99cd, type: 3}
+  - {fileID: 21300000, guid: ff8e750c475e0184eb2a461c1abcb6ff, type: 3}
+  - {fileID: 21300000, guid: 2020ba0c738fbea4aac1a894dd96c06d, type: 3}
+  - {fileID: 21300000, guid: 7022492cadbf670439151acc5051a0d7, type: 3}
+  - {fileID: 21300000, guid: e4a16e2c807eb1a40b4666f24f143702, type: 3}
+  - {fileID: 21300000, guid: 6ec43a3c6b9cd0d42adaa61a36543341, type: 3}
+  - {fileID: 21300000, guid: b7d6a77cd4b64a04387d81700d379ade, type: 3}
+  - {fileID: 21300000, guid: 8258a9accf7fd29498c3e66a4f6b0547, type: 3}
+  - {fileID: 21300000, guid: a2d912ec72b2b1742bece6c3581697a2, type: 3}
+  - {fileID: 21300000, guid: bf3e136d363a74541acf19f882dbc85a, type: 3}
+  - {fileID: 21300000, guid: 761d3d8d815e87c4f980dabf8dec6d49, type: 3}
+  - {fileID: 21300000, guid: 00cce34e51ce7cb40aaf7d6e7856577a, type: 3}
+  - {fileID: 21300000, guid: 4f0ffc5eb9b52d54d9e0aa7118a26254, type: 3}
+  - {fileID: 21300000, guid: 24e198aefc51fd44292ea63b3619396f, type: 3}
+  - {fileID: 21300000, guid: 1ad6200f662d600469c90045c35c75df, type: 3}
+  - {fileID: 21300000, guid: 6950282fff755774da1c515a2ce248b6, type: 3}
+  - {fileID: 21300000, guid: d6eab15fc7cd54b4f826e234073b150a, type: 3}
+  - {fileID: 21300000, guid: 01db0d5fe15be2d4fb00f0c2e44d48d9, type: 3}
+  - {fileID: 21300000, guid: bf9b946ff2da8f84d9d4af77a96dfacd, type: 3}
+  - {fileID: 21300000, guid: cd561fdfc52d6194ea065c66bb1aa990, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Sword
+  - Gem_Blue
+  - Gem_Diamond
+  - Frame_Diamond
+  - Rank_8
+  - Wings_Diamond
+  - Sword
+  - Sidebar_Diamond
+  - Sword
+  - Gem_White
+  - Ribbon_WhiteGreen
+  - Sidebar_Bronze
+  - Crown_Diamond
+  - Rank_12
+  - Sidebar_Gold
+  - Gem_Ruby
+  - Point
+  - Ribbon_Bronze
+  - Storm
+  - Storm
+  - Star
+  - Frame_Gold
+  - Ribbon_Gold
+  - Crown_Gold
+  - Skull
+  - Storm
+  - Rank_10
+  - Sword
+  - Rank_5
+  - Gem_Gold
+  - Rank_4
+  - Star
+  - Wings_Silver
+  - Gem_Purple
+  - Crown_Ruby
+  - Sidebar_Silver
+  - Ribbon_Green
+  - Skull
+  - Gem_Yellow
+  - Storm
+  - Sword
+  - Gem_Bronze
+  - Skull
+  - Rank_3
+  - Rank_11
+  - Point
+  - Frame_Bronze
+  - Crown_Silver
+  - Star
+  - Sidebar_Ruby
+  - Rank_1
+  - Gem_Green
+  - Point
+  - Rank_6
+  - Ribbon_Diamond
+  - Rank_9
+  - Star
+  - Ribbon_Silver
+  - Star
+  - Gem_Silver
+  - Wings_Gold
+  - Frame_Ruby
+  - Ribbon_Blue
+  - Wings_Ruby
+  - Rank_7
+  - Rank_2
+  - Ribbon_Red
+  - Wings_Bronze
+  - Storm
+  - Point
+  - Ribbon_Ruby
+  - Point
+  - Gem_Red
+  - Skull
+  - Ribbon_WhiteRed
+  - Frame_Silver
+  - Rank_13
+  - Skull
+  - Crown_Bronze
+  - Ribbon_Yellow
+  m_Tag: CasualGameRankBadges
+  m_IsVariant: 0
