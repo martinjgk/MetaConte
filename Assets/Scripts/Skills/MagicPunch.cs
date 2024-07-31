@@ -11,8 +11,11 @@ public class MagicPunch : Magic
 
 	[SerializeField]
 	float sizeUp;
+
 	[SerializeField]
-	float damageTick;
+	Transform rightHand;
+	[SerializeField]
+	Transform leftHand;
 
 	GameObject effectRightHand;
 	GameObject effectLeftHand;
@@ -52,23 +55,4 @@ public class MagicPunch : Magic
 		}
 	}
 
-	private void OnCollisionEnter(Collision collision) {
-		IDamageable dmgable = collision.gameObject.GetComponent<IDamageable>();
-		if (dmgable != null) {
-			StartCoroutine(GiveDamage(dmgable));
-		}
-	}
-
-	private void OnCollisionExit(Collision collision) {
-		IDamageable dmgable = collision.gameObject.GetComponent<IDamageable>();
-		if (dmgable != null) {
-
-			StopCoroutine(GiveDamage(dmgable));
-		}
-	}
-
-	IEnumerator GiveDamage(IDamageable damageable) {
-		yield return new WaitForSeconds(damageTick);
-		damageable.getDamage(damage);
-	}
 }

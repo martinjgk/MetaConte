@@ -7,8 +7,12 @@ public class LivingEntity : MonoBehaviour, IDamageable
     protected bool isDead = false;
     private float hp = 100;
 	protected float lastDamageT = -10;
-	private float damageCool = 0.5f;
+	private float damageCool = 0.1f;
 
+	public float speed;
+	public float runSpeed;
+	public float atk;
+	public float def;
 
     public float HP {
         get {
@@ -39,6 +43,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
     {
 		if (!isDead && Time.time - lastDamageT >= damageCool) {
 			HP -= damage;
+			lastDamageT = Time.time;
 		}
     }
 }

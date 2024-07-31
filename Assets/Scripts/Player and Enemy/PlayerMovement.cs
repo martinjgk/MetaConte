@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     [SerializeField]
-    float speed = 10f;
+    float speed = 7f;
     [SerializeField]
-    float runSpeed = 18f;
+    float runSpeed = 15f;
     [SerializeField]
-    float jumpPower = 7f;
+    float jumpPower = 10f;
     [SerializeField]
-    float gravity = 10f;
+    float gravity = 15f;
 
 
     [SerializeField]

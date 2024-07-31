@@ -5,11 +5,34 @@ using UnityEngine;
 public class Player : LivingEntity
 {
 	PlayerMagic playerSkill;
-	public int defense; // 방어력
-	public int attack; // 공격력
-    public float speed; //이동 속도
-    public int health; // 체력
-    public int mana; // 마나
+	public int defense; // ����
+	public int attack; // ���ݷ�
+    public float speed; //�̵� �ӵ�
+    public int health; // ü��
+    public int mana; // ����
+
+	float mp = 100;
+	[SerializeField]
+	float mpUpperBound = 100;
+
+	public float mpRecoverT;
+	public float mpRecoverAmount;
+	public float mpReduceAmount;
+
+	public float MP {
+		get {
+			return mp;
+		}
+		set {
+			mp = value;
+			if (mp <= 0) {
+				mp = 0;
+			}
+			else if (mp >= mpUpperBound) {
+				mp = mpUpperBound;
+			}
+		}
+	}
 
 	private static Player s_instance;
 	// Start is called before the first frame update
@@ -21,6 +44,7 @@ public class Player : LivingEntity
 
 		s_instance = this;
 		DontDestroyOnLoad(gameObject);
+		StartCoroutine(MPUpdate());
 	}
 
 	// Start is called before the first frame update
@@ -32,6 +56,15 @@ public class Player : LivingEntity
 	// Update is called once per frame
 	void Update()
 	{
+		
+	}
+
+	IEnumerator MPUpdate() {
+		while (!isDead) {
+			MP -= mpReduceAmount;
+			yield return new WaitForSeconds(mpRecoverT);
+		}
+	}
 		
 	}
 

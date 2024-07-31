@@ -1553,6 +1553,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74bd6b084fc22489e94e5db69efffc51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1.5
+  runSpeed: 3.5
+  atk: 100
+  def: 10
   healthBar: {fileID: 8546340617078508821}
   animator: {fileID: 1980470002399456318}
   attackInterval: 2

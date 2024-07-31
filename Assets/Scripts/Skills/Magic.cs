@@ -27,6 +27,7 @@ public abstract class Magic : MonoBehaviour
 	protected PlayerMagic player=null;
 
 	public virtual void UseSkill() {
+		skillOnTime = Time.time;
 		player.CurrentSkill = skillName;
 	}
 
