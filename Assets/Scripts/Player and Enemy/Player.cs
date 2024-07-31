@@ -7,7 +7,6 @@ public class Player : LivingEntity
 	PlayerMagic playerSkill;
 	public int defense; // ����
 	public int attack; // ���ݷ�
-    public float speed; //�̵� �ӵ�
     public int health; // ü��
     public int mana; // ����
 
@@ -44,7 +43,7 @@ public class Player : LivingEntity
 
 		s_instance = this;
 		DontDestroyOnLoad(gameObject);
-		StartCoroutine(MPUpdate());
+		// StartCoroutine(MPUpdate());
 	}
 
 	// Start is called before the first frame update
@@ -66,7 +65,6 @@ public class Player : LivingEntity
 		}
 	}
 		
-	}
 
 	// 방어력을 증가시키는 메소드
     public void IncreaseDefense(int amount)

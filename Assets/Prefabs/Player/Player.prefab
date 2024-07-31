@@ -211,8 +211,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f6d274d0454bd419d46a59c606a648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mpRecoverT: 0
-  mpReduceAmount: 0
+  speed: 10
+  runSpeed: 0
+  atk: 100
+  def: 100
+  defense: 100
+  attack: 100
+  speed: 0
+  health: 100
+  mana: 100
+  mpUpperBound: 100
+  mpRecoverT: 0.5
+  mpRecoverAmount: 0.5
+  mpReduceAmount: 1
 --- !u!114 &1590765093792591237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e79294719548f04d884c9e57365f995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   current_skill: 
   skillDict:
     array:

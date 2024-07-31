@@ -61,6 +61,7 @@ public class PlayerMagic : MonoBehaviour
 		damage = player.atk;
 		inputSignLang = FindObjectOfType<InputSignLang>();
 		SetUsableSkillElement();
+		StartCoroutine(MPRegenerator());
 	}
 
     // Update is called once per frame
