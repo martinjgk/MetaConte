@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WaterDemo/WaterTestField.unity
     guid: f1c47a5b7619ca744b6925bb27325268
+  - enabled: 1
+    path: Assets/Scenes/WaterDemo/Transition1Scene.unity
+    guid: c4750822809fc3c48a5e01251b26e01a
+  - enabled: 1
+    path: Assets/Scenes/WaterDemo/FireTestField.unity
+    guid: 04cf73fc0d78a984f912ed960d0dc346
+  - enabled: 1
+    path: Assets/Scenes/WaterDemo/MainScene.unity
+    guid: 2a212a8425fb1ed4f8129c825ba0b1a1
   m_configObjects: {}

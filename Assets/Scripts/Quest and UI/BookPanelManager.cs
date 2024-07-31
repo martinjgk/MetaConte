@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Video;
+using System.Collections;
+using System.Collections.Generic;
 public class BookPanelManager : MonoBehaviour
 {
     public GameObject bookPanel;
@@ -17,6 +19,10 @@ public class BookPanelManager : MonoBehaviour
     public string[] textList; // List of texts
 
     private int currentIndex = 0; // Current index of the list
+    [SerializeField]
+    private VideoPlayer SLVideoPlayer;
+    [SerializeField]
+    private List<VideoClip> videoClips; 
 
     void Start()
     {
@@ -29,7 +35,7 @@ public class BookPanelManager : MonoBehaviour
         if (bookPanel != null)
         {
             bookPanel.SetActive(true);
-            buttonObject.SetActive(false);
+            //buttonObject.SetActive(false);
         }
         else
         {
@@ -45,7 +51,7 @@ public class BookPanelManager : MonoBehaviour
         }
         if (QuestButtton != null)
         {
-            QuestButtton.SetActive(false);
+            //QuestButtton.SetActive(false);
             
         }
         else
@@ -76,7 +82,7 @@ public class BookPanelManager : MonoBehaviour
     {
         if (imageList.Length > 0 && textList.Length > 0)
         {
-            displayImage.sprite = imageList[currentIndex];
+            SLVideoPlayer.clip = videoClips[currentIndex];
             displayText.text = textList[currentIndex];
         }
     }
