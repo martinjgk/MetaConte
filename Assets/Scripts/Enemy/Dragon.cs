@@ -28,6 +28,7 @@ public class Dragon : LivingEntity
     public AudioClip fireBreathSound; // FireBreath 사운드 클립
     private AudioSource audioSource; // AudioSource 컴포넌트
 
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -35,13 +36,10 @@ public class Dragon : LivingEntity
 		questManager = FindAnyObjectByType<QuestManager>();
     }
 
-    void Update(){
-        healthBar.value = HP;
-    }
 
 	public override void getDamage(float damage) {
 		base.getDamage(damage);
-
+        Debug.Log("alskdfjlajsdlfkjlkasjds");
 		if (HP <= 0) {
 			Die();
 			isDead = true;
@@ -82,7 +80,7 @@ public class Dragon : LivingEntity
 
     void Die()
     {
-		questManager.AddNumMonsterKill();
+		questManager.AddNumBossMonsterKill();
         OnDeath?.Invoke(gameObject); // 사망 이벤트 발생
         Destroy(gameObject); // 몬스터 제거
     }
@@ -151,6 +149,15 @@ public class Dragon : LivingEntity
         }
     }
 
+    void Update(){
+        healthBar.value = HP;
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            getDamage(10); // 예시로 10의 데미지를 입힘
+        }
+		
+    }
     public void FireFireball(){
         AudioClip clip = fireballSound;
         PlaySound(clip);
