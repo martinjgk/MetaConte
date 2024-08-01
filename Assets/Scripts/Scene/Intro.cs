@@ -21,6 +21,8 @@ public class Intro : MonoBehaviour
     private float startY = 815f; // Image3의 시작 y 위치 (화면 위쪽)
     private float endY = 275f; // Image3의 끝 y 위치 (화면 아래쪽)
 
+    [SerializeField] private BGMManager bGMManager;
+
     private void Start()
     {
         group2.gameObject.SetActive(false);

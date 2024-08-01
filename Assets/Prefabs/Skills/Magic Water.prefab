@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6744460602976024170}
   - component: {fileID: 5928981576598151559}
   m_Layer: 0
-  m_Name: Water Magic
+  m_Name: Magic Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,6 +55,7 @@ MonoBehaviour:
   nextMagic:
   - down
   - flow
+  - hell
   damage: 10
   duringTime: 10
 --- !u!1001 &70857233982076973

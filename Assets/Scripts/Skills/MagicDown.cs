@@ -6,7 +6,8 @@ using UnityEngine;
 public class MagicDown : Magic
 {
 	[SerializeField]
-	public float damage;
+	float damageCoef;
+	float damage;
 	[SerializeField]
 	float duringTime;
 	[SerializeField]
@@ -26,10 +27,9 @@ public class MagicDown : Magic
 
 	private void Awake() {
 		player = FindObjectOfType<PlayerMagic>();
-
-		effect = Instantiate(effectDict[player.CurrentSkill]);
-		effect.transform.SetParent(transform, false);
-		moveDir = player.transform.forward;
+		damage = player.damage * damageCoef;
+		effect = Instantiate(effectDict[player.CurrentSkill], transform);
+		moveDir = Vector3.forward;
 
 		transform.position = player.transform.position;
 		transform.rotation = player.transform.rotation;
@@ -38,8 +38,6 @@ public class MagicDown : Magic
 
 	public override void UseSkill() {
 		base.UseSkill();
-		skillOnTime = Time.time;
-		player.CurrentSkill = skillName;
 	}
 
 	protected override void OffSkill() {
@@ -64,13 +62,21 @@ public class MagicDown : Magic
 		}
 	}
 
-	private void OnTriggerEnter(Collider collision) {
-		IDamageable dmgable = collision.gameObject.GetComponent<IDamageable>();
-		if (dmgable != null && collision.gameObject.tag == "Enemy") {
+	private void OnTriggerEnter(Collider other) {
+		IDamageable dmgable = other.gameObject.GetComponent<IDamageable>();
+		if (dmgable != null && other.gameObject.tag == "Enemy") {
 			isReached = true;
 			StartCoroutine(GiveDamage(dmgable));
 		}
     }
+
+	private void OnTriggerStay(Collider other) {
+		IDamageable dmgable = other.gameObject.GetComponent<IDamageable>();
+		if (dmgable != null && other.gameObject.tag == "Enemy") {
+			isReached = true;
+			StartCoroutine(GiveDamage(dmgable));
+		}
+	}
 
 	private void OnTriggerExit(Collider collision) {
 		IDamageable dmgable = collision.gameObject.GetComponent<IDamageable>();

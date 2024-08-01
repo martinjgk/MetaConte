@@ -6,13 +6,15 @@ using UnityEngine.AI;
 public class ChaseState : StateMachineBehaviour
 {
     NavMeshAgent agent;
-    Transform player; 
-    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+	Transform player;
+	LivingEntity enemy;
+	// OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
+	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         agent = animator.GetComponent<NavMeshAgent>();
+		enemy = animator.GetComponent<LivingEntity>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        agent.speed = 3.5f;
+		agent.speed = enemy.runSpeed;
         Debug.Log("Entered Chase State");
     }
 

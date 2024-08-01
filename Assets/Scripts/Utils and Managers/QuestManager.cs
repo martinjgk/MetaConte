@@ -68,7 +68,7 @@ public class QuestManager : MonoBehaviour
         quests.Add(new Quest() { questNo = 0, questName = "Init", npcType = "Init", content = "Init", target = "", clearExp =0 });
         quests.Add(new Quest() { questNo = 1, questName = "새로운 희망", npcType = "story", content = "스승님의 조수 주변으로 이동해 말을 걸어보기", target = "", clearExp =60 });
         quests.Add(new Quest() { questNo = 2, questName = "물의 길", npcType = "sign", content = "물의 왕국 주민 쿠아쿠아에게 감사 인사 전해주기. WASD를 사용하여 이동할 수 있습니다.", target = "", clearExp =60 });
-        quests.Add(new Quest() { questNo = 3, questName = "멀티콤보크래프트", npcType = "", content = "스승님의 조수 온에게 다가가 말을 걸기", target = "", clearExp =50 });
+        quests.Add(new Quest() { questNo = 3, questName = "매직 앤 머지", npcType = "", content = "스승님의 조수 온에게 다가가 말을 걸기", target = "", clearExp =50 });
         quests.Add(new Quest() { questNo = 4, questName = "화마를 찾아서", npcType = "", content = "화마를 지키는 몬스터 3마리를 사냥하기", target = "", clearExp =50 });
         quests.Add(new Quest() { questNo = 5, questName = "물 흐르듯", npcType = "", content = "물의 왕국 주민 쿠아쿠아 주변으로 이동해 말을 걸어보기", target = "", clearExp =50 });
         quests.Add(new Quest() { questNo = 6, questName = "깨어난 화마", npcType = "", content = "화마의 선발대 몬스터 5마리를 사냥하기", target = "", clearExp =100 });

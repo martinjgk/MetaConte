@@ -12,6 +12,8 @@ public class PlayerMagic : MonoBehaviour
 	InputSignLang inputSignLang;
 	UIManager ui;
 
+	public float damage;
+
 	[SerializeField]
 	private string current_skill;
 	
@@ -56,23 +58,34 @@ public class PlayerMagic : MonoBehaviour
 		// learnedSkills = new List<string>();
 		usableSkills = new List<string>();
 		player = GetComponent<Player>();
+		damage = player.atk;
 		inputSignLang = FindObjectOfType<InputSignLang>();
 		SetUsableSkillElement();
+		StartCoroutine(MPRegenerator());
 	}
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Alpha1) || inputSignLang.inputSign == "water") {
-			CastSkill("water");
+        if (player.MP > 10.0f)
+        {
+			if (Input.GetKey(KeyCode.Alpha1) || inputSignLang.inputSign == "water") {
+				CastSkill("water");
+			}
+			if (Input.GetKey(KeyCode.Alpha2) || inputSignLang.inputSign == "fire") {
+				CastSkill("fire");
+			}
 		}
+
 		if(Input.GetKey(KeyCode.E) || inputSignLang.inputSign == "down") {
 			CastSkill("down");
 		}
-		if(Input.GetKey(KeyCode.Alpha2) || inputSignLang.inputSign == "fire") {
-			CastSkill("fire");
+		if(Input.GetKey(KeyCode.Q) || inputSignLang.inputSign == "flow") {
+			CastSkill("flow");
 		}
-		
+		if (Input.GetKey(KeyCode.R) || inputSignLang.inputSign == "hell") {
+			CastSkill("hell");
+		}
 		ui.SetSkillDialog(current_skill, usableSkills);
     }
 
@@ -92,7 +105,7 @@ public class PlayerMagic : MonoBehaviour
 				if (CurrentSkill != "None" && currentSkillObj != null) {
 					Destroy(currentSkillObj);
 				}
-				currentSkillObj = Instantiate(skill);
+				currentSkillObj = Instantiate(skill, transform.position, transform.rotation);
 
 			}
 		}
@@ -125,6 +138,18 @@ public class PlayerMagic : MonoBehaviour
 		}
 		if (learnedSkills.Contains("wind")) {
 			usableSkills.Add("wind");
+		}
+	}
+
+	IEnumerator MPRegenerator() {
+		while(true) {
+			if (currentSkillObj == null) {
+				player.MP += player.mpRecoverAmount;
+			}
+			else if (current_skill == "water" || current_skill == "fire" || current_skill == "dirt" || current_skill == "wind") {
+				player.MP -= player.mpReduceAmount;
+			}
+			yield return new WaitForSeconds(player.mpRecoverT);
 		}
 	}
 }

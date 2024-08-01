@@ -211,6 +211,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f6d274d0454bd419d46a59c606a648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
+  runSpeed: 0
+  atk: 100
+  def: 100
+  defense: 100
+  attack: 100
+  speed: 0
+  health: 100
+  mana: 100
+  mpUpperBound: 100
+  mpRecoverT: 0.5
+  mpRecoverAmount: 0.5
+  mpReduceAmount: 1
 --- !u!114 &1590765093792591237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e79294719548f04d884c9e57365f995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  current_skill: 
   skillDict:
     array:
     - Key: water
@@ -233,21 +248,26 @@ MonoBehaviour:
       Value: {fileID: 3712962257597547801, guid: 531721c65bb9cc44bab58d354cd90b30, type: 3}
     - Key: punch
       Value: {fileID: 3712962257597547801, guid: 531721c65bb9cc44bab58d354cd90b30, type: 3}
+    - Key: flow
+      Value: {fileID: 9130974322763580093, guid: ea9eb424678faf749a11f5b040af2a32, type: 3}
   skillCoolDict:
     array:
     - Key: water
-      Value: 2
+      Value: 1
     - Key: fire
-      Value: 2
+      Value: 1
     - Key: down
-      Value: 3
+      Value: 1
     - Key: punch
-      Value: 3
+      Value: 1
+    - Key: flow
+      Value: 1
   learnedSkills:
   - water
   - fire
   - down
   - punch
+  - flow
   usableSkills: []
 --- !u!114 &5293372282084738160
 MonoBehaviour:

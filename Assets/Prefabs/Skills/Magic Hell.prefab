@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1812152447663851529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2342657274125347674}
+  - component: {fileID: 6327212155720615070}
+  m_Layer: 0
+  m_Name: Magic Hell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2342657274125347674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812152447663851529}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6327212155720615070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812152447663851529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e10662dea8c5b94bb48e3ca96a09b00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillName: hell
+  element: 0
+  wordClass: 1
+  effectDict:
+    array:
+    - Key: water
+      Value: {fileID: 1120475714093099031, guid: 5c0a94b002008ac4e95668cb617cdd8a, type: 3}
+    - Key: fire
+      Value: {fileID: 7365440638642754384, guid: e6ef9f30c438dce468420e706e6a76e9, type: 3}
+    - Key: dirt
+      Value: {fileID: 0}
+    - Key: wind
+      Value: {fileID: 0}
+  nextMagic: []
+  damageCoef: 0.1
+  speedReduceAmount: 0.05
+  duringTime: 6
+  viewRange: 8
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  targetList: []
