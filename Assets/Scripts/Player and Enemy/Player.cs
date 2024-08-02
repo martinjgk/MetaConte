@@ -42,7 +42,7 @@ public class Player : LivingEntity
 		}
 
 		s_instance = this;
-		DontDestroyOnLoad(gameObject);
+		// DontDestroyOnLoad(gameObject);
 		// StartCoroutine(MPUpdate());
 	}
 

@@ -5,7 +5,11 @@ using UnityEngine;
 public class WorldNPC_Trigger : MonoBehaviour
 {
     [SerializeField]
-    private GameObject worldNpcManager;
+    private WorldNPCManager worldNpcManager;
+
+    void Start() {
+        worldNpcManager = FindObjectOfType<WorldNPCManager>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {

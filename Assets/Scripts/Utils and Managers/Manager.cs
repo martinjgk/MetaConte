@@ -14,6 +14,6 @@ public class Manager : MonoBehaviour
 		}
 
 		s_instance = this;
-		DontDestroyOnLoad(gameObject);
+		// DontDestroyOnLoad(gameObject);
     }
 }
