@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.UIElements;
 
+#if UNITY_EDITOR
 namespace GDS.Demos.Basic {
 
     public class BasicRootWindow : EditorWindow {
@@ -17,3 +18,4 @@ namespace GDS.Demos.Basic {
         }
     }
 }
+#endif

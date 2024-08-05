@@ -38,7 +38,8 @@ public class MagicFlow : Magic
 
 		targetList = new List<Transform>();
 
-		effect = Instantiate(effectDict[player.CurrentSkill], transform.position + Vector3.up, transform.rotation, transform);
+		// effect = Instantiate(effectDict[player.CurrentSkill], transform.position + Vector3.up, transform.rotation, transform);
+		effect = Instantiate(effectList[effectNameList.IndexOf(player.CurrentSkill)], transform.position + Vector3.up, transform.rotation, transform);
 		CheckTarget();
 		
 		agent.speed = speed;

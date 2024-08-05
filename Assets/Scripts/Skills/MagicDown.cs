@@ -28,7 +28,7 @@ public class MagicDown : Magic
 	private void Awake() {
 		player = FindObjectOfType<PlayerMagic>();
 		damage = player.damage * damageCoef;
-		effect = Instantiate(effectDict[player.CurrentSkill], transform);
+		effect = Instantiate(effectList[effectNameList.IndexOf(player.CurrentSkill)], transform);
 		moveDir = Vector3.forward;
 
 		transform.position = player.transform.position;

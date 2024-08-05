@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
 using UnityEngine;
-using UnityEditor.UI;
 using UnityEngine.UI;
 using System;
 public class Dragon : LivingEntity

@@ -27,7 +27,7 @@ public class MagicHell : Magic
 
 	private void Awake() {
 		player = FindAnyObjectByType<PlayerMagic>();
-		GameObject effect = Instantiate(effectDict[player.CurrentSkill], transform);
+		GameObject effect = Instantiate(effectList[effectNameList.IndexOf(player.CurrentSkill)], transform);
 		damage = player.damage * damageCoef;
 		skillOnTime = Time.time;
 		UseSkill();

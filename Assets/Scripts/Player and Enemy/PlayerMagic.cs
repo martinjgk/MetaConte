@@ -31,10 +31,21 @@ public class PlayerMagic : MonoBehaviour
 	private GameObject currentSkillObj;
 
 	[SerializeField]
+	List<string> skillNames;
+
+	[SerializeField]
+	List<GameObject> skillList;
+
+	[SerializeField]
+	List<float> skillCools;
+
+	/*
+	[SerializeField]
 	SerializableDictionary<string, GameObject> skillDict;
 
 	[SerializeField]
 	SerializableDictionary<string, float> skillCoolDict;
+	*/
 
 	Dictionary<string, float> lastSkillTimeDict = new Dictionary<string, float>()
 	{
@@ -90,10 +101,11 @@ public class PlayerMagic : MonoBehaviour
     }
 
 	void CastSkill(string skillName) {
-		GameObject skill = skillDict[skillName];
+		// GameObject skill = skillDict[skillName];
+		GameObject skill = skillList[skillNames.IndexOf(skillName)];
 		if(skill != null && learnedSkills.Contains(skillName) && usableSkills.Contains(skillName)) {
 
-			if(Time.time - lastSkillTimeDict[skillName] >= skillCoolDict[skillName]) {
+			if(Time.time - lastSkillTimeDict[skillName] >= skillCools[skillNames.IndexOf(skillName)]) {
 				usableSkills.Clear();
 				Magic skillMagic = skill.GetComponent<Magic>();
 
@@ -112,7 +124,7 @@ public class PlayerMagic : MonoBehaviour
 	}
 
 	public void AddSkill(string skillName) {
-		GameObject newSkill = skillDict[skillName];
+		GameObject newSkill = skillList[skillNames.IndexOf(skillName)];
 
 		if(newSkill != null && !learnedSkills.Contains(skillName)) {
 
