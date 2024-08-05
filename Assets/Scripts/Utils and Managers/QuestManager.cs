@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 public class QuestManager : MonoBehaviour
 {

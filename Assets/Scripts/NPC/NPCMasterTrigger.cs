@@ -6,16 +6,17 @@ using UnityEngine;
 public class NPCMasterTrigger : MonoBehaviour
 {
     [SerializeField]
-    private GameObject NPCManager;
+    private NPCManager nPCManager;
     void Start()
     {
+        nPCManager = FindObjectOfType<NPCManager>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            NPCManager.GetComponent<NPCManager>().NPCChatEnter();
+            nPCManager.NPCChatEnter();
         }
     }
 
@@ -23,7 +24,7 @@ public class NPCMasterTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            NPCManager.GetComponent<NPCManager>().NPCChatExit();
+            nPCManager.NPCChatExit();
         }
     }
 }

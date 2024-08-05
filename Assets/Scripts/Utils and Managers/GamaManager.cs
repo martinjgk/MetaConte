@@ -42,7 +42,7 @@ public class GamaManager : MonoBehaviour
                 go = new GameObject { name = "Game Manager" };
                 go.AddComponent<GamaManager>();
             }
-            DontDestroyOnLoad(go);
+            // DontDestroyOnLoad(go);
             instance = go.GetComponent<GamaManager>();
 			npcInstance = go.gameObject.GetComponent<NPCManager>();
 		}
