@@ -28,11 +28,13 @@ public class PlayerMovement : MonoBehaviour {
 	bool isCursurOn = false;
 
     public bool canMove = true;
+	InputSignLang signInput;
 
 
     private void Start() {
         characterController = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
+		signInput = FindAnyObjectByType<InputSignLang>();
+		Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = isCursurOn;
     }
 
@@ -56,6 +58,9 @@ public class PlayerMovement : MonoBehaviour {
         float spdX = canMove ? (isRunning ? runSpeed : speed) * dx : 0;
         float spdZ = canMove ? (isRunning ? runSpeed : speed) * dz : 0;
 		float moveDirectionY = moveDirection.y;
+		if(signInput.inputSign == "walk") {
+			dz = 1;
+		}
 
         moveDirection = (transform.TransformDirection(Vector3.right) * spdX) + (transform.TransformDirection(Vector3.forward) * spdZ);
 		if (canMove && characterController.isGrounded && Input.GetKey(KeyCode.Space)) {

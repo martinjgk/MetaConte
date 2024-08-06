@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FireEffect : MonoBehaviour {
 	MagicFire magicElement;
-	Transform player;
+	Transform hand;
 	SphereCollider coll;
 	[SerializeField]
 	float circleR;
@@ -16,7 +16,7 @@ public class FireEffect : MonoBehaviour {
 
 	// Start is called before the first frame update
 	void OnEnable() {
-		player = FindObjectOfType<Player>().GetComponent<Transform>();
+		hand = GameObject.Find("RightHandAnchor").transform;
 		magicElement = GetComponentInParent<MagicFire>();
 		coll = gameObject.GetComponent<SphereCollider>();
 	}
@@ -36,7 +36,7 @@ public class FireEffect : MonoBehaviour {
 			float x = circleR * Mathf.Sin(radius);
 			float y = circleR * Mathf.Cos(radius);
 
-			transform.position = player.position + new Vector3(x, -1, y);
+			transform.position = hand.position + new Vector3(x, 0, y);
 			transform.rotation = Quaternion.Euler(0, 0, deg * -1);
 
 		}

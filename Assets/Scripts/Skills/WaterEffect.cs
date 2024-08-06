@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WaterEffect : MonoBehaviour {
 	MagicWater water;
-	Transform player;
+	Transform hand;
 	SphereCollider coll;
 	[SerializeField]
 	float circleR;
@@ -16,7 +16,7 @@ public class WaterEffect : MonoBehaviour {
 
 	// Start is called before the first frame update
 	void OnEnable() {
-		player = FindObjectOfType<Player>().GetComponent<Transform>();
+		hand = GameObject.Find("LeftHandAnchor").transform;
 		water = GetComponentInParent<MagicWater>();
 		coll = gameObject.GetComponent<SphereCollider>();
 	}
@@ -36,9 +36,8 @@ public class WaterEffect : MonoBehaviour {
 			float x = circleR * Mathf.Sin(radius);
 			float y = circleR * Mathf.Cos(radius);
 
-			transform.position = player.position + new Vector3(x, -1, y);
+			transform.position = hand.position + new Vector3(x, 0, y);
 			transform.rotation = Quaternion.Euler(0, 0, deg * -1);
-
 		}
 		else {
 			deg = 0;
