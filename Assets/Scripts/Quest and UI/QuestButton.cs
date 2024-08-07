@@ -71,7 +71,7 @@ public class QuestButton : MonoBehaviour
         }
     }
 
-    private void DisplayNextSentence()
+    public void DisplayNextSentence()
     {
         if (sentences.Count == 0)
         {
