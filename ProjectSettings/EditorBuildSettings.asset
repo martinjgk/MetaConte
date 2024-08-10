@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/WaterDemo/MainScene.unity
+    guid: 2a212a8425fb1ed4f8129c825ba0b1a1
+  - enabled: 1
     path: Assets/Scenes/Demo 2.unity
     guid: 6a2bcf9edeea8e24e8de59bc3c5f8bd7
   - enabled: 1
@@ -17,7 +20,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WaterDemo/FireTestField.unity
     guid: 04cf73fc0d78a984f912ed960d0dc346
-  - enabled: 1
-    path: Assets/Scenes/WaterDemo/MainScene.unity
-    guid: 2a212a8425fb1ed4f8129c825ba0b1a1
   m_configObjects: {}

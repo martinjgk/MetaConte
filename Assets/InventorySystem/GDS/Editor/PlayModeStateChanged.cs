@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using GDS;
-
+#if UNITY_EDITOR
 namespace GDS {
 
     [InitializeOnLoadAttribute]
@@ -19,3 +19,4 @@ namespace GDS {
         }
     }
 }
+#endif

@@ -4,6 +4,7 @@ using UnityEngine.UIElements;
 using GDS;
 using static GDS.Dom;
 using GDS.Demos.Basic;
+#if UNITY_EDITOR
 namespace GDS.Demos.Basic {
 
     public class BasicInventoryDebugWindow : EditorWindow {
@@ -32,3 +33,4 @@ namespace GDS.Demos.Basic {
 
     }
 }
+#endif

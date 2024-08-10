@@ -1,5 +1,4 @@
-﻿using log4net.Appender;
-using UnityEngine;
+﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
