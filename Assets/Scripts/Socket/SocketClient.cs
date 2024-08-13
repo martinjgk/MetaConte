@@ -6,10 +6,11 @@ using UnityEngine.Networking;
 public class PersistentSocketClient : MonoBehaviour
 {
     private bool running = true;
-    private string serverUrl = "http://3.35.214.173:8501/get-string";
+    private string serverUrl = "http://3.35.214.173:8502/get-string";
 
     private InputSignLang inputSignLang;
-
+    [SerializeField]
+    bool isSocketOn;
     void Start()
     {
         inputSignLang = GetComponent<InputSignLang>();

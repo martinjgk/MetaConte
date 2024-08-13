@@ -57,7 +57,7 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Sprite[] imageList; // List of images
 
-    private List <string> magicName = new List<string>();
+    private List<string> magicName = new List<string>();
 
     [SerializeField]
     private float firstLevelMagicCoolTime = 7.0f;
@@ -82,17 +82,20 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private string currentWorldNameText;
+
+    PlayerMagic playerMagic;
     // Start is called before the first frame update
     void Start()
     {
         CurrentSkill.SetActive(false);
         CurrentSkillIconText.text = "";
+        inputSignLang = FindAnyObjectByType<InputSignLang>();
+        playerMagic = FindAnyObjectByType<PlayerMagic>();
         InitializeMagicName();
         ShowInitState();
-        inputSignLang = FindObjectOfType<InputSignLang>();
     }
 
-    void InitializeMagicName(){
+    void InitializeMagicName() {
         magicName.Add("물");        //0
         magicName.Add("불");        //1
         magicName.Add("흙");        //2
@@ -131,22 +134,22 @@ public class UIManager : MonoBehaviour
         magicName.Add("회오리바람");//29
     }
 
-    public void SetSkillDialog(string targetMagicName, List<string> usableSkills){
-        if(targetMagicName == "") {
+    public void SetSkillDialog(string targetMagicName, List<string> usableSkills) {
+        if (targetMagicName == "") {
             prevMagicName = curMagicName;
             curMagicName = targetMagicName;
             return;
         }
-        else if(targetMagicName != prevMagicName){
-            if(isSkillDialog){
+        else if (targetMagicName != prevMagicName) {
+            if (isSkillDialog) {
                 int idx = GetIndexOfMagic(targetMagicName);
-                if(targetMagicName == "None")
+                if (targetMagicName == "None")
                 {
                     //Debug.Log("SetSkillDialog None: prev: "+prevMagicName+" cur:" + targetMagicName);
                     ShowInitState();
                     currentState = 0;
                 }
-                else if(currentState == 0 && idx >= 0 && idx <= 3){
+                else if (currentState == 0 && idx >= 0 && idx <= 3) {
                     prevMagicName = curMagicName;
                     curMagicName = targetMagicName;
                     foreach (string skill in usableSkills)
@@ -156,17 +159,17 @@ public class UIManager : MonoBehaviour
                     ShowFirstState(idx, usableSkills);
                     currentState = 1;
                 }
-                else if(currentState == 1 && idx >= 4 && idx <= 10){
-                    Debug.Log("SetSkillDialog Second: prev: "+prevMagicName+" cur:" + targetMagicName);
+                else if (currentState == 1 && idx >= 4 && idx <= 10) {
+                    Debug.Log("SetSkillDialog Second: prev: " + prevMagicName + " cur:" + targetMagicName);
                     prevMagicName = curMagicName;
                     curMagicName = targetMagicName;
                     ShowSecondState(idx, usableSkills);
                     currentState = 2;
                 }
-                else if(currentState == 2 && targetMagicName == "강하다"){
+                else if (currentState == 2 && targetMagicName == "강하다") {
                     //강하다 발동
                 }
-                else if(currentState == 2&& idx >= 0 && idx <= 3){
+                else if (currentState == 2 && idx >= 0 && idx <= 3) {
                     //None이 실행될 것.
                 }
             }
@@ -179,13 +182,13 @@ public class UIManager : MonoBehaviour
     {
 
     }
-    
 
-    void SetCurrentIcon(string targetMagicName){
-        if(targetMagicName == "None"){
+
+    void SetCurrentIcon(string targetMagicName) {
+        if (targetMagicName == "None") {
             CurrentSkill.SetActive(false);
         }
-        else if (GetIndexOfMagic(targetMagicName) != -1){
+        else if (GetIndexOfMagic(targetMagicName) != -1) {
             CurrentSkill.SetActive(true);
             int idx = GetIndexOfMagic(targetMagicName);
             CurrentSkillIconImage.sprite = imageList[idx];
@@ -193,80 +196,80 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    void SetCurrentIconIdx(int targetMagicIdx){
-        if(targetMagicIdx == -1){
+    void SetCurrentIconIdx(int targetMagicIdx) {
+        if (targetMagicIdx == -1) {
             CurrentSkill.SetActive(false);
         }
-        else{
+        else {
             CurrentSkill.SetActive(true);
             CurrentSkillIconImage.sprite = imageList[targetMagicIdx];
             CurrentSkillIconText.text = magicName[targetMagicIdx];
         }
     }
 
-    int GetIndexOfMagic(string targetMagicName){
-        if(targetMagicName == "water")
+    int GetIndexOfMagic(string targetMagicName) {
+        if (targetMagicName == "water")
         {
             return 0;
         }
-        else if(targetMagicName == "fire")
+        else if (targetMagicName == "fire")
         {
             return 1;
-        } 
-        else if(targetMagicName == "dirt")
+        }
+        else if (targetMagicName == "dirt")
         {
             return 2;
-        } 
-        else if(targetMagicName == "wind")
+        }
+        else if (targetMagicName == "wind")
         {
             return 3;
-        } 
-        else if(targetMagicName == "down")
+        }
+        else if (targetMagicName == "down")
         {
             return 4;
-        } 
-        else if(targetMagicName == "flow")
+        }
+        else if (targetMagicName == "flow")
         {
             return 5;
-        } 
-        else if(targetMagicName == "punch")
+        }
+        else if (targetMagicName == "punch")
         {
             return 6;
         }
-        else if(targetMagicName == "hell")
+        else if (targetMagicName == "hell")
         {
             return 7;
         }
-        else if(targetMagicName == "scatter")
+        else if (targetMagicName == "scatter")
         {
             return 8;
         }
-        else if(targetMagicName == "block")
+        else if (targetMagicName == "block")
         {
             return 9;
         }
-        else if(targetMagicName == "spin")
+        else if (targetMagicName == "spin")
         {
             return 10;
         }
-        else if(targetMagicName == "rain")
+        else if (targetMagicName == "rain")
         {
             return 11;
-        } 
+        }
         return -1;
     }
 
-    void SetFirstIcon(string targetMagicName){
+    void SetFirstIcon(string targetMagicName) {
         FirstIconMagicName = targetMagicName;
-        if(targetMagicName == "None"){
+        if (targetMagicName == "None") {
             FirstSkill.SetActive(false);
         }
-        else{
+        else {
             FirstSkill.SetActive(true);
             int index = GetIndexOfMagic(targetMagicName);
-            if(index == -1)
+            if (index == -1)
             {
-                Debug.Log("ERROR At getIndexOfMagic"+targetMagicName);
+                Debug.Log("ERROR At getIndexOfMagic" + targetMagicName);
                 return;
             }
             FirstSkillIconVideoPlayer.clip = videoClips[index];
@@ -274,77 +277,77 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    void SetSecondIcon(string targetMagicName){
+    void SetSecondIcon(string targetMagicName) {
         SecondIconMagicName = targetMagicName;
-        if(targetMagicName == "None"){
+        if (targetMagicName == "None") {
             SecondSkill.SetActive(false);
         }
         else
         {
             SecondSkill.SetActive(true);
             int index = GetIndexOfMagic(targetMagicName);
-            if(index == -1)
+            if (index == -1)
             {
-                Debug.Log("ERROR At getIndexOfMagic"+targetMagicName);
+                Debug.Log("ERROR At getIndexOfMagic" + targetMagicName);
                 return;
             }
             SecondSkillIconVideoPlayer.clip = videoClips[index];
             SecondSkillIconText.text = magicName[index];
-        } 
+        }
     }
 
-    void SetThirdIcon(string targetMagicName){
+    void SetThirdIcon(string targetMagicName) {
         ThirdIconMagicName = targetMagicName;
-        if(targetMagicName == "None"){
+        if (targetMagicName == "None") {
             ThirdSkill.SetActive(false);
         }
         else
         {
             ThirdSkill.SetActive(true);
             int index = GetIndexOfMagic(targetMagicName);
-            if(index == -1)
+            if (index == -1)
             {
-                Debug.Log("ERROR At getIndexOfMagic"+targetMagicName);
+                Debug.Log("ERROR At getIndexOfMagic" + targetMagicName);
                 return;
             }
             ThirdSkillIconVideoPlayer.clip = videoClips[index];
             ThirdSkillIconText.text = magicName[index];
-        } 
+        }
     }
-    void SetFourthIcon(string targetMagicName){
+    void SetFourthIcon(string targetMagicName) {
         FourthIconMagicName = targetMagicName;
-        if(targetMagicName == "None"){
+        if (targetMagicName == "None") {
             FourthSkill.SetActive(false);
         }
         else
         {
             FourthSkill.SetActive(true);
             int index = GetIndexOfMagic(targetMagicName);
-            if(index == -1)
+            if (index == -1)
             {
-                Debug.Log("ERROR At getIndexOfMagic"+targetMagicName);
+                Debug.Log("ERROR At getIndexOfMagic" + targetMagicName);
                 return;
             }
             FourthSkillIconVideoPlayer.clip = videoClips[index];
             FourthSkillIconText.text = magicName[index];
-        } 
+        }
     }
 
-    void ShowInitState(){
-            prevMagicName = curMagicName;
-            curMagicName = "None";
-            currentState = 0;
-            SetCurrentIcon("None");
-            SetFirstIcon("water");
-            SetSecondIcon("fire");
-            SetThirdIcon("dirt");
-            SetFourthIcon("wind");
-            NextSkillTimerSlider.gameObject.SetActive(false);
+    void ShowInitState() {
+        prevMagicName = curMagicName;
+        curMagicName = "None";
+        currentState = 0;
+        SetCurrentIcon("None");
+        SetFirstIcon("water");
+        SetSecondIcon("fire");
+        SetThirdIcon("dirt");
+        SetFourthIcon("wind");
+        NextSkillTimerSlider.gameObject.SetActive(false);
     }
     void ShowFirstState(int currentMagicIdx, List<string> usableSkills)
     {
         SetCurrentIconIdx(currentMagicIdx);
-        
+
         if (usableSkills.Count > 0)
         {
             SetFirstIcon(usableSkills[0]);
@@ -388,7 +391,7 @@ public class UIManager : MonoBehaviour
     {
         //Debug.Log("ShowSecondState "+currentMagicIdx.ToString()+" "+prevMagicName+" "+(11 + 4 * (currentMagicIdx - 4) + getIndexOfMagic(prevMagicName)).ToString());
         SetCurrentIconIdx(11 + 4 * (currentMagicIdx - 4) + GetIndexOfMagic(prevMagicName));
-        
+
         if (usableSkills.Count > 0)
         {
             SetFirstIcon(usableSkills[0]);
@@ -443,7 +446,7 @@ public class UIManager : MonoBehaviour
     {
         if (NextSkillTimerSlider != null)
             NextSkillTimerSlider.value = curSkillTime / maxCurrentSkillTime;
-            UpdateSliderColor();
+        UpdateSliderColor();
     }
     private IEnumerator SkillTimer()
     {
@@ -496,24 +499,23 @@ public class UIManager : MonoBehaviour
             skillTimerCoroutine = null;
         }
     }
-    public void OnFirstIconClick(){
-    if (inputSignLang != null && !string.IsNullOrEmpty(FirstIconMagicName)) {
-        inputSignLang.inputSign = FirstIconMagicName;
-    } else {
-        Debug.LogWarning("inputSignLang is null or FirstIconMagicName is null or empty");
+    public void OnFirstIconClick()
+    {
+        Debug.Log(FirstIconMagicName);
+        playerMagic.CastSkill(FirstIconMagicName);
     }
-}
 
 
     public void OnSecondIconClick(){
         Debug.Log(SecondIconMagicName);
-        inputSignLang.inputSign=SecondIconMagicName;
-        Debug.Log(inputSignLang.inputSign);
+        playerMagic.CastSkill(SecondIconMagicName);
     }
     public void OnThirdIconClick(){
-        inputSignLang.inputSign=ThirdIconMagicName;
+        Debug.Log(ThirdIconMagicName);
+        playerMagic.CastSkill(ThirdIconMagicName);
     }
     public void OnFourthIconClick(){
-        inputSignLang.inputSign=FourthIconMagicName;
+        Debug.Log(FourthIconMagicName);
+        playerMagic.CastSkill(FourthIconMagicName);
     }
 }

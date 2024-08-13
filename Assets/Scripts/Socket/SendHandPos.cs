@@ -10,13 +10,23 @@ public class SendHandPos : MonoBehaviour {
 	[SerializeField]
 	List<Transform> leftHandLandMark;
 
+	InputSignLang signLang;
+
+	[SerializeField]
+	bool isSocketOn;
+
 	float[] rightHand = new float[57];  // 0~2: wrist position, 3~ all rotation
 	float[] leftHand = new float[57];
 
 	List<float[]> recordedRightHandData = new List<float[]>();
 	List<float[]> recordedLeftHandData = new List<float[]>();
 
-	void FixedUpdate() {
+    private void Start()
+    {
+        signLang = GetComponent<InputSignLang>();
+    }
+
+    void FixedUpdate() {
 		// Right hand data collection
 		rightHand[0] = rightHandLandMark[0].localPosition.x;
 		rightHand[1] = rightHandLandMark[0].localPosition.y;
@@ -42,8 +52,11 @@ public class SendHandPos : MonoBehaviour {
 		recordedLeftHandData.Add((float[])leftHand.Clone());
 
 
-		// JSON 데이터를 전송하는 코루틴을 시작합니다.
-		StartCoroutine(SendDataToServer(rightHand, leftHand));
+		if (isSocketOn)
+		{
+			// JSON 데이터를 전송하는 코루틴을 시작합니다.
+			StartCoroutine(SendDataToServer(rightHand, leftHand));
+		}
 	}
 
 	public class HandData {
@@ -62,7 +75,7 @@ public class SendHandPos : MonoBehaviour {
 		string jsonData = JsonUtility.ToJson(data);
 
 		// 서버 URL 정의
-		string serverUrl = "http://3.35.214.173:8501/receive_data";
+		string serverUrl = "http://3.35.214.173:8502/receive_data";
 
 		// UnityWebRequest를 사용하여 POST 요청 생성
 		UnityWebRequest request = new UnityWebRequest(serverUrl, "POST");
@@ -79,6 +92,6 @@ public class SendHandPos : MonoBehaviour {
 		}
 		else {
 			Debug.Log("Successfully sent data: " + request.downloadHandler.text);
-		}
+        }
 	}
 }

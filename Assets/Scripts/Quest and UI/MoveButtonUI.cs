@@ -16,21 +16,25 @@ public class MoveButtonUI : MonoBehaviour
 	[SerializeField]
 	Button jumpButton;
 
+	[SerializeField]
 	PlayerMovement playerMovement;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerMovement = FindAnyObjectByType<PlayerMovement>();
+        // playerMovement = FindAnyObjectByType<PlayerMovement>();
     }
 
 	public void ClickVertical(float dz) {
-		playerMovement.SetVertical(dz);
+		Debug.Log("vertical" + dz.ToString());
+		playerMovement.vrVertic = dz;
 	}
 	public void ClickHorizontal(float dx) {
-		playerMovement.SetHorizontal(dx);
+        Debug.Log("horizontal");
+		playerMovement.vrHorizon = dx;
 	}
 	public void ClickJump(bool jump) {
-		playerMovement.SetJump(jump);
+        Debug.Log("jump");
+		playerMovement.vrJump = jump;
 	}
 }

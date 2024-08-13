@@ -1682,6 +1682,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anchor: {fileID: 331011588}
+  y_anchor: {fileID: 331011588}
+  isRotateOn: 1
 --- !u!1001 &1116318125
 PrefabInstance:
   m_ObjectHideFlags: 0

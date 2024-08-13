@@ -29,14 +29,14 @@ public class PlayerMovement : MonoBehaviour {
 
     public bool canMove = true;
 	InputSignLang signInput;
-	public bool isKeyboard = true;
+	public bool isKeyboard;
 
 	float dx;
 	float dz;
 
-	float vrHorizon;
-	float vrVertic;
-	bool vrJump;
+	public float vrHorizon;
+    public float vrVertic;
+	public bool vrJump;
 
     private void Start() {
         characterController = GetComponent<CharacterController>();
@@ -59,39 +59,33 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void Move() {
-		if (isKeyboard) {
-			dx = Input.GetAxis("Horizontal");
-			dz = Input.GetAxis("Vertical");
-		}
-        else
-        {
-			dx = vrHorizon;
-			dz = vrVertic;
-		}
+        // dx = Input.GetAxis("Horizontal");
+		// dz = Input.GetAxis("Vertical");
+		
+
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float spdX = canMove ? (isRunning ? runSpeed : speed) * dx : 0;
-        float spdZ = canMove ? (isRunning ? runSpeed : speed) * dz : 0;
+        float spdX = canMove ? (isRunning ? runSpeed * vrHorizon : speed * vrHorizon) : 0;
+        float spdZ = canMove ? (isRunning ? runSpeed * vrVertic : speed * vrVertic) : 0;
+		Debug.Log(spdX.ToString() + " " + spdZ.ToString());
+		Debug.Log(vrHorizon.ToString() + " " +  vrVertic.ToString());
+
+
 		float moveDirectionY = moveDirection.y;
 		if(signInput.inputSign == "walk") {
-			dz = 1;
+            vrHorizon = 1;
 		}
 
         moveDirection = (transform.TransformDirection(Vector3.right) * spdX) + (transform.TransformDirection(Vector3.forward) * spdZ);
+
 		if (canMove && characterController.isGrounded) {
-			if (isKeyboard) {
-				if (Input.GetKey(KeyCode.Space)) {
-					moveDirection.y = jumpPower;
-				}
-			}
-			else {
-				if (vrJump) {
-					moveDirection.y = jumpPower;
-				}
+			if (Input.GetKey(KeyCode.Space) || vrJump) {
+				moveDirection.y = jumpPower;
 			}
 		}
 		else {
 			moveDirection.y = moveDirectionY;
 		}
+
 	}
 
 
@@ -109,15 +103,17 @@ public class PlayerMovement : MonoBehaviour {
 			transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
 		}
 	}
-
+	/*
 	public void SetHorizontal(float horizon) {
 		vrHorizon = horizon;
 	}
 	public void SetVertical(float verton) {
+		Debug.Log(verton);
 		vrVertic = verton;
 	}
 
 	public void SetJump(bool jump) {
 		vrJump = jump;
 	}
+	*/
 }
