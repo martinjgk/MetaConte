@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1223282001561458475}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -251,11 +251,17 @@ MonoBehaviour:
   defense: 100
   attack: 100
   health: 100
-  mana: 100
   mpUpperBound: 100
   mpRecoverT: 0.5
   mpRecoverAmount: 0.5
   mpReduceAmount: 1
+  hpText: {fileID: 0}
+  mpText: {fileID: 0}
+  defenseText: {fileID: 0}
+  attackText: {fileID: 0}
+  speedText: {fileID: 0}
+  manaSlider: {fileID: 0}
+  hpSlider: {fileID: 0}
 --- !u!114 &818094318930859898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +306,6 @@ MonoBehaviour:
   - down
   - punch
   - flow
-  - hell
   usableSkills: []
 --- !u!114 &6707075526697682115
 MonoBehaviour:

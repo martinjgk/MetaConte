@@ -3896,7 +3896,7 @@ GameObject:
   - component: {fileID: 4995768462656859951}
   - component: {fileID: 319251178226919966}
   m_Layer: 5
-  m_Name: ATKText
+  m_Name: DEFText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6978,7 +6978,7 @@ GameObject:
   - component: {fileID: 6495667465324871038}
   - component: {fileID: 8553915681892585946}
   m_Layer: 5
-  m_Name: ATKText
+  m_Name: SPDText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7403,7 +7403,7 @@ GameObject:
   - component: {fileID: 1085143738659699066}
   - component: {fileID: 2363816118865738295}
   m_Layer: 5
-  m_Name: ATKText (1)
+  m_Name: STAT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7855,7 +7855,7 @@ GameObject:
   - component: {fileID: 3104455134003533459}
   - component: {fileID: 3615238033547559929}
   m_Layer: 5
-  m_Name: ATKText
+  m_Name: MPText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

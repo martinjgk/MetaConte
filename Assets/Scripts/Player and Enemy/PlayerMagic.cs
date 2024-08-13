@@ -157,9 +157,13 @@ public class PlayerMagic : MonoBehaviour
 		while(true) {
 			if (currentSkillObj == null) {
 				player.MP += player.mpRecoverAmount;
+				Debug.Log("마나 충전");
+				player.UpdateUI();
 			}
 			else if (current_skill == "water" || current_skill == "fire" || current_skill == "dirt" || current_skill == "wind") {
 				player.MP -= player.mpReduceAmount;
+				Debug.Log("마나 소모");
+				player.UpdateUI();
 			}
 			yield return new WaitForSeconds(player.mpRecoverT);
 		}
