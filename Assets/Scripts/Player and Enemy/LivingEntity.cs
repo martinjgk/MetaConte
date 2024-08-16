@@ -12,7 +12,6 @@ public class LivingEntity : MonoBehaviour, IDamageable
 	public float speed;
 	public float runSpeed;
 	public float atk;
-	public float def;
 
     public float HP {
         get {
