@@ -11,6 +11,9 @@ public class MonsterAttackState : StateMachineBehaviour
     public int longRangeAttackType = 3;
     public float attackCooldown = 2.0f;
     private float lastAttackTime = 0f;
+
+    public float shortAttackRange = 1.0f; // 근접 공격 범위
+    public float shortDamage = 5f; // 근접 공격 시 플레이어에게 입힐 데미지
     public GameObject monsterSkillPrefab; // 스킬 프리팹
 
     public float heightOffset = 1.0f;
@@ -46,6 +49,13 @@ public class MonsterAttackState : StateMachineBehaviour
         else{
             int closeRangeAttackType = Random.Range(0, longRangeAttackType); 
             animator.SetFloat("attackType", closeRangeAttackType);
+            if(distance<=shortAttackRange){
+                Player playerComponent = player.GetComponent<Player>();
+                if (playerComponent != null)
+                {
+                    playerComponent.getDamage(shortDamage);
+                }
+            }
         }
     }
 

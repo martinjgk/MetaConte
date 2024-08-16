@@ -50,15 +50,14 @@ MonoBehaviour:
   element: 0
   wordClass: 1
   effectDict:
-    array:
-    - Key: water
-      Value: {fileID: 3864030169049535082, guid: c7200b1b3ca4d1146bd7fec0b2e1474b, type: 3}
-    - Key: fire
-      Value: {fileID: 3864030169049535082, guid: febd81579c671134697528713f23d845, type: 3}
-    - Key: dirt
-      Value: {fileID: 0}
-    - Key: wind
-      Value: {fileID: 0}
+    keys: []
+    values: []
+  effectNameList:
+  - water
+  - fire
+  effectList:
+  - {fileID: 3864030169049535082, guid: c7200b1b3ca4d1146bd7fec0b2e1474b, type: 3}
+  - {fileID: 3864030169049535082, guid: febd81579c671134697528713f23d845, type: 3}
   nextMagic: []
   damageCoef: 0.8
   viewRange: 20

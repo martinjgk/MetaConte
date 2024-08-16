@@ -31,10 +31,21 @@ public class PlayerMagic : MonoBehaviour
 	private GameObject currentSkillObj;
 
 	[SerializeField]
+	List<string> skillNames;
+
+	[SerializeField]
+	List<GameObject> skillList;
+
+	[SerializeField]
+	List<float> skillCools;
+
+	/*
+	[SerializeField]
 	SerializableDictionary<string, GameObject> skillDict;
 
 	[SerializeField]
 	SerializableDictionary<string, float> skillCoolDict;
+	*/
 
 	Dictionary<string, float> lastSkillTimeDict = new Dictionary<string, float>()
 	{
@@ -67,14 +78,11 @@ public class PlayerMagic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.MP > 10.0f)
-        {
-			if (Input.GetKey(KeyCode.Alpha1) || inputSignLang.inputSign == "water") {
-				CastSkill("water");
-			}
-			if (Input.GetKey(KeyCode.Alpha2) || inputSignLang.inputSign == "fire") {
-				CastSkill("fire");
-			}
+		if (Input.GetKey(KeyCode.Alpha1) || inputSignLang.inputSign == "water") {
+			CastSkill("water");
+		}
+		if (Input.GetKey(KeyCode.Alpha2) || inputSignLang.inputSign == "fire") {
+			CastSkill("fire");
 		}
 
 		if(Input.GetKey(KeyCode.E) || inputSignLang.inputSign == "down") {
@@ -89,11 +97,13 @@ public class PlayerMagic : MonoBehaviour
 		ui.SetSkillDialog(current_skill, usableSkills);
     }
 
-	void CastSkill(string skillName) {
-		GameObject skill = skillDict[skillName];
+	public void CastSkill(string skillName) {
+		// GameObject skill = skillDict[skillName];
+		Debug.Log("CASTtttttttttttttttttttttt!!!");
+		GameObject skill = skillList[skillNames.IndexOf(skillName)];
 		if(skill != null && learnedSkills.Contains(skillName) && usableSkills.Contains(skillName)) {
 
-			if(Time.time - lastSkillTimeDict[skillName] >= skillCoolDict[skillName]) {
+			if(Time.time - lastSkillTimeDict[skillName] >= skillCools[skillNames.IndexOf(skillName)]) {
 				usableSkills.Clear();
 				Magic skillMagic = skill.GetComponent<Magic>();
 
@@ -112,7 +122,7 @@ public class PlayerMagic : MonoBehaviour
 	}
 
 	public void AddSkill(string skillName) {
-		GameObject newSkill = skillDict[skillName];
+		GameObject newSkill = skillList[skillNames.IndexOf(skillName)];
 
 		if(newSkill != null && !learnedSkills.Contains(skillName)) {
 
@@ -145,9 +155,13 @@ public class PlayerMagic : MonoBehaviour
 		while(true) {
 			if (currentSkillObj == null) {
 				player.MP += player.mpRecoverAmount;
+				Debug.Log("마나 충전");
+				player.UpdateUI();
 			}
 			else if (current_skill == "water" || current_skill == "fire" || current_skill == "dirt" || current_skill == "wind") {
 				player.MP -= player.mpReduceAmount;
+				Debug.Log("마나 소모");
+				player.UpdateUI();
 			}
 			yield return new WaitForSeconds(player.mpRecoverT);
 		}

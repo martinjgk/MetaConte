@@ -49,21 +49,20 @@ MonoBehaviour:
   element: 0
   wordClass: 0
   effectDict:
-    array:
-    - Key: water
-      Value: {fileID: 4366900416175226820, guid: a6496df669b35ca409802ee374959841, type: 3}
-    - Key: fire
-      Value: {fileID: 1634767862067424, guid: 9dacacd713380bf408749c47f3bac918, type: 3}
-    - Key: dirt
-      Value: {fileID: 0}
-    - Key: wind
-      Value: {fileID: 0}
+    keys: []
+    values: []
+  effectNameList:
+  - water
+  - fire
+  effectList:
+  - {fileID: 4366900416175226820, guid: a6496df669b35ca409802ee374959841, type: 3}
+  - {fileID: 1634767862067424, guid: 9dacacd713380bf408749c47f3bac918, type: 3}
   nextMagic: []
-  damageCoef: 0.2
+  damageCoef: 0.1
   duringTime: 5
   moveSpd: 10
   maxDistance: 15
-  damageTick: 0.5
+  damageTick: 1
   isReached: 0
 --- !u!136 &2344048627950849094
 CapsuleCollider:

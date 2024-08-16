@@ -12,6 +12,8 @@ public class MonsterSkill : MonoBehaviour
 
     private Rigidbody skillRigidBody;
 
+    private float damage = 30f;
+
 
     public ParticleSystem monsterSkillEffect;
 
@@ -54,7 +56,12 @@ public class MonsterSkill : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Fireball이 플레이어에게 도달했습니다.");
-            // 여기서 플레이어에게 피해를 입히는 로직 추가 가능
+            Player player = other.GetComponent<Player>();
+            if (player != null)
+            {
+                player.getDamage(damage); 
+            }
+
             Destroy(gameObject);
         }
     }

@@ -18,7 +18,11 @@ public abstract class Magic : MonoBehaviour
 	protected WordClass wordClass;
 
 	[SerializeField]
-	protected SerializableDictionary<string, GameObject> effectDict;
+	protected List<string> effectNameList;
+
+	[SerializeField]
+	protected List<GameObject> effectList;
+
 
 	[SerializeField]
 	public List<string> nextMagic;

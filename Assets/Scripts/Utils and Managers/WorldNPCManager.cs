@@ -109,18 +109,18 @@ public class WorldNPCManager : MonoBehaviour
         }
     }
 
-    private void DisplayNextSentence()
-    {
-        if (sentences.Count == 0)
-        {
-            EndDialog();
-            return;
-        }
+	public void DisplayNextSentence() {
+		if (isDialogActive) {
+			if (sentences.Count == 0) {
+				EndDialog();
+				return;
+			}
 
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
-    }
+			string sentence = sentences.Dequeue();
+			StopAllCoroutines();
+			StartCoroutine(TypeSentence(sentence));
+		}
+	}
 
     IEnumerator TypeSentence(string sentence)
     {

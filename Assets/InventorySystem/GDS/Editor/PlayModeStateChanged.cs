@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEditor;
 using GDS;
+
 #if UNITY_EDITOR
 namespace GDS {
 
-    [InitializeOnLoadAttribute]
+    [InitializeOnLoad]
     public static class PlayModeStateChanged {
 
         static PlayModeStateChanged() {

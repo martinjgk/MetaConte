@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4849091470804571095}
   - component: {fileID: 8227203415314758683}
   - component: {fileID: 3466704508427593949}
+  - component: {fileID: 5832540370548917701}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -57,9 +58,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efed133f53a0094bb74ff6d64b7f5af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NPCDialog: {fileID: 0}
+  NPCText_Discription: {fileID: 0}
+  NPCText_name: {fileID: 0}
   infos: []
   NPCImageList: []
   questManager: {fileID: 5203907908768585111}
+  StatUI: {fileID: 0}
+  UIInfoDialog: {fileID: 0}
+--- !u!114 &5832540370548917701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3585286622171027186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d3349a3fa811244b40e8588e951ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPCDialog: {fileID: 0}
+  NPCText_Discription: {fileID: 0}
+  NPCText_name: {fileID: 0}
+  infos: []
+  questManager: {fileID: 5203907908768585111}
+  StatUI: {fileID: 0}
 --- !u!1 &7201571527044877382
 GameObject:
   m_ObjectHideFlags: 0

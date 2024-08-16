@@ -43,7 +43,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -217,7 +217,6 @@ MonoBehaviour:
   def: 100
   defense: 100
   attack: 100
-  speed: 0
   health: 100
   mana: 100
   mpUpperBound: 100
@@ -238,36 +237,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   current_skill: 
-  skillDict:
-    array:
-    - Key: water
-      Value: {fileID: 5950268727943348770, guid: ae9d2ff69a825fc4fa574ae5c147433a, type: 3}
-    - Key: fire
-      Value: {fileID: 3732865343195339182, guid: 0971583cda302db4b9cad42d82a6d90c, type: 3}
-    - Key: down
-      Value: {fileID: 3712962257597547801, guid: 531721c65bb9cc44bab58d354cd90b30, type: 3}
-    - Key: punch
-      Value: {fileID: 3712962257597547801, guid: 531721c65bb9cc44bab58d354cd90b30, type: 3}
-    - Key: flow
-      Value: {fileID: 9130974322763580093, guid: ea9eb424678faf749a11f5b040af2a32, type: 3}
-  skillCoolDict:
-    array:
-    - Key: water
-      Value: 1
-    - Key: fire
-      Value: 1
-    - Key: down
-      Value: 1
-    - Key: punch
-      Value: 1
-    - Key: flow
-      Value: 1
+  skillNames:
+  - water
+  - fire
+  - dirt
+  - wind
+  - down
+  - flow
+  - hell
+  skillList:
+  - {fileID: 5950268727943348770, guid: ae9d2ff69a825fc4fa574ae5c147433a, type: 3}
+  - {fileID: 3732865343195339182, guid: 0971583cda302db4b9cad42d82a6d90c, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 3712962257597547801, guid: 531721c65bb9cc44bab58d354cd90b30, type: 3}
+  - {fileID: 9130974322763580093, guid: ea9eb424678faf749a11f5b040af2a32, type: 3}
+  - {fileID: 1812152447663851529, guid: 1afc65956944e134aadb0931108ae495, type: 3}
+  skillCools:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
   learnedSkills:
   - water
   - fire
   - down
   - punch
   - flow
+  - hell
   usableSkills: []
 --- !u!114 &5293372282084738160
 MonoBehaviour:

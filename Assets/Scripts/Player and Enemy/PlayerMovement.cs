@@ -28,11 +28,23 @@ public class PlayerMovement : MonoBehaviour {
 	bool isCursurOn = false;
 
     public bool canMove = true;
+	InputSignLang signInput;
+	public bool isKeyboard;
 
+	float dx;
+	float dz;
+
+	public float vrHorizon;
+    public float vrVertic;
+	public bool vrJump;
+
+	[SerializeField]
+	UIAnchorPosition mainUI;
 
     private void Start() {
         characterController = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
+		signInput = FindAnyObjectByType<InputSignLang>();
+		Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = isCursurOn;
     }
 
@@ -50,20 +62,42 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void Move() {
-		float dx = Input.GetAxis("Horizontal");
-		float dz = Input.GetAxis("Vertical");
-		bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float spdX = canMove ? (isRunning ? runSpeed : speed) * dx : 0;
-        float spdZ = canMove ? (isRunning ? runSpeed : speed) * dz : 0;
+        // dx = Input.GetAxis("Horizontal");
+		// dz = Input.GetAxis("Vertical");
+		
+
+        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        float spdX = canMove ? (isRunning ? runSpeed * vrHorizon : speed * vrHorizon) : 0;
+        float spdZ = canMove ? (isRunning ? runSpeed * vrVertic : speed * vrVertic) : 0;
+		Debug.Log(spdX.ToString() + " " + spdZ.ToString());
+		Debug.Log(vrHorizon.ToString() + " " +  vrVertic.ToString());
+
+
 		float moveDirectionY = moveDirection.y;
 
+        mainUI.isRotateOn = false;
+
+        if (spdZ > 0 || spdX > 0)
+		{
+			mainUI.isRotateOn = true;
+		}
+
+		/*
+		if(signInput.inputSign == "walk") {
+            vrHorizon = 1;
+		}
+		*/
         moveDirection = (transform.TransformDirection(Vector3.right) * spdX) + (transform.TransformDirection(Vector3.forward) * spdZ);
-		if (canMove && characterController.isGrounded && Input.GetKey(KeyCode.Space)) {
-			moveDirection.y = jumpPower;
+
+		if (canMove && characterController.isGrounded) {
+			if (Input.GetKey(KeyCode.Space) || vrJump) {
+				moveDirection.y = jumpPower;
+			}
 		}
 		else {
 			moveDirection.y = moveDirectionY;
 		}
+
 	}
 
 
@@ -81,5 +115,17 @@ public class PlayerMovement : MonoBehaviour {
 			transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
 		}
 	}
+	/*
+	public void SetHorizontal(float horizon) {
+		vrHorizon = horizon;
+	}
+	public void SetVertical(float verton) {
+		Debug.Log(verton);
+		vrVertic = verton;
+	}
 
+	public void SetJump(bool jump) {
+		vrJump = jump;
+	}
+	*/
 }

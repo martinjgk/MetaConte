@@ -49,9 +49,10 @@ MonoBehaviour:
   element: 2
   wordClass: 0
   effectDict:
-    array:
-    - Key: fire
-      Value: {fileID: 1518039238872793837}
+    keys: []
+    values: []
+  effectNameList: []
+  effectList: []
   nextMagic:
   - down
   - punch
@@ -116,11 +117,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d0738c83e908c34da63e61687c04cd0, type: 3}
---- !u!1 &1518039238872793837 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2475679545370010338, guid: 3d0738c83e908c34da63e61687c04cd0, type: 3}
-  m_PrefabInstance: {fileID: 3984077956915191823}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2619632016760206597 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1373743827363271946, guid: 3d0738c83e908c34da63e61687c04cd0, type: 3}
