@@ -19,19 +19,23 @@ public class MoveButtonUI : MonoBehaviour
 	[SerializeField]
 	PlayerMovement playerMovement;
 
+	Transform player;
     // Start is called before the first frame update
     void Start()
     {
-        // playerMovement = FindAnyObjectByType<PlayerMovement>();
+		// playerMovement = FindAnyObjectByType<PlayerMovement>();
+		player = playerMovement.transform;
     }
 
 	public void ClickVertical(float dz) {
 		Debug.Log("vertical" + dz.ToString());
+		player.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
 		playerMovement.vrVertic = dz;
 	}
 	public void ClickHorizontal(float dx) {
         Debug.Log("horizontal");
-		playerMovement.vrHorizon = dx;
+        player.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
+        playerMovement.vrHorizon = dx;
 	}
 	public void ClickJump(bool jump) {
         Debug.Log("jump");

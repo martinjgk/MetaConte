@@ -10,8 +10,7 @@ public class UIAnchorPosition : MonoBehaviour
     [SerializeField]
     Transform y_anchor;
 
-    [SerializeField]
-    bool isRotateOn;
+    public bool isRotateOn;
 
     // Update is called once per frame
     void Update()

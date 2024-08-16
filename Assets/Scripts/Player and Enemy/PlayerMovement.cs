@@ -38,6 +38,9 @@ public class PlayerMovement : MonoBehaviour {
     public float vrVertic;
 	public bool vrJump;
 
+	[SerializeField]
+	UIAnchorPosition mainUI;
+
     private void Start() {
         characterController = GetComponent<CharacterController>();
 		signInput = FindAnyObjectByType<InputSignLang>();
@@ -71,10 +74,19 @@ public class PlayerMovement : MonoBehaviour {
 
 
 		float moveDirectionY = moveDirection.y;
+
+        mainUI.isRotateOn = false;
+
+        if (spdZ > 0 || spdX > 0)
+		{
+			mainUI.isRotateOn = true;
+		}
+
+		/*
 		if(signInput.inputSign == "walk") {
             vrHorizon = 1;
 		}
-
+		*/
         moveDirection = (transform.TransformDirection(Vector3.right) * spdX) + (transform.TransformDirection(Vector3.forward) * spdZ);
 
 		if (canMove && characterController.isGrounded) {
