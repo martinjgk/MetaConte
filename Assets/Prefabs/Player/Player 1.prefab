@@ -284,11 +284,17 @@ MonoBehaviour:
   defense: 100
   attack: 100
   health: 100
-  mana: 100
   mpUpperBound: 100
   mpRecoverT: 0.5
   mpRecoverAmount: 0.5
   mpReduceAmount: 1
+  hpText: {fileID: 0}
+  mpText: {fileID: 0}
+  defenseText: {fileID: 0}
+  attackText: {fileID: 0}
+  speedText: {fileID: 0}
+  manaSlider: {fileID: 0}
+  hpSlider: {fileID: 0}
 --- !u!114 &818094318930859898
 MonoBehaviour:
   m_ObjectHideFlags: 0
