@@ -6,17 +6,6 @@ using UnityEngine.UI;
 public class MoveButtonUI : MonoBehaviour
 {
 	[SerializeField]
-	Button forwardButton;
-	[SerializeField]
-	Button backButton;
-	[SerializeField]
-	Button rightButton;
-	[SerializeField]
-	Button leftButton;
-	[SerializeField]
-	Button jumpButton;
-
-	[SerializeField]
 	PlayerMovement playerMovement;
 
 	Transform player;
