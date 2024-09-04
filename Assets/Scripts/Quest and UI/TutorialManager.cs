@@ -108,14 +108,14 @@ public class TutorialManager : MonoBehaviour
 				currentSkillImage.gameObject.transform.parent.parent.parent.parent.parent.gameObject.SetActive(true);
 				nextSkillText.gameObject.transform.parent.gameObject.SetActive(true);
 
-				nextSkillText.text = "��";
+				nextSkillText.text = "물";
 				nextSkillVideo.clip = waterVideo;
 			}
 			else if (dialogStep == 11) {
 				inputDone = false;
 				nextSkillText.gameObject.transform.parent.gameObject.SetActive(true);
 
-				nextSkillText.text = "������";
+				nextSkillText.text = "내리다";
 				nextSkillVideo.clip = downVideo;
 			}
 			else if (dialogStep == 13) {
@@ -133,7 +133,7 @@ public class TutorialManager : MonoBehaviour
 					dialog.text = npcText[dialogStep];
 					currentSkillImage.gameObject.transform.parent.parent.parent.gameObject.SetActive(true);
 					currentSkillImage.sprite = waterImage;
-					currentSkillText.text = "��";
+					currentSkillText.text = "물";
 					waterEffect.SetActive(true);
 					nextSkillText.gameObject.transform.parent.gameObject.SetActive(false);
 				}
@@ -145,7 +145,7 @@ public class TutorialManager : MonoBehaviour
 					dialog.text = npcText[dialogStep];
 					currentSkillImage.gameObject.transform.parent.parent.parent.gameObject.SetActive(true);
 					currentSkillImage.sprite = downWaterImage;
-					currentSkillText.text = "��";
+					currentSkillText.text = "비";
 					waterEffect.SetActive(false);
 					rainEffect.SetActive(true);
 					nextSkillText.gameObject.transform.parent.gameObject.SetActive(false);

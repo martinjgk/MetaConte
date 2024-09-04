@@ -78,14 +78,11 @@ public class PlayerMagic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.MP > 10.0f)
-        {
-			if (Input.GetKey(KeyCode.Alpha1) || inputSignLang.inputSign == "water") {
-				CastSkill("water");
-			}
-			if (Input.GetKey(KeyCode.Alpha2) || inputSignLang.inputSign == "fire") {
-				CastSkill("fire");
-			}
+		if (Input.GetKey(KeyCode.Alpha1) || inputSignLang.inputSign == "water") {
+			CastSkill("water");
+		}
+		if (Input.GetKey(KeyCode.Alpha2) || inputSignLang.inputSign == "fire") {
+			CastSkill("fire");
 		}
 
 		if(Input.GetKey(KeyCode.E) || inputSignLang.inputSign == "down") {
@@ -100,8 +97,9 @@ public class PlayerMagic : MonoBehaviour
 		ui.SetSkillDialog(current_skill, usableSkills);
     }
 
-	void CastSkill(string skillName) {
+	public void CastSkill(string skillName) {
 		// GameObject skill = skillDict[skillName];
+		Debug.Log("CASTtttttttttttttttttttttt!!!");
 		GameObject skill = skillList[skillNames.IndexOf(skillName)];
 		if(skill != null && learnedSkills.Contains(skillName) && usableSkills.Contains(skillName)) {
 
