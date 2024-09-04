@@ -36,6 +36,8 @@ public class QuestManager : MonoBehaviour
 
     [SerializeField]
     private Text NewQuestText;
+    [SerializeField]
+    private TextMesh NewQuestTextMesh;
 
     [SerializeField]
     private int numMonsterKill = 0;
@@ -58,6 +60,7 @@ public class QuestManager : MonoBehaviour
         playerIngameProfileManager.SetExp(playerExp - playerExpToLevelUp[playerLevel], playerExpToLevelUp[playerLevel + 1]);
         InitializeQuests();
         NewQuestText.text = "";
+        NewQuestTextMesh.text = "";
         NextQuest();
         boss.SetActive(false);
         QuestDoneUI.SetActive(false);
@@ -94,6 +97,7 @@ public class QuestManager : MonoBehaviour
         {
             IncreasePlayerExp(quests[currentQuestIndex].clearExp);
             NewQuestText.text = "NEW";
+            NewQuestTextMesh.text = "NEW";
             currentQuestIndex++;
             numMonsterKill = 0;
             
