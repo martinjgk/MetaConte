@@ -32,19 +32,11 @@ public class BookPanelManager : MonoBehaviour
 		Debug.Log("Clicked");
         if (bookPanel != null)
         {
-            bookPanel.SetActive(true);
+            bookPanel.SetActive(!bookPanel.activeSelf);
         }
         else
         {
             Debug.LogError("BookPanel is not assigned.");
-        }
-        if (bookPanelCloseButton != null)
-        {
-            bookPanelCloseButton.SetActive(true);
-        }
-        else
-        {
-            Debug.LogError("bookPanelCloseButton is not assigned.");
         }
     }
 

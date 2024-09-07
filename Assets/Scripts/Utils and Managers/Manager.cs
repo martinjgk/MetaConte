@@ -8,11 +8,12 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+		/*
         if (s_instance) {
 			DestroyImmediate(gameObject);
 			return;
 		}
-
+		*/
 		s_instance = this;
 		// DontDestroyOnLoad(gameObject);
     }
