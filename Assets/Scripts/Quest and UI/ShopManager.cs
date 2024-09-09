@@ -8,7 +8,6 @@ public class ShopManager : MonoBehaviour
     public GameObject inventoryUI;
     public TMP_Text warningText;
     public TMP_Text goldText;
-    private int gold = 500; //player에게 부여해야함
     public Inventory inventory;
     private bool isShopOpen = false;
 
@@ -76,74 +75,28 @@ public class ShopManager : MonoBehaviour
         inventoryUI.SetActive(!inventoryUI.activeSelf);
     }
 
-   public void BuyArmor(Item armorItem)
-    {
-        if (gold >= 100)
-        {
-            gold -= 100;
-            inventory.AddItem(armorItem);
-            UpdateGoldText();
-            HideWarning();
-        }
-        else
-        {
-            ShowWarning();
-        }
-    }
-
-    public void BuyCloak(Item cloakItem)
-    {
-        if (gold >= 80)
-        {
-            gold -= 80;
-            inventory.AddItem(cloakItem);
-            UpdateGoldText();
-            HideWarning();
-        }
-        else
-        {
-            ShowWarning();
-        }
-    }
-
-    public void BuyBoots(Item bootsItem)
-    {
-        if (gold >= 50)
-        {
-            gold -= 50;
-            inventory.AddItem(bootsItem);
-            UpdateGoldText();
-            HideWarning();
-        }
-        else
-        {
-            ShowWarning();
-        }
-    }
-
     public void BuyItem(Item item)
-{
-    if (gold >= item.itemPrice)
     {
-        gold -= item.itemPrice; // 금액 차감
-        inventory.AddItem(item); // 아이템 인벤토리에 추가
-        item.Use(player);
-        UpdateGoldText(); // 금액 텍스트 업데이트
-        HideWarning(); // 경고 메시지 숨기기
-        PlayPurchaseSound();
+        if (player.SpendGold(item.itemPrice)) // Player의 골드를 차감
+        {
+            inventory.AddItem(item); // 아이템 인벤토리에 추가
+            item.Use(player); // 아이템 사용
+            UpdateGoldText(); // 금액 텍스트 업데이트
+            HideWarning(); // 경고 메시지 숨기기
+            PlayPurchaseSound(); // 구매 소리 재생
+        }
+        else
+        {
+            ShowWarning(); // 자금 부족 경고
+        }
     }
-    else
-    {
-        ShowWarning(); // 자금 부족 경고
-    }
-}
 
 
     private void ShowWarning()
     {
         if (warningText != null)
         {
-            warningText.text = "Not Enough Gold";
+            warningText.text = "골드가 충분하지 않습니다.";
             warningText.gameObject.SetActive(true);
         }
     }
@@ -160,7 +113,7 @@ public class ShopManager : MonoBehaviour
     {
         if (goldText != null)
         {
-            goldText.text = "Gold: " + gold.ToString();
+            goldText.text = "Gold: " + player.GetGold().ToString(); // Player의 골드를 가져와서 업데이트
         }
     }
 

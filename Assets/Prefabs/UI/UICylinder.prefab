@@ -8516,7 +8516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4349173064230559929}
   m_Layer: 5
-  m_Name: MP
+  m_Name: GOLD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10368,7 +10368,7 @@ GameObject:
   - component: {fileID: 3231737841207729343}
   - component: {fileID: 2985534237077653150}
   m_Layer: 5
-  m_Name: MPText
+  m_Name: GoldText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10434,7 +10434,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10000
+  m_Text: 100
 --- !u!1 &5952132227722250787
 GameObject:
   m_ObjectHideFlags: 0
@@ -15212,6 +15212,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7513206731979056063}
     m_Modifications:
+    - target: {fileID: 261206172596943428, guid: 987c11779d8cb4c2f9fc64bbc5019deb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7407537774837181880, guid: 73e9598a14738490fa4ebb7064721a79, type: 3}
+    - target: {fileID: 1051951579445429192, guid: 987c11779d8cb4c2f9fc64bbc5019deb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7407537774837181880, guid: 73e9598a14738490fa4ebb7064721a79, type: 3}
+    - target: {fileID: 1159007024553696591, guid: 987c11779d8cb4c2f9fc64bbc5019deb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7407537774837181880, guid: 73e9598a14738490fa4ebb7064721a79, type: 3}
+    - target: {fileID: 1314124968182195503, guid: 987c11779d8cb4c2f9fc64bbc5019deb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7407537774837181880, guid: 73e9598a14738490fa4ebb7064721a79, type: 3}
+    - target: {fileID: 1832382017506311736, guid: 987c11779d8cb4c2f9fc64bbc5019deb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7407537774837181880, guid: 73e9598a14738490fa4ebb7064721a79, type: 3}
     - target: {fileID: 2259485100682571504, guid: 987c11779d8cb4c2f9fc64bbc5019deb, type: 3}
       propertyPath: m_Name
       value: Shop
@@ -15312,6 +15332,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5163310132019200248, guid: 987c11779d8cb4c2f9fc64bbc5019deb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7407537774837181880, guid: 73e9598a14738490fa4ebb7064721a79, type: 3}
+    - target: {fileID: 7188789213045690940, guid: 987c11779d8cb4c2f9fc64bbc5019deb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7407537774837181880, guid: 73e9598a14738490fa4ebb7064721a79, type: 3}
+    - target: {fileID: 7477061622701090896, guid: 987c11779d8cb4c2f9fc64bbc5019deb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7407537774837181880, guid: 73e9598a14738490fa4ebb7064721a79, type: 3}
+    - target: {fileID: 7553123422237660641, guid: 987c11779d8cb4c2f9fc64bbc5019deb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7407537774837181880, guid: 73e9598a14738490fa4ebb7064721a79, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

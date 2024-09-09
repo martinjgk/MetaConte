@@ -9,7 +9,6 @@ public class ShopButton : MonoBehaviour
 
     private bool isShopOpen = false;      // 상점 창 열림 여부
     private bool isInventoryOpen = false; // 인벤토리 창 열림 여부
-
     public void ToggleShop()
     {
         isShopOpen = !isShopOpen;

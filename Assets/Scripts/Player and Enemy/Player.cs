@@ -8,6 +8,7 @@ public class Player : LivingEntity
 	PlayerMagic playerSkill;
 	public int defense = 50; 
 	public int attack = 50; 
+	public int gold = 0;
 
 	float mp = 100;
 	[SerializeField]
@@ -28,6 +29,7 @@ public class Player : LivingEntity
 	public Text defenseText;
 	public Text attackText;
 	public Text speedText;
+	public Text goldText;
 	public Slider manaSlider;
 	public Slider hpSlider;
 
@@ -73,6 +75,33 @@ public class Player : LivingEntity
 		
 	}
 
+	public void AddGold(int amount)
+    {
+        gold += amount;
+        Debug.Log("Gold added: " + amount + ". Current Gold: " + gold);
+		UpdateUI();
+    }
+
+	public bool SpendGold(int amount)
+    {
+        if (gold >= amount)
+        {
+            gold -= amount;
+            Debug.Log("Gold spent: " + amount + ". Current Gold: " + gold);
+			UpdateUI();
+            return true;
+        }
+        else
+        {
+            Debug.Log("Not enough gold!");
+            return false;
+        }
+    }
+
+    public int GetGold()
+    {
+        return gold;
+    }
 
 	IEnumerator HPRegenerator() {
 		while (!isDead) {
@@ -128,6 +157,7 @@ public class Player : LivingEntity
         Debug.Log($"Mana restored by {amount}. New mana: {mp}");
 		UpdateUI();
     }
+	
 
     public override void getDamage(float damage)
     {
@@ -164,6 +194,9 @@ public class Player : LivingEntity
 
 		if (speedText != null)
 			speedText.text = "SPD: " + speed;
+
+		if (goldText != null)
+			goldText.text = " " + gold;
 
 		if (manaSlider != null)
 			manaSlider.value = MP / mpUpperBound;
