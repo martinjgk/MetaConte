@@ -23,7 +23,7 @@ public class MagicFlow : Magic
 	[SerializeField]
 	float speed;
 
-	Text text;
+	//Text text;
 	GameObject effect;
 	bool isTargetOn = false;
 	Transform target;
@@ -32,7 +32,7 @@ public class MagicFlow : Magic
 
 	private void Awake() {
 		player = FindAnyObjectByType<PlayerMagic>();
-		text = GameObject.Find("DebugLogText").GetComponent<Text>();
+		//text = GameObject.Find("DebugLogText").GetComponent<Text>();
 		agent = GetComponent<NavMeshAgent>();
 		damage = player.damage * damageCoef;
 		startTransform = player.transform;
@@ -89,12 +89,12 @@ public class MagicFlow : Magic
 			Vector3 direction = (e.transform.position - transform.position).normalized;
 
 			print("target in range");
-			text.text = "enemy in range";
+			//text.text = "enemy in range";
 			// 대상과의 각도가 설정한 각도 이내에 있는지 확인한다.
 			// viewAngle 은 부채꼴 전체 각도이기 때문에, 0.5를 곱해준다.
 			if (Vector3.Angle(transform.forward, direction) < (viewAngle * 0.5f) && e.gameObject.tag == "Enemy") {
 				print("target in angle");
-                text.text = "enemy in angle";
+                //text.text = "enemy in angle";
                 isTargetOn = true;
 				targetList.Add(e.transform);
 			}
