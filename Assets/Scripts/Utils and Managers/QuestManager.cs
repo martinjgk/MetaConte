@@ -27,6 +27,7 @@ public class QuestManager : MonoBehaviour
         public string content;
         public string target;
         public int clearExp;
+        public int clearGold;
     }
 
     public List<Quest> quests = new List<Quest>();
@@ -50,9 +51,12 @@ public class QuestManager : MonoBehaviour
     private GameObject MonsterKillUI;
     [SerializeField]
     private Text MonsterKillText;
+    
+    Player player;
     void Start()
     {
         playerIngameProfileManager = FindObjectOfType<PlayerIngameProfileManager>();
+        player = FindObjectOfType<Player>();
         playerIngameProfileManager.UpdatePlayerLevelUI(playerLevel);
         Debug.Log((playerExp - playerExpToLevelUp[playerLevel - 1]).ToString()+" "+(playerExpToLevelUp[playerLevel]).ToString());
         playerIngameProfileManager.SetExp(playerExp - playerExpToLevelUp[playerLevel], playerExpToLevelUp[playerLevel + 1]);
@@ -66,25 +70,25 @@ public class QuestManager : MonoBehaviour
 
     void InitializeQuests()
     {
-        quests.Add(new Quest() { questNo = 0, questName = "Init", npcType = "Init", content = "Init", target = "", clearExp =0 });
-        quests.Add(new Quest() { questNo = 1, questName = "새로운 희망", npcType = "story", content = "스승님의 조수 주변으로 이동해 말을 걸어보기", target = "", clearExp =60 });
-        quests.Add(new Quest() { questNo = 2, questName = "물의 길", npcType = "sign", content = "물의 왕국 주민 쿠아쿠아에게 감사 인사 전해주기. WASD를 사용하여 이동할 수 있습니다.", target = "", clearExp =60 });
-        quests.Add(new Quest() { questNo = 3, questName = "매직 앤 머지", npcType = "", content = "스승님의 조수 온에게 다가가 말을 걸기", target = "", clearExp =50 });
-        quests.Add(new Quest() { questNo = 4, questName = "화마를 찾아서", npcType = "", content = "화마를 지키는 몬스터 3마리를 사냥하기", target = "", clearExp =50 });
-        quests.Add(new Quest() { questNo = 5, questName = "물 흐르듯", npcType = "", content = "물의 왕국 주민 쿠아쿠아 주변으로 이동해 말을 걸어보기", target = "", clearExp =50 });
-        quests.Add(new Quest() { questNo = 6, questName = "깨어난 화마", npcType = "", content = "화마의 선발대 몬스터 5마리를 사냥하기", target = "", clearExp =100 });
-        quests.Add(new Quest() { questNo = 7, questName = "비를 내려다오", npcType = "", content = "스승님의 조수 온 주변으로 이동해 말을 걸어보기", target = "", clearExp =50 });
-        quests.Add(new Quest() { questNo = 8, questName = "화마의 최후", npcType = "", content = "Boss 화마를 무찔러 가뭄을 끝내기", target = "", clearExp =100 });
-        quests.Add(new Quest() { questNo = 9, questName = "첫 번째 여정을 마치며", npcType = "", content = "스승님의 조수 온 주변으로 이동해 말을 걸어보기", target = "", clearExp =100 });
-        quests.Add(new Quest() { questNo = 10, questName = "가자! 불의 왕국으로", npcType = "", content = "불의 왕국 도착, 스승님의 조수 온 주변으로 이동해 말을 걸어보기", target = "", clearExp =100 });
-        quests.Add(new Quest() { questNo = 11, questName = "공포의 땅두대지", npcType = "", content = "불의 왕국 주민 주변으로 이동해 말을 걸어보기", target = "", clearExp =100 });
-        quests.Add(new Quest() { questNo = 12, questName = "땅두대지의 습격", npcType = "", content = "땅두대지를 지키는 몬스터 3마리 사냥하기", target = "", clearExp =100 });
-        quests.Add(new Quest() { questNo = 13, questName = "불꽃~ 펀치", npcType = "", content = "불의 왕국 마그마그 주변으로 이동해 말을 걸어보기", target = "", clearExp =100 });
-        quests.Add(new Quest() { questNo = 14, questName = "땅두대지의 역습", npcType = "", content = "땅두대지를 지키는 몬스터를 5마리 사냥하기", target = "", clearExp =100 });
-        quests.Add(new Quest() { questNo = 15, questName = "웰 컴 투 헬", npcType = "", content = "불의 왕국 마그마그 주변으로 이동해 말을 걸어보기", target = "", clearExp =100 });
-        quests.Add(new Quest() { questNo = 16, questName = "땅두더지의 분노", npcType = "", content = "땅두대지의 일곱 수호단 7마리 사냥하기", target = "", clearExp =100 });
-        quests.Add(new Quest() { questNo = 17, questName = "땅두대지의 최후", npcType = "", content = "땅두대지를 무찔러 불의 왕국을 구하기", target = "", clearExp =100 });
-        quests.Add(new Quest() { questNo = 18, questName = "예언된 자", npcType = "", content = "스승님의 조수 온 주변으로 이동해 말을 걸어보기", target = "", clearExp =100 });
+        quests.Add(new Quest() { questNo = 0, questName = "Init", npcType = "Init", content = "Init", target = "", clearExp =0, clearGold = 0 });
+        quests.Add(new Quest() { questNo = 1, questName = "새로운 희망", npcType = "story", content = "스승님의 조수 주변으로 이동해 말을 걸어보기", target = "", clearExp =60, clearGold = 30 });
+        quests.Add(new Quest() { questNo = 2, questName = "물의 길", npcType = "sign", content = "물의 왕국 주민 쿠아쿠아에게 감사 인사 전해주기. WASD를 사용하여 이동할 수 있습니다.", target = "", clearExp =60, clearGold = 30 });
+        quests.Add(new Quest() { questNo = 3, questName = "매직 앤 머지", npcType = "", content = "스승님의 조수 온에게 다가가 말을 걸기", target = "", clearExp =50, clearGold = 30 });
+        quests.Add(new Quest() { questNo = 4, questName = "화마를 찾아서", npcType = "", content = "화마를 지키는 몬스터 3마리를 사냥하기", target = "", clearExp =50, clearGold = 20 });
+        quests.Add(new Quest() { questNo = 5, questName = "물 흐르듯", npcType = "", content = "물의 왕국 주민 쿠아쿠아 주변으로 이동해 말을 걸어보기", target = "", clearExp =50, clearGold = 20 });
+        quests.Add(new Quest() { questNo = 6, questName = "깨어난 화마", npcType = "", content = "화마의 선발대 몬스터 5마리를 사냥하기", target = "", clearExp =100, clearGold = 80 });
+        quests.Add(new Quest() { questNo = 7, questName = "비를 내려다오", npcType = "", content = "스승님의 조수 온 주변으로 이동해 말을 걸어보기", target = "", clearExp =50, clearGold = 0 });
+        quests.Add(new Quest() { questNo = 8, questName = "화마의 최후", npcType = "", content = "Boss 화마를 무찔러 가뭄을 끝내기", target = "", clearExp =100, clearGold = 80 });
+        quests.Add(new Quest() { questNo = 9, questName = "첫 번째 여정을 마치며", npcType = "", content = "스승님의 조수 온 주변으로 이동해 말을 걸어보기", target = "", clearExp =100, clearGold = 30 });
+        quests.Add(new Quest() { questNo = 10, questName = "가자! 불의 왕국으로", npcType = "", content = "불의 왕국 도착, 스승님의 조수 온 주변으로 이동해 말을 걸어보기", target = "", clearExp =100, clearGold = 50 });
+        quests.Add(new Quest() { questNo = 11, questName = "공포의 땅두대지", npcType = "", content = "불의 왕국 주민 주변으로 이동해 말을 걸어보기", target = "", clearExp =100, clearGold = 30 });
+        quests.Add(new Quest() { questNo = 12, questName = "땅두대지의 습격", npcType = "", content = "땅두대지를 지키는 몬스터 3마리 사냥하기", target = "", clearExp =100, clearGold = 60 });
+        quests.Add(new Quest() { questNo = 13, questName = "불꽃~ 펀치", npcType = "", content = "불의 왕국 마그마그 주변으로 이동해 말을 걸어보기", target = "", clearExp =100, clearGold = 50 });
+        quests.Add(new Quest() { questNo = 14, questName = "땅두대지의 역습", npcType = "", content = "땅두대지를 지키는 몬스터를 5마리 사냥하기", target = "", clearExp =100, clearGold = 70 });
+        quests.Add(new Quest() { questNo = 15, questName = "웰 컴 투 헬", npcType = "", content = "불의 왕국 마그마그 주변으로 이동해 말을 걸어보기", target = "", clearExp =100, clearGold = 60 });
+        quests.Add(new Quest() { questNo = 16, questName = "땅두더지의 분노", npcType = "", content = "땅두대지의 일곱 수호단 7마리 사냥하기", target = "", clearExp =100, clearGold = 80 });
+        quests.Add(new Quest() { questNo = 17, questName = "땅두대지의 최후", npcType = "", content = "땅두대지를 무찔러 불의 왕국을 구하기", target = "", clearExp =100, clearGold = 100 });
+        quests.Add(new Quest() { questNo = 18, questName = "예언된 자", npcType = "", content = "스승님의 조수 온 주변으로 이동해 말을 걸어보기", target = "", clearExp =100, clearGold = 90 });
     }
 
 
@@ -93,6 +97,7 @@ public class QuestManager : MonoBehaviour
         if (currentQuestIndex < quests.Count - 1)
         {
             IncreasePlayerExp(quests[currentQuestIndex].clearExp);
+            player.AddGold(quests[currentQuestIndex].clearGold);
             NewQuestText.text = "NEW";
             currentQuestIndex++;
             numMonsterKill = 0;

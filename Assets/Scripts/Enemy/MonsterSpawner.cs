@@ -9,6 +9,7 @@ public class MonsterSpawner : MonoBehaviour
     public int monsterCount = 5;
     private List<GameObject> monsters = new List<GameObject>();
     private float respawnTime = 30.0f;
+    private bool isSpawning = false;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class MonsterSpawner : MonoBehaviour
             monsters.Add(monster);
             monster.GetComponent<Monster>().OnDeath += HandleMonsterDeath;
         }
+        isSpawning = false;
     }
 
     void HandleMonsterDeath(GameObject monster)
@@ -31,7 +33,7 @@ public class MonsterSpawner : MonoBehaviour
         Debug.Log("Handling monster death.");
         monsters.Remove(monster);
 
-        if (monsters.Count == 0)
+        if (monsters.Count == 0 && !isSpawning)
         {
             Debug.Log("All monsters dead. Starting respawn timer.");
             StartCoroutine(RespawnMonsters());
@@ -40,6 +42,7 @@ public class MonsterSpawner : MonoBehaviour
 
     IEnumerator RespawnMonsters()
     {
+        isSpawning = true;
         yield return new WaitForSeconds(respawnTime);
         Debug.Log("Respawning monsters after delay.");
         SpawnMonsters();
