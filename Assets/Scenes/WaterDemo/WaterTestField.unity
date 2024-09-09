@@ -64814,18 +64814,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 174343638}
     - target: {fileID: 9173656133087460643, guid: af2f132b940cb0f458b3db26403c9c2e, type: 3}
-      propertyPath: atk
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9173656133087460643, guid: af2f132b940cb0f458b3db26403c9c2e, type: 3}
-      propertyPath: gold
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9173656133087460643, guid: af2f132b940cb0f458b3db26403c9c2e, type: 3}
-      propertyPath: attack
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 9173656133087460643, guid: af2f132b940cb0f458b3db26403c9c2e, type: 3}
       propertyPath: hpText
       value: 
       objectReference: {fileID: 1766090684}
@@ -64833,10 +64821,6 @@ PrefabInstance:
       propertyPath: mpText
       value: 
       objectReference: {fileID: 979139846}
-    - target: {fileID: 9173656133087460643, guid: af2f132b940cb0f458b3db26403c9c2e, type: 3}
-      propertyPath: defense
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 9173656133087460643, guid: af2f132b940cb0f458b3db26403c9c2e, type: 3}
       propertyPath: goldText
       value: 
