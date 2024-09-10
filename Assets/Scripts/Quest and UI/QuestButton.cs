@@ -17,6 +17,8 @@ public class QuestButton : MonoBehaviour
     private bool isDialogActive = false;
     [SerializeField]
     private Text NewQuestText;
+    [SerializeField]
+    private TextMesh NewQuestTextMesh;
 
     [SerializeField]
     private GameObject StatUI;
@@ -36,6 +38,7 @@ public class QuestButton : MonoBehaviour
     {
         StatUI.SetActive(false);
         NewQuestText.text = "";
+        NewQuestTextMesh.text = "";
         if (QuestDialog != null)
         {
             QuestDialog.SetActive(true);

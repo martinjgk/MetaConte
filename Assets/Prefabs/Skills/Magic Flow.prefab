@@ -49,9 +49,6 @@ MonoBehaviour:
   skillName: flow
   element: 0
   wordClass: 1
-  effectDict:
-    keys: []
-    values: []
   effectNameList:
   - water
   - fire
@@ -60,7 +57,7 @@ MonoBehaviour:
   - {fileID: 3864030169049535082, guid: febd81579c671134697528713f23d845, type: 3}
   nextMagic: []
   damageCoef: 0.8
-  viewRange: 20
+  viewRange: 23.2
   viewAngle: 60
   targetMask:
     serializedVersion: 2

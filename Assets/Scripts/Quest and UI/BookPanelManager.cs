@@ -7,8 +7,6 @@ public class BookPanelManager : MonoBehaviour
 {
     public GameObject bookPanel;
     public GameObject bookPanelCloseButton;
-    public GameObject buttonObject;
-    public GameObject QuestButtton;
 
     public Image displayImage; // Display image component
     public Text displayText; // Display text component
@@ -34,29 +32,11 @@ public class BookPanelManager : MonoBehaviour
 		Debug.Log("Clicked");
         if (bookPanel != null)
         {
-            bookPanel.SetActive(true);
-            //buttonObject.SetActive(false);
+            bookPanel.SetActive(!bookPanel.activeSelf);
         }
         else
         {
             Debug.LogError("BookPanel is not assigned.");
-        }
-        if (bookPanelCloseButton != null)
-        {
-            bookPanelCloseButton.SetActive(true);
-        }
-        else
-        {
-            Debug.LogError("bookPanelCloseButton is not assigned.");
-        }
-        if (QuestButtton != null)
-        {
-            //QuestButtton.SetActive(false);
-            
-        }
-        else
-        {
-            Debug.LogError("QuestButtton is not assigned.");
         }
     }
 

@@ -4,17 +4,15 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class PersistentSocketClient : MonoBehaviour
+public class SocketClient : MonoBehaviour
 {
     private bool running = true;
     private string serverUrl = "http://3.35.214.173:8502/get-string";
 
-	[SerializeField]
-	Text text;
     private InputSignLang inputSignLang;
     [SerializeField]
     bool isSocketOn;
-    void Start()
+    void OnEnable()
     {
         inputSignLang = GetComponent<InputSignLang>();
         StartCoroutine(GetDataFromServer());
@@ -30,14 +28,12 @@ public class PersistentSocketClient : MonoBehaviour
             if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
             {
                 Debug.LogError("Error: " + request.error);
-				text.text = "Error: " + request.error;
 
 			}
             else
             {
                 string receivedMessage = request.downloadHandler.text;
                 Debug.Log("Received from server: " + receivedMessage);
-				text.text = "Received from server: " + receivedMessage;
 
 				// Parse the received JSON to get the prediction string
 				string prediction = JsonUtility.FromJson<PredictionResponse>(receivedMessage).prediction;

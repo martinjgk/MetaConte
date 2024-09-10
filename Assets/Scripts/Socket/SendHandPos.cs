@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Text;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class SendHandPos : MonoBehaviour {
 	[SerializeField]
