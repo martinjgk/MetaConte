@@ -40,7 +40,7 @@ public class NPCManager : MonoBehaviour
         NPCDialog.SetActive(false);
 
         sentences = new Queue<string>();
-        UIInfoDialog.SetActive(false);
+        // UIInfoDialog.SetActive(false);
     }
 
     void InitializeInfos()
@@ -166,8 +166,8 @@ public class NPCManager : MonoBehaviour
 
     private IEnumerator ShowUIInfoDialog()
     {
-        UIInfoDialog.SetActive(true);
+        // UIInfoDialog.SetActive(true);
         yield return new WaitForSeconds(10);
-        UIInfoDialog.SetActive(false);
+        // UIInfoDialog.SetActive(false);
     }
 }
