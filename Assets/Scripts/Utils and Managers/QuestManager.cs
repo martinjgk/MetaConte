@@ -63,7 +63,7 @@ public class QuestManager : MonoBehaviour
         Debug.Log((playerExp - playerExpToLevelUp[playerLevel - 1]).ToString()+" "+(playerExpToLevelUp[playerLevel]).ToString());
         playerIngameProfileManager.SetExp(playerExp - playerExpToLevelUp[playerLevel], playerExpToLevelUp[playerLevel + 1]);
         InitializeQuests();
-        NewQuestText.text = "";
+        // NewQuestText.text = "";
         NewQuestTextMesh.text = "";
         NextQuest();
         boss.SetActive(false);
@@ -101,7 +101,7 @@ public class QuestManager : MonoBehaviour
         {
             IncreasePlayerExp(quests[currentQuestIndex].clearExp);
             player.AddGold(quests[currentQuestIndex].clearGold);
-            NewQuestText.text = "NEW";
+            // NewQuestText.text = "NEW";
             NewQuestTextMesh.text = "NEW";
             currentQuestIndex++;
             numMonsterKill = 0;

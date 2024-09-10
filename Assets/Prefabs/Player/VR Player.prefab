@@ -1,0 +1,239 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &422016163625977596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 229527974514390145}
+  m_Layer: 0
+  m_Name: Eyelevel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &229527974514390145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 422016163625977596}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4261264330423442608}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4190500268884176523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4261264330423442608}
+  - component: {fileID: 6043964918404638611}
+  - component: {fileID: 1082138140118847659}
+  - component: {fileID: 9173656133087460643}
+  - component: {fileID: 818094318930859898}
+  - component: {fileID: 6707075526697682115}
+  m_Layer: 0
+  m_Name: VR Player
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4261264330423442608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190500268884176523}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.34, y: 0.8, z: -26.17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 229527974514390145}
+  - {fileID: 2142411410144752921}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &6043964918404638611
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190500268884176523}
+  m_Enabled: 1
+--- !u!143 &1082138140118847659
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190500268884176523}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9173656133087460643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190500268884176523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f6d274d0454bd419d46a59c606a648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  runSpeed: 0
+  atk: 50
+  defense: 50
+  attack: 50
+  gold: 0
+  mpUpperBound: 100
+  mpRecoverT: 0.5
+  mpRecoverAmount: 0.5
+  mpReduceAmount: 1
+  hpRecoverAmount: 10
+  hpRecoverInterval: 3
+  hpUpperBound: 100
+  hpText: {fileID: 0}
+  mpText: {fileID: 0}
+  defenseText: {fileID: 0}
+  attackText: {fileID: 0}
+  speedText: {fileID: 0}
+  goldText: {fileID: 0}
+  manaSlider: {fileID: 0}
+  hpSlider: {fileID: 0}
+--- !u!114 &818094318930859898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190500268884176523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e79294719548f04d884c9e57365f995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  current_skill: 
+  skillNames:
+  - water
+  - fire
+  - dirt
+  - wind
+  - down
+  - flow
+  - hell
+  skillList:
+  - {fileID: 5950268727943348770, guid: ae9d2ff69a825fc4fa574ae5c147433a, type: 3}
+  - {fileID: 3732865343195339182, guid: 0971583cda302db4b9cad42d82a6d90c, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 3712962257597547801, guid: 531721c65bb9cc44bab58d354cd90b30, type: 3}
+  - {fileID: 9130974322763580093, guid: ea9eb424678faf749a11f5b040af2a32, type: 3}
+  - {fileID: 1812152447663851529, guid: 1afc65956944e134aadb0931108ae495, type: 3}
+  skillCools:
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  learnedSkills:
+  - water
+  - fire
+  - down
+  - punch
+  - flow
+  usableSkills: []
+--- !u!114 &6707075526697682115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190500268884176523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc4cfdb85de1694d86098ab95ecdeaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  runSpeed: 13
+  jumpPower: 8
+  gravity: 18
+  cam: {fileID: 0}
+  lookSpeed: 2
+  lookXLimit: 45
+  canMove: 1
+  isKeyboard: 0
+  vrHorizon: 0
+  vrVertic: 0
+  vrJump: 0
+  mainUI: {fileID: 0}
+--- !u!1 &6133533657706483108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2142411410144752921}
+  m_Layer: 0
+  m_Name: ChestLevel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2142411410144752921
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6133533657706483108}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4261264330423442608}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

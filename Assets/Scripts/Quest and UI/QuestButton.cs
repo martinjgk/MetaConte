@@ -37,7 +37,7 @@ public class QuestButton : MonoBehaviour
     public void OnButtonClick()
     {
         StatUI.SetActive(false);
-        NewQuestText.text = "";
+        // NewQuestText.text = "";
         NewQuestTextMesh.text = "";
         if (QuestDialog != null)
         {

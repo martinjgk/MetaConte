@@ -6773,8 +6773,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookPanel: {fileID: 1866724409628073810}
   bookPanelCloseButton: {fileID: 8638605026600706074}
-  buttonObject: {fileID: 8488063108763544539}
-  QuestButtton: {fileID: 333258137745961726}
   displayImage: {fileID: 6302140335106975554}
   displayText: {fileID: 3203009400932639753}
   imageList:
@@ -8284,7 +8282,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &7474639458572256818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10515,8 +10513,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bookPanel: {fileID: 1866724409628073810}
   bookPanelCloseButton: {fileID: 8638605026600706074}
-  buttonObject: {fileID: 8488063108763544539}
-  QuestButtton: {fileID: 333258137745961726}
   displayImage: {fileID: 0}
   displayText: {fileID: 0}
   imageList: []
@@ -11387,6 +11383,7 @@ MonoBehaviour:
   QuestText_Discription: {fileID: 4343313194855959453}
   QuestText_name: {fileID: 8732049613562262217}
   NewQuestText: {fileID: 238243907096246486}
+  NewQuestTextMesh: {fileID: 0}
   StatUI: {fileID: 1203280349787079253}
 --- !u!1 &8638605026600706074
 GameObject:
