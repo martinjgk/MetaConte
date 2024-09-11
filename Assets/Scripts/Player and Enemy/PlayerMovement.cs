@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour {
 		characterController.Move(moveDirection * Time.deltaTime);
 		Move();
 		Gravity();
-		Rotate();
+		// Rotate();
 		
 		if(Input.GetKeyUp(KeyCode.LeftAlt)) {
 			isCursurOn = !isCursurOn;
@@ -106,7 +106,7 @@ public class PlayerMovement : MonoBehaviour {
             moveDirection.y -= gravity * Time.deltaTime;
         }
     }
-
+	/*
 	void Rotate() {
 		if(canMove) {
 			rotX += -Input.GetAxis("Mouse Y") * lookSpeed;
@@ -115,6 +115,7 @@ public class PlayerMovement : MonoBehaviour {
 			transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
 		}
 	}
+	*/
 	/*
 	public void SetHorizontal(float horizon) {
 		vrHorizon = horizon;
