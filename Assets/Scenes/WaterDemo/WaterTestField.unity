@@ -60544,6 +60544,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4785000029750760, guid: 2802a8bdb7ea3354a8b0be8bfb9e7ac9, type: 3}
   m_PrefabInstance: {fileID: 2020285163}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2021174435 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1336798380717906027, guid: e4ec1ffa3eb33784caa55b4f12607ae8, type: 3}
+  m_PrefabInstance: {fileID: 170533752}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdb1b6e41f4ca1e4c981806f5324f28f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2023395480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62311,6 +62322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OVRCameraRig Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 9141098511618664105, guid: c573b0cc162581d4786d826476a058ce, type: 3}
+      propertyPath: playerMovement
+      value: 
+      objectReference: {fileID: 1091072467}
     - target: {fileID: 9156550517181208832, guid: c573b0cc162581d4786d826476a058ce, type: 3}
       propertyPath: playerMovement
       value: 
@@ -64398,6 +64413,10 @@ PrefabInstance:
       propertyPath: questManager
       value: 
       objectReference: {fileID: 1976945755}
+    - target: {fileID: 6707075526697682115, guid: af2f132b940cb0f458b3db26403c9c2e, type: 3}
+      propertyPath: mainUI
+      value: 
+      objectReference: {fileID: 2021174435}
     - target: {fileID: 9173656133087460643, guid: af2f132b940cb0f458b3db26403c9c2e, type: 3}
       propertyPath: hpText
       value: 
@@ -64447,6 +64466,14 @@ PrefabInstance:
       propertyPath: NPCManager
       value: 
       objectReference: {fileID: 714951485}
+    - target: {fileID: 2741546004993596729, guid: c908e2241d9611a46a45dcbb11bdc650, type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2741546004993596729, guid: c908e2241d9611a46a45dcbb11bdc650, type: 3}
+      propertyPath: m_LODs.Array.data[3].screenRelativeHeight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6023865334867849989, guid: c908e2241d9611a46a45dcbb11bdc650, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.5

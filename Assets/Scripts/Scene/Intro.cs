@@ -81,6 +81,6 @@ public class Intro : MonoBehaviour
     }
 
     public void OnButtonClick(){
-        SceneManager.LoadScene("WaterTestField");
+        SceneManager.LoadScene("Tutorial");
     }
 }

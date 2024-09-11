@@ -5,8 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 
-public class TutorialManager : MonoBehaviour
-{
+public class TutorialManager : MonoBehaviour {
 	[SerializeField]
 	Animator dragonAnimator;
 	[SerializeField]
@@ -74,16 +73,18 @@ public class TutorialManager : MonoBehaviour
 	bool inputDone = true;
 
 	int dragonAnimDir = 1;
-    // Start is called before the first frame update
-    void Start()
-    {
+
+	bool clickNext = false;
+	bool clickFirst = false;
+	// Start is called before the first frame update
+	void Start() {
 		waterEffect.SetActive(false);
 		rainEffect.SetActive(false);
 		fadeOut.gameObject.SetActive(false);
 		ultimateSkill.SetActive(false);
 		dialogPanel.SetActive(false);
-        teacherAnimator.SetBool("Attack", false);
-		eyelidAnimator.SetTrigger("blink");
+		teacherAnimator.SetBool("Attack", false);
+		// eyelidAnimator.SetTrigger("blink");
 		dialog.gameObject.SetActive(false);
 		StartCoroutine(DragonAttackAnimation());
 		currentSkillImage.gameObject.transform.parent.parent.parent.parent.parent.gameObject.SetActive(false);
@@ -91,16 +92,24 @@ public class TutorialManager : MonoBehaviour
 		nextSkillText.gameObject.transform.parent.gameObject.SetActive(false);
 	}
 
-    // Update is called once per frame
-    void Update()
-    {
-		if (dialogStep < 0 && eyelidAnimator.GetCurrentAnimatorStateInfo(0).IsName("animation_lids_idle")) {
+	public void OnNextClick() {
+		clickNext = true;
+	}
+
+	public void OnFirstSkillClick() {
+		clickNext = true;
+	}
+
+	// Update is called once per frame
+	void Update() {
+		if (dialogStep < 0) {
 			dialogStep = 0;
 			dialogPanel.SetActive(true);
 			dialog.text = npcText[dialogStep];
 			dialog.gameObject.SetActive(true);
 		}
-		if (inputDone && dialogStep >= 0 && Input.GetKeyDown(KeyCode.N)) {
+		if (inputDone && dialogStep >= 0 && (Input.GetKeyDown(KeyCode.N) || clickNext)) {
+			clickNext = false;
 			dialogStep++;
 			if (dialogStep == 7) {
 				inputDone = false;
@@ -127,7 +136,8 @@ public class TutorialManager : MonoBehaviour
 
 		if (!inputDone) {
 			if (dialogStep == 7) {
-				if (inputs.inputSign == "water" || Input.GetKey(KeyCode.Alpha1)) {
+				if (inputs.inputSign == "water" || Input.GetKey(KeyCode.Alpha1) || clickFirst) {
+					clickFirst = false;
 					inputDone = true;
 					dialogStep++;
 					dialog.text = npcText[dialogStep];
@@ -139,7 +149,8 @@ public class TutorialManager : MonoBehaviour
 				}
 			}
 			else if (dialogStep == 11) {
-				if (inputs.inputSign == "down" || Input.GetKey(KeyCode.E)) {
+				if (inputs.inputSign == "down" || Input.GetKey(KeyCode.E) || clickFirst) {
+					clickFirst = false;
 					inputDone = true;
 					dialogStep++;
 					dialog.text = npcText[dialogStep];
