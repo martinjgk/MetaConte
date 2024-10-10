@@ -84,6 +84,9 @@ public class UIManager : MonoBehaviour
     private string currentWorldNameText;
 
     PlayerMagic playerMagic;
+
+    [SerializeField]
+    private GameObject playerStatUI;
     // Start is called before the first frame update
     void Start()
     {

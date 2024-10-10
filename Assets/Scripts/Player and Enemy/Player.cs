@@ -72,6 +72,11 @@ public class Player : LivingEntity
 	// Update is called once per frame
 	void Update()
 	{
+		if (Input.GetKeyDown(KeyCode.D))
+		{
+			getDamage(10);  // Reduce player's health by 10 when the "D" key is pressed
+			Debug.Log("Player took damage. Current HP: " + HP);
+		}
 		
 	}
 
@@ -204,4 +209,7 @@ public class Player : LivingEntity
 		if (hpSlider != null)
             hpSlider.value = HP / hpUpperBound;;
 	}
+
+	
 }
+
